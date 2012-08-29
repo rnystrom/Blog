@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Ryan Nystrom" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/skeleton.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/prettify.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+    <link rel="shortcut icon" href="/media/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/media/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/media/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"/>
+
+    <title>CSS3 Keyframes</title>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29022599-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+        <header class="sixteen columns" id="site-header">
+            <h1 class="remove-bottom">Ryan Nystrom</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/work">My Work</a></li>
+                </ul>
+            </nav>
+            <hr />
+        </header>
+        <section id="posts" class="sixteen columns">
+          <div class="single-post">
+  <div id="post">
+    <h1></h1>
+    <blockquote><p>This is a post from my original Wordpress blog. It has some valuable information so I decided to reinstate some of these old posts. Originally posted on September 14, 2010.</p></blockquote>
+
+<p>There are two main options for using CSS3 animations: keyframes and transitions. Both have their advantages and are syntactically different. I'll do my best to explain each in Layman's terms and also give some examples. In this post I'll be going over keyframes.</p>
+
+<p>Keyframes let you control what properties are changed and when. To create a keyframe animation, you need the following:</p>
+
+<ul>
+    <li><strong>from</strong> or <strong>0%</strong> - This is the origin of your frame. Here you need to define the properties that are going to be modified. It is best practice to match the properties in the class/ID definition in your stylesheet, especially if you are delaying the animation.</li>
+    <li><strong>to</strong> or <strong>100%</strong> - Easy to figure this part out: to/100% contains the properties' new values. Make sure you restate each value in <strong>from</strong>.</li>
+</ul>
+
+
+<p>Here is an example:</p>
+
+<pre><code>@-webkit-keyframes move {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 200px;
+    }
+}
+</code></pre>
+
+<p><em>Optionally</em>, if you use <strong>0% - 100%</strong>, you can also provide steps of changes in between. You chose the percentages of the steps. I usually match up the percentages with my timing. If my animation is going to take 4 seconds and I want the color to change at 1.5 seconds, then I just do 1.5/4*100 = 37.5%. So, my new keyframe will look like this:</p>
+
+<pre><code>@-webkit-keyframes move {
+    0% {
+        left: 0px;
+        background:red;
+    }
+        38% {
+        background:blue;
+    }
+        100% {
+        left: 200px;
+    }
+}
+</code></pre>
+
+<p>Now that you have defined your animation, in this case we've called it "move", we can apply it to a DOM object. Personally, I always store my animations in their own separate classes. This does not mean that you cannot store the animation and it's properties in a main class, ID, or even in the DOM CSS definition (ie. div, a, img), I think it's just better practice to keep them separate. Here are all of your animation options:</p>
+
+<ul>
+    <li><strong>-webkit-animation-name</strong> - REQUIRED! You have to pick your previously defined keyframe. In our case, we would put "-webkit-animation-name: move;". This is whatever you named your keyframe. If you have done custom web fonts before, this should be easier to understand.</li>
+    <li><strong>-webkit-animation-duration</strong> -REQUIRED! Also, self explanatory. How long you want the animation to last. The animation will not work without this property set.</li>
+    <li><strong>-webkit-animation-direction</strong> - Two options here, either <strong>normal</strong> (default) or <strong>alternate</strong>. <strong>Normal </strong>executes the keyframe as is, while <strong>alternate</strong> reverses the keyframe on <em>odd</em> iterations.</li>
+    <li><strong>-webkit-animation-timing-function</strong> - Default: <strong>ease</strong>. Your other options are <strong>linear, ease-in, ease-out, ease-in-out</strong>. See <a href="http://css-infos.net/property/-webkit-animation-timing-function" target="_blank">this link</a> for more information on their behaviors.</li>
+    <li><strong>-webkit-animation-iteration-count</strong> - Default: <strong>1</strong>. The only two options are any integer (greater than 1), or <strong>infinite</strong> to make the keyframe execution indefinitely.</li>
+</ul>
+
+
+<p>Keyframes are a great way to keep messy and resource using Javascript off of your pages and away from your users. But, keep in mind that only browsers using the Webkit engine will be able to utilize them. Currently, this means only Chrome and Safari. However, both Mozilla and Opera will be using animations very soon. I believe Firefox 3.7 will be using <strong>-moz</strong> and Opera may already support some <strong>-o</strong> animations.</p>
+
+<p>Another downside, and the reason I stick mostly to transitions, is that mobile support for keyframes is pretty weak. Yes, you will your iPhone to render a keyframe animation, but it will be just as choppy as a jQuery.animate({...}) function.</p>
+
+<p>In the next CSS Animations post, I'll be covering <strong>-webkit-transitions</strong>, and after that I'll be showing some examples of how to tie it all together and create some amazing works/tools with some help from Javascript.</p>
+
+<p>I left out any examples of how to use keyframes in this post, but be sure to check out some of the sources I used to create this small guide for some excellent examples and source code:</p>
+
+<ul>
+    <li><a href="http://webkit.org/blog/324/css-animation-2/" target="_blank">Surfin' Safari</a></li>
+<li><a href="http://www.endigodesign.com/2010/06/learn-how-to-use-css3-keyframe-animation/" target="_blank">Endigo Design</a></li>
+<li><a href="http://www.leemunroe.com/css3-animations/" target="_blank">Lee Munroe</a></li>
+<li><a href="http://css-infos.net/" target="_blank">CSS Property Database</a></li>
+</ul>
+
+
+  </div>
+</div>
+
+        </section>
+      </div>
+  </body>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="/js/tabs.js"></script>
+  <script src="/js/prettify.js"></script>
+</html>

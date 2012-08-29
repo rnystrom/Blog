@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Ryan Nystrom" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/skeleton.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/prettify.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+    <link rel="shortcut icon" href="/media/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/media/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/media/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"/>
+
+    <title>Using Linode</title>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29022599-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+        <header class="sixteen columns" id="site-header">
+            <h1 class="remove-bottom">Ryan Nystrom</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/work">My Work</a></li>
+                </ul>
+            </nav>
+            <hr />
+        </header>
+        <section id="posts" class="sixteen columns">
+          <div class="single-post">
+  <div id="post">
+    <h1></h1>
+    <p>My mentor at work, <a href="http://twitter.com/jackboberg">Jack Boberg</a> has introduced me to a lot of tech before, but this is something totally new. Linode functions on two basic principles: virtual private servers (which Linode calls "nodes" or "Linodes", linux nodes), and Xen virtualization. The node principle is pretty simple, you have a VPS running on a machine somewhere. The great thing about Linode as compared to basic hosting sites is the ability to have root access. This is likely common with other VPS plans, but its new to me and pretty exciting. Xen virtualization is the real kicker. This means I can run Ubuntu 10.04 alongside with Debian on my 20GB partition, allocating as much memory and disk space as I deem fit for each distro.</p>
+
+<p>So root access and the ability to mount almost any Linux distro you want must cost a lot right? Nope. The base plan which gives you 20GB of disk space and 512MB of memory is only running me $20/mo, chump change for all of the features. In comparison, you would need a server (simple server might be $200 barebones, +$ electricity each month) which running on a home line is on <em>your</em> power supply and using <em>your</em> bandwidth. Linode is an extremely cost effective and feature-rich solution.</p>
+
+<p>I highly recommend it.</p>
+
+  </div>
+</div>
+
+        </section>
+      </div>
+  </body>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="/js/tabs.js"></script>
+  <script src="/js/prettify.js"></script>
+</html>

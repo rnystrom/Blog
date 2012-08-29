@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Ryan Nystrom" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/skeleton.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/prettify.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+    <link rel="shortcut icon" href="/media/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/media/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/media/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"/>
+
+    <title>Guide to iOS Web Apps</title>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29022599-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+        <header class="sixteen columns" id="site-header">
+            <h1 class="remove-bottom">Ryan Nystrom</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/work">My Work</a></li>
+                </ul>
+            </nav>
+            <hr />
+        </header>
+        <section id="posts" class="sixteen columns">
+          <div class="single-post">
+  <div id="post">
+    <h1></h1>
+    <blockquote><p>This is a post from my original Wordpress blog. It has some valuable information so I decided to reinstate some of these old posts. Originally posted on July 1, 2011.</p></blockquote>
+
+<p>I've been brainstorming ways to come up with some low-resource and memory usage ways to make a nice looking/feeling UI for web apps. Obviously we need to use out basics: HTML, CSS, Javascript, but how can we use the least amount of device memory and the least amount of lines of code while still getting something that runs great? I took a stab at a button example and I think I found a pretty nifty way to go about this.</p>
+
+<p>iOS is a great operating system, but mobile safari leaves a lot to be desired. One of those is the default UI elements (like input elements) are just plain-jane Mac icons. Their events are dull and boring. On top of all of that, we can't completely customize the CSS attributes of them (just <em>try</em> to style a default button element, it looks like trash!).</p>
+
+<p>I personally like big, round buttons for my inaccurate fingertips. I also like a simple, subtle, and <b>fast</b> event response to show me that I pressed what I wanted. There are two types of feedback that I prefer: either some sort of highlight, or a ripple.</p>
+
+<p>The best way to save resources is to utilize OOP and create some classes for our objects. Create the constructor, set some defaults, then set up your events. Make sure to add your event with <b>addEventListener</b>. (Again since I'm using mobile, I'm trying as hard as possible to avoid redundancy with jQuery)</p>
+
+  </div>
+</div>
+
+        </section>
+      </div>
+  </body>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="/js/tabs.js"></script>
+  <script src="/js/prettify.js"></script>
+</html>

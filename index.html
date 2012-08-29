@@ -1,0 +1,18 @@
+---
+layout: layout
+title: Ryan Nystrom
+---
+
+{% for post in site.posts %}
+<article class="link">
+    <header>
+        <h2>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+        </h2>
+
+        <p>
+            <time datetime="{{ post.date | date: "%B %e, %Y" }}" pubdate="pubdate">{{ post.date | date: "%B %e, %Y" }}</time>
+        </p>
+    </header>
+</article>
+{% endfor %}

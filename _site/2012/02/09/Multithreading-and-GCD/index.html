@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Ryan Nystrom" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/skeleton.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/prettify.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+    <link rel="shortcut icon" href="/media/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/media/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/media/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"/>
+
+    <title>Multithreading Beginners Tutorial</title>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29022599-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+        <header class="sixteen columns" id="site-header">
+            <h1 class="remove-bottom">Ryan Nystrom</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/work">My Work</a></li>
+                </ul>
+            </nav>
+            <hr />
+        </header>
+        <section id="posts" class="sixteen columns">
+          <div class="single-post">
+  <div id="post">
+    <h1></h1>
+    <h4><a href="http://www.raywenderlich.com/4295/multithreading-and-grand-central-dispatch-on-ios-for-beginners-tutorial">See the original post here</a></h4>
+
+<p>After doing some serious job searching a few days ago (mainly in Silicon Valley... some day), I realized there are several techs that I need to brush up on. One of them that I've never thought of is multi-threading on iOS. I've used threading in C++ and Python for research and test scenarios, but I was always under the assumption that threading on iOS was a no-no.</p>
+
+<p>Apparently I'm dead wrong. The Grand Central Dispatch is Apple's threading solution. It's fairly simple: seperate objects that will be used on the main thread and sub threads, define your thread queue, add objects to the queue, and then some fancy things in between and after.</p>
+
+<p>The biggest advantage of threading on iOS is that you don't make your user wait for things to load. This is huge. Say you're crunching a <em>ton</em> of data, well your user will have to sit there and wait for the main thread to finish its processing. With multi-threading, you could load your view and in the background crunch your data, firing a delegate call when everything is all finished. Simple.</p>
+
+<p>The only thing to be weary of is that you cannot use UIKit objects in threads, leave those to the main thread.</p>
+
+  </div>
+</div>
+
+        </section>
+      </div>
+  </body>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="/js/tabs.js"></script>
+  <script src="/js/prettify.js"></script>
+</html>
