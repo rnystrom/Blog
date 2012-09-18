@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Guide to iOS Web Apps
+title: "Mobile Web App Frameworks"
 ---
 
 > This is a post from my original Wordpress blog. It has some valuable information so I decided to reinstate some of these old posts. Originally posted on April 11, 2011.
@@ -17,23 +17,23 @@ That aside, why would I consider jQuery Mobile one of the best? Simply because i
 
 Finally, take a look at jQuery Mobile's list of supported devices. This is pretty insane.
 
-Apple iOS 3.2-5.0 beta: Tested on the original iPad (3.2 / 4.3), iPad 2 (4.3), original iPhone (3.1), iPhone 3 (3.2), 3GS (4.3), and 4 (4.3 / 5.0 beta)
-Android 2.1-2.3: Tested on the HTC Incredible (2.2), original Droid (2.2), Nook Color (2.2), HTC Aria (2.1), emulator (2.3). Functional on 1.5 & 1.6 but performance may be sluggish, tested on Google G1 (1.5)
-Windows Phone 7: Tested on the HTC 7 Surround
-Blackberry 6.0: Tested on the Torch 9800 and Style 9670
-Blackberry Playbook: Tested on PlayBook version 1.0.1 / 1.0.5
-Palm WebOS (1.4-2.0): Tested on the Palm Pixi (1.4), Pre (1.4), Pre 2 (2.0)
-Firebox Mobile (Beta): Tested on Android 2.2
-Opera Mobile 11.0: Tested on the iPhone 3GS and 4 (5.0/6.0), Android 2.2 (5.0/6.0), Windows Mobile 6.5 (5.0)
-Kindle 3: Tested on the built-in WebKit browser included in the Kindle 3 device
-Chrome Desktop 11-13 – Tested on OS X 10.6.7 and Windows 7
-Firefox Desktop 3.6-4.0 – Tested on OS X 10.6.7 and Windows 7
-Internet Explorer 7-9 – Tested on Windows XP, Vista and 7 (minor CSS issues)
-Opera Desktop 10-11 - Tested on OS X 10.6.7 and Windows 7
-Blackberry 5.0: Tested on the Storm 2 9550, Bold 9770
-Opera Mini (5.0-6.0) - Tested on iOS 3.2/4.3
-Windows Phone 6.5 – Tested on the HTC
-Blackberry4.x: Tested on the Curve 8330
+    Apple iOS 3.2-5.0 beta: Tested on the original iPad (3.2 / 4.3), iPad 2 (4.3), original iPhone (3.1), iPhone 3 (3.2), 3GS (4.3), and 4 (4.3 / 5.0 beta)
+    Android 2.1-2.3: Tested on the HTC Incredible (2.2), original Droid (2.2), Nook Color (2.2), HTC Aria (2.1), emulator (2.3). Functional on 1.5 & 1.6 but performance may be sluggish, tested on Google G1 (1.5)
+    Windows Phone 7: Tested on the HTC 7 Surround
+    Blackberry 6.0: Tested on the Torch 9800 and Style 9670
+    Blackberry Playbook: Tested on PlayBook version 1.0.1 / 1.0.5
+    Palm WebOS (1.4-2.0): Tested on the Palm Pixi (1.4), Pre (1.4), Pre 2 (2.0)
+    Firebox Mobile (Beta): Tested on Android 2.2
+    Opera Mobile 11.0: Tested on the iPhone 3GS and 4 (5.0/6.0), Android 2.2 (5.0/6.0), Windows Mobile 6.5 (5.0)
+    Kindle 3: Tested on the built-in WebKit browser included in the Kindle 3 device
+    Chrome Desktop 11-13 – Tested on OS X 10.6.7 and Windows 7
+    Firefox Desktop 3.6-4.0 – Tested on OS X 10.6.7 and Windows 7
+    Internet Explorer 7-9 – Tested on Windows XP, Vista and 7 (minor CSS issues)
+    Opera Desktop 10-11 - Tested on OS X 10.6.7 and Windows 7
+    Blackberry 5.0: Tested on the Storm 2 9550, Bold 9770
+    Opera Mini (5.0-6.0) - Tested on iOS 3.2/4.3
+    Windows Phone 6.5 – Tested on the HTC
+    Blackberry4.x: Tested on the Curve 8330
 
 Just nuts. I give the guys at jQuery a lot of credit for really focusing on useability, like they usually do. Kudos guys.
 

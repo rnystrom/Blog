@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HTML5 Websockets and You
+title: "HTML5 Websockets and You"
 ---
 
 > This is a post from my original Wordpress blog. It has some valuable information so I decided to reinstate some of these old posts. Originally posted on February 22, 2011.
@@ -23,83 +23,92 @@ Here is a demo I created that combines mobile Safari's websocket and orientation
 
 **Mobile Browser**
 
-	var ax = 0,
-	ay = 0,
-	vx = 0,
-	vy = 0,
-	rate = 50,
-	interval,
-	user = Math.floor(Math.random()*99999);
-	function init(){
-		if(!("WebSocket" in window)){
-		}else{
-			try{
-				socket = new WebSocket(host);		
-				socket.onopen = function(){ 
-					interval = setInterval(function(){startTilt();},rate);
-				}
-				socket.onmessage = function(msg){ }
-				socket.onclose = function(){ 
-					clearInterval(interval);
-					$('#id').html('Connection lost');
-				}
-			} catch(ex){
-				$('#id').html('ERROR:'+ex);
+{% highlight js %}
+var ax = 0,
+ay = 0,
+vx = 0,
+vy = 0,
+rate = 50,
+interval,
+user = Math.floor(Math.random()*99999);
+function init(){
+	if(!("WebSocket" in window)){
+	}else{
+		try{
+			socket = new WebSocket(host);		
+			socket.onopen = function(){ 
+				interval = setInterval(function(){startTilt();},rate);
 			}
+			socket.onmessage = function(msg){ }
+			socket.onclose = function(){ 
+				clearInterval(interval);
+				$('#id').html('Connection lost');
+			}
+		} catch(ex){
+			$('#id').html('ERROR:'+ex);
 		}
-	}	
-	function startTilt(){
-		socket.send(
-			'{"tiltdemo":"yes","ax":"'+ax.toString().substring(0,5)+'",
-			"ay":"'+ay.toString().substring(0,5)+'","user":"'+user+'"}'
-		);
-	}	
-	$(document).ready(function(){
-		$('#id').html('Your iOS id:'+user);
-		window.ondevicemotion = function(event) {
-			ax = event.accelerationIncludingGravity.x;
-			ay = event.accelerationIncludingGravity.y;			
-		}
-		init();
-	});
+	}
+}	
+function startTilt(){
+	socket.send(
+		'{"tiltdemo":"yes","ax":"'+ax.toString().substring(0,5)+'",
+		"ay":"'+ay.toString().substring(0,5)+'","user":"'+user+'"}'
+	);
+}	
+$(document).ready(function(){
+	$('#id').html('Your iOS id:'+user);
+	window.ondevicemotion = function(event) {
+		ax = event.accelerationIncludingGravity.x;
+		ay = event.accelerationIncludingGravity.y;			
+	}
+	init();
+});
+{% endhighlight %}
 
 This could be done without jQuery. I'm trying to break the habit I swear!
 
 **Normal Browser**
 
-	var user;
-	function init(){
-		if(!("WebSocket" in window)){
-			$('body').html('No websocket or canvas support, SORRY.');
-		}else{
-			try{
-				socket = new WebSocket(host);		
-				socket.onopen = function(){ }
-				socket.onmessage = function(msg){receive(msg);}
-				socket.onclose = function(){ }
-			} catch(ex){				
-			}
+{% highlight js %}
+var user;
+function init(){
+	if(!("WebSocket" in window)){
+		$('body').html('No websocket or canvas support, SORRY.');
+	}else{
+		try{
+			socket = new WebSocket(host);		
+			socket.onopen = function(){ }
+			socket.onmessage = function(msg){receive(msg);}
+			socket.onclose = function(){ }
+		} catch(ex){				
 		}
 	}
-	function receive(msg){
-		if(user!==undefined){
-			var obj = $.parseJSON(msg.data);
-			if(obj.tiltdemo!==undefined&&obj.user==user){
-				iphone.style.webkitTransform = 'rotateY('+(Math.floor((parseFloat(obj.ax)/10)*110)).toString() + 'deg) rotateX('+(Math.floor((parseFloat(obj.ay)/10)*110)).toString() + 'deg)';
-				back.style.webkitTransform = 'rotateY('+(Math.floor((parseFloat(obj.ax)/10)*110)).toString() + 'deg) rotateX('+(Math.floor((parseFloat(obj.ay)/10)*110)+180).toString() + 'deg)';
-			}
+}
+function receive(msg){
+	if(user!==undefined){
+		var obj = $.parseJSON(msg.data);
+		if(obj.tiltdemo!==undefined&&obj.user==user){
+			iphone.style.webkitTransform = 'rotateY(' + 
+				(Math.floor((parseFloat(obj.ax)/10)*110)).toString() + 'deg) rotateX(' +
+				(Math.floor((parseFloat(obj.ay)/10)*110)).toString() + 'deg)';
+
+			back.style.webkitTransform = 'rotateY(' +
+				(Math.floor((parseFloat(obj.ax)/10)*110)).toString() + 'deg) rotateX(' +
+				(Math.floor((parseFloat(obj.ay)/10)*110)+180).toString() + 'deg)';
 		}
 	}
-	$(document).ready(function(){
-		$('#tb').keydown(function(e){
-			if(e.keyCode==13)
-				user = $('#tb').val();
-		}).focus();
-		$('#ok').click(function(e){
-			if($('#tb').val().length>0)
-				user = $('#tb').val();
-		});
-		init();
+}
+$(document).ready(function(){
+	$('#tb').keydown(function(e){
+		if(e.keyCode==13)
+			user = $('#tb').val();
+	}).focus();
+	$('#ok').click(function(e){
+		if($('#tb').val().length>0)
+			user = $('#tb').val();
 	});
+	init();
+});
+{% endhighlight %}
 
 Play around with websockets, there is a ton of potential here. Ultimately we could be using our mobile devices as gamepads for browser games. How awesome would that be? I wish I knew some game designers right about now.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Memoization in Python
+title: "Memoization in Python"
 ---
 
 I ran into a pretty interesting problem last week. I was working on an AI for my senior thesis (its an iOS game), and I wanted it done in python to be able to test it out on any machine before porting it over to Objective C (though it'll likely be done in C for speed reasons). The algorithm used a *lot* of recursion. I basically did the following:
@@ -19,26 +19,30 @@ This entire process meant that I had to find the score for roughly 7 * 10^31 out
 
 I needed to build a cache object in Python. The memory footprint wasn't going to be huge, even with 7 * 10^31 states. A lot of those states are repitions, and each state only needs to hold an integer value from the range 0 to 16 (16 is the maximum possible score for one turn). The solution I came up with is a form of Memoization. I created a dictionary and added keys and values based on the parameters of the function that I was recursing. The function looked like this:
 
-    def getAvgPoints(num_remaining, tanks, rays, humans, chickens, cows ):
-        if num_remaining == 0:
-            if ( ... ):
-                return 0
-            else:
-                return humans + chickens + cows + (3 if humans > 0 and chickens > 0 and cows > 0 else 0 )   
-        ...
-        // get all combinations
-        // recursively get their scores, calling getAvgPoints( ... )
-        ...
-        return score
+{% highlight python %}
+def getAvgPoints(num_remaining, tanks, rays, humans, chickens, cows ):
+    if num_remaining == 0:
+        if ( ... ):
+            return 0
+        else:
+            return humans + chickens + cows + (3 if humans > 0 and chickens > 0 and cows > 0 else 0 )   
+    ...
+    // get all combinations
+    // recursively get their scores, calling getAvgPoints( ... )
+    ...
+    return score
+{% endhighlight %}
 
 To cache these values and avoid repeated calculations, I added this to the beginning of the function:
 
-    cache = {}
-    def getAvgPoints(num_remaining, tanks, rays, humans, chickens, cows ):
-        key = '%s-%s-%s-%s-%s-%s' % (num_remaining, tanks, rays, humans, chickens, cows )
-            if cache.get(key):
-                return cache.get(key)
-        ...
+{% highlight python %}
+cache = {}
+def getAvgPoints(num_remaining, tanks, rays, humans, chickens, cows ):
+    key = '%s-%s-%s-%s-%s-%s' % (num_remaining, tanks, rays, humans, chickens, cows )
+        if cache.get(key):
+            return cache.get(key)
+    ...
+{% endhighlight %}
 
 And that's it. Now, if I've already figured out the score for a certain number of remaining and collected dice, I skip all of the nitty-gritty and just return the score which saves tons of time. Time spent calculating went from about 1-1.5 minutes to **1-3 seconds**.
 

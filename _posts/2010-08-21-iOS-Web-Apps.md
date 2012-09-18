@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Guide to iOS Web Apps
+title: "Guide to iOS Web Apps"
 ---
 
 > This is a post from my original Wordpress blog. It has some valuable information so I decided to reinstate some of these old posts. Originally posted on October 21, 2010.
@@ -64,17 +64,20 @@ To make a web application feel like an application and not a website, you need t
 
 You don't need to be an expert in server-side controls to create a web app for iOS. However, the better you are, the better your apps will be (see the next technology). The biggest thing that you should be able to do is detect an iOS device on the server side and then redirect, or filter, the content that is displayed. In PHP I use this simple script to determine what the user agent is, and then tailor the content I display to fit the limitations of the user:
 
-	if(strstr($USER_AGENT,'iPhone') || strstr($USER_AGENT,'iPod')){
-		$browser = 0;
-	}elseif(strstr($USER_AGENT,'iPad')){
-		$browser = 1;
-	}elseif(strstr($USER_AGENT,'MSIE')){//internet explorer
-		$browser = 2;
-	}elseif(strstr($USER_AGENT,'MOZILLA')){	//firefox
-		$browser = 3;
-	}else{//chrome or safari (webkit)
-		$browser = 4;
-	}
+{% highlight php5 %}
+<?php
+if(strstr($USER_AGENT,'iPhone') || strstr($USER_AGENT,'iPod')){
+	$browser = 0;
+}elseif(strstr($USER_AGENT,'iPad')){
+	$browser = 1;
+}elseif(strstr($USER_AGENT,'MSIE')){//internet explorer
+	$browser = 2;
+}elseif(strstr($USER_AGENT,'MOZILLA')){	//firefox
+	$browser = 3;
+}else{//chrome or safari (webkit)
+	$browser = 4;
+}
+{% endhighlight %}
 
 As far as languages go, I prefer PHP for my server side control when developing for iOS devices. I initially started using ASP.net, but the more that I got into using AJAX, the more ASP.net was trying to do than was necessary. In general I find ASP.net to be a solid language, but when it comes to minimization and optimization, it usually does more than I ask. Stick to something simple that will control your HTML, CSS, and Javascript output. I have not gotten a chance to experiment with Ruby or even HTTP via Python, but I have heard good things about them.
 
@@ -92,11 +95,15 @@ Links:
 
 Open up whatever image editor you want and create a blank 114x114 pixel PNG. This creates the maximum icon size for the Retina display. Once you have created and uploaded the image, link to it like so:
 
-	<link rel='apple-touch-icon' href='/images/icon.png' />
+{% highlight html %}
+<link rel='apple-touch-icon' href='/images/icon.png' />
+{% endhighlight %}
 
 or if you don't want the gloss overlay:
 
-	<link rel='apple-touch-icon-precomposed' href='/images/icon.png' />
+{% highlight html %}
+<link rel='apple-touch-icon-precomposed' href='/images/icon.png' />
+{% endhighlight %}
 
 The image will automatically be glossed (unless you use the second link) and the corners rounded, so don't worry about applying any of those effects in your image editor.
 
@@ -104,7 +111,9 @@ The image will automatically be glossed (unless you use the second link) and the
 
 Just like the icon, add the following meta tag to the head of your html:
 
-	<link rel='apple-touch-startup-image' href='/images/splash.png' />
+{% highlight html %}
+<link rel='apple-touch-startup-image' href='/images/splash.png' />
+{% endhighlight %}
 
 For the iPhone/iPod, you need to create a PNG that is 320x460px, and for the iPad the image needs to be 768x1004px. Make sure that you create portrait oriented images. Currently the iPad will load an app in landscape mode, but it will still use the 768x1004px image which leaves a blank, see-through, space on the left side of the screen. I haven't found a fix for this, so if anyone has any ideas, let me know!
 
@@ -114,7 +123,9 @@ For the iPhone/iPod, you need to create a PNG that is 320x460px, and for the iPa
 
 This is very simple. In my opinion you should always remove the address bar to give your web app a native app appearance.
 
-	<meta name='apple-mobile-web-app-capable' content='yes' />
+{% highlight html %}
+<meta name='apple-mobile-web-app-capable' content='yes' />
+{% endhighlight %}
 
 <h2><a class='nohover' id='noscroll'>Stop Zooming and Scrolling</a></h2>
 
@@ -122,23 +133,31 @@ If your app fits inside the window and you would like to prevent the user from s
 
 For scaling, add to the head:
 
-	<meta name='viewport' content='user-scalable=no, width=device-width' />
+{% highlight html %}
+<meta name='viewport' content='user-scalable=no, width=device-width' />
+{% endhighlight %}
 
 For scrolling, add to your javascript:
 
-	function block(e) {
-		e.preventDefault() ;
-	}
+{% highlight js %}
+function block(e) {
+	e.preventDefault() ;
+}
+{% endhighlight %}
 
 and to the body element:
 
-	<body ontouchmove='block(e)'>
+{% highlight html %}
+<body ontouchmove='block(e)'>
+{% endhighlight %}
 
 <h2><a class='nohover' id='statusbar'>Change the Status Bar</a></h2>
 
 This is another simple aesthetic change. I'd prefer Apple allow the status bar to be removed so that we can take advantage of the entire 1024x768 resolution, but it is always present.
 
-	<meta name='apple-mobile-web-app-status-bar-style' content='default' />
+{% highlight html %}
+<meta name='apple-mobile-web-app-status-bar-style' content='default' />
+{% endhighlight %}
 
 The other values for <b>content</b> are:
 
@@ -156,14 +175,18 @@ Usually, I use one master stylesheet. I try my best to reduce HTTP requests, bec
 
 However, if you do not want to select a stylesheet based on the user_agent, here is a device width technique:
 
-	<link media='only screen and (max-device-width: 480px)' href='/css/iphone.css' type= 'text/css' rel='stylesheet' />
+{% highlight html %}
+<link media='only screen and (max-device-width: 480px)' href='/css/iphone.css' type= 'text/css' rel='stylesheet' />
+{% endhighlight %}
 
 <h4>Detecting Orientation</h4>
 
 You should also separate your stylesheets based on the device's orientation. I generally put all of the style properties in one file, and in another, correct for the opposite orientation with <b>!important</b> tags on each property I am changing. Usually this leaves me with two stylesheets (and that is all that will be requested on the page load!): one being very large for one orientation, and the other very small with opposite orientation corrections. To determine orientation for stylesheet selection, use this:
 
+{% highlight html %}
 	<link type='text/css' rel='Stylesheet' media='all and (orientation:portrait)' charset='utf-8' href='css/ipadp.css' />
 	<link type='text/css' rel='Stylesheet' media='all' charset='utf-8' href='css/ipad.css' />
+{% endhighlight %}
 
 <h4>Animating with CSS</h4>
 
@@ -179,13 +202,17 @@ Here are a few other tips:
 <ul>
 <li><b>Flickering</b> - Sometimes you will encounter flickering when you animate a large object. This is because to Mobile Safari, each object is a 3D element, which means it has a front and back. When you animate an element, you are only animating one side. Use this to make the backface transparent:
 
-	-webkit-backface-visibility: hidden;
+{% highlight css %}
+-webkit-backface-visibility: hidden;
+{% endhighlight %}
 
 <li><b>Page Size</b> - Take advantage of CSS3's ability to create gradients, shadows, and rounded corners and avoid using any &lt;img&gt; tags. This saves page load time and system memory. There are some good guides to making glossy buttons with CSS3, just search around Google.</li>
 <li><b>Avoid :hover</b> - The :hover property will act like a toggle. You may be able to find a way to take advantage of it, but usually it will only cause extra markup.</li>
 <li><b>Prevent Page Selection</b> - If you are planning on having the user touch elements for more than a second, you might want to consider adding this to your body element in your CSS. This will stop any "Open in New Window" popups, text highlighting, and image copying.
 
-	-webkit-user-select:none;
+{% highlight css %}
+-webkit-user-select:none;
+{% endhighlight %}
 
 </ul>
 
@@ -225,7 +252,9 @@ Always try to minimize.
 </li>
 <li><b>OnLoad</b> - Make use of jQuery's $(document).ready() or an onload function to assign global variables, call init events, etc. You need to make sure that the DOM elements load. Sometimes it is better to use a timeout function to ensure everything has loaded.
 
-	setTimeout(function(){init();},200);
+{% highlight js %}
+setTimeout(function(){init();},200);
+{% endhighlight %}
 
 </li>
 <li><b>AJAX</b> - Try to use AJAX everywhere that you need to send, receive, or display data. In my planning phase, I make sure that I can completely avoid any "flickering" between pages or data loads. It ruins immersion.

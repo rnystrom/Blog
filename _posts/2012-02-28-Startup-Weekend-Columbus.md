@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Startup Weekend Columbus
+title: "Startup Weekend Columbus"
 ---
 
 On February 17th I headed up to Columbus, OH to participate in my first [Startup Weekend](http://startupweekend.org/). I was geared up, however pitch-less, for the event. I brought all of my tech ready to create something incredible in 54 hours. This included an external monitor which became my crutch for parsing monstrous files. The event was sponsored and hosted by a great tech company called [Tech Columbus](http://www.techcolumbus.org/). They really put on a great event with their huge, spacious offices.

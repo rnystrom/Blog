@@ -1,5 +1,7 @@
-About
-============
+---
+layout: post
+title: 'About Me'
+---
 
 ## about me
 

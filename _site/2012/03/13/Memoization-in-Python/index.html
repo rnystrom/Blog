@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/prettify.css" />
     <link rel="stylesheet" href="/css/custom.css" />
+    <link rel="stylesheet" href="/css/syntax.css" />
 
     <link rel="shortcut icon" href="/media/images/favicon.ico">
     <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
@@ -42,13 +43,15 @@
 
   <body>
     <div class="container">
-        <header class="sixteen columns" id="site-header">
-            <h1 class="remove-bottom">Ryan Nystrom</h1>
-            <nav>
+        <header class="" id="site-header">
+            <div class="eight columns">
+                <h1>Ryan Nystrom</h1>
+            </div>
+            <nav class="eight columns">
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/work">Work</a></li>
                     <li><a href="/about">About</a></li>
-                    <li><a href="/work">My Work</a></li>
+                    <li><a href="/">Blog</a></li>
                 </ul>
             </nav>
             <hr />
@@ -56,7 +59,7 @@
         <section id="posts" class="sixteen columns">
           <div class="single-post">
   <div id="post">
-    <h1></h1>
+    <h2>Memoization in Python</h2>
     <p>I ran into a pretty interesting problem last week. I was working on an AI for my senior thesis (its an iOS game), and I wanted it done in python to be able to test it out on any machine before porting it over to Objective C (though it'll likely be done in C for speed reasons). The algorithm used a <em>lot</em> of recursion. I basically did the following:</p>
 
 <ul>
@@ -84,28 +87,32 @@
 
 <p>I needed to build a cache object in Python. The memory footprint wasn't going to be huge, even with 7 * 10<sup>31</sup> states. A lot of those states are repitions, and each state only needs to hold an integer value from the range 0 to 16 (16 is the maximum possible score for one turn). The solution I came up with is a form of Memoization. I created a dictionary and added keys and values based on the parameters of the function that I was recursing. The function looked like this:</p>
 
-<pre><code>def getAvgPoints(num_remaining, tanks, rays, humans, chickens, cows ):
-    if num_remaining == 0:
-        if ( ... ):
-            return 0
-        else:
-            return humans + chickens + cows + (3 if humans &gt; 0 and chickens &gt; 0 and cows &gt; 0 else 0 )   
-    ...
-    // get all combinations
-    // recursively get their scores, calling getAvgPoints( ... )
-    ...
-    return score
+<div class="highlight"><pre><code class="python"><span class="k">def</span> <span class="nf">getAvgPoints</span><span class="p">(</span><span class="n">num_remaining</span><span class="p">,</span> <span class="n">tanks</span><span class="p">,</span> <span class="n">rays</span><span class="p">,</span> <span class="n">humans</span><span class="p">,</span> <span class="n">chickens</span><span class="p">,</span> <span class="n">cows</span> <span class="p">):</span>
+    <span class="k">if</span> <span class="n">num_remaining</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="o">...</span> <span class="p">):</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">humans</span> <span class="o">+</span> <span class="n">chickens</span> <span class="o">+</span> <span class="n">cows</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span> <span class="k">if</span> <span class="n">humans</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">chickens</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">cows</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span> <span class="p">)</span>   
+    <span class="o">...</span>
+    <span class="o">//</span> <span class="n">get</span> <span class="nb">all</span> <span class="n">combinations</span>
+    <span class="o">//</span> <span class="n">recursively</span> <span class="n">get</span> <span class="n">their</span> <span class="n">scores</span><span class="p">,</span> <span class="n">calling</span> <span class="n">getAvgPoints</span><span class="p">(</span> <span class="o">...</span> <span class="p">)</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="n">score</span>
 </code></pre>
+</div>
+
 
 <p>To cache these values and avoid repeated calculations, I added this to the beginning of the function:</p>
 
-<pre><code>cache = {}
-def getAvgPoints(num_remaining, tanks, rays, humans, chickens, cows ):
-    key = '%s-%s-%s-%s-%s-%s' % (num_remaining, tanks, rays, humans, chickens, cows )
-        if cache.get(key):
-            return cache.get(key)
-    ...
+<div class="highlight"><pre><code class="python"><span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">def</span> <span class="nf">getAvgPoints</span><span class="p">(</span><span class="n">num_remaining</span><span class="p">,</span> <span class="n">tanks</span><span class="p">,</span> <span class="n">rays</span><span class="p">,</span> <span class="n">humans</span><span class="p">,</span> <span class="n">chickens</span><span class="p">,</span> <span class="n">cows</span> <span class="p">):</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">-</span><span class="si">%s</span><span class="s">-</span><span class="si">%s</span><span class="s">-</span><span class="si">%s</span><span class="s">-</span><span class="si">%s</span><span class="s">-</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num_remaining</span><span class="p">,</span> <span class="n">tanks</span><span class="p">,</span> <span class="n">rays</span><span class="p">,</span> <span class="n">humans</span><span class="p">,</span> <span class="n">chickens</span><span class="p">,</span> <span class="n">cows</span> <span class="p">)</span>
+        <span class="k">if</span> <span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="o">...</span>
 </code></pre>
+</div>
+
 
 <p>And that's it. Now, if I've already figured out the score for a certain number of remaining and collected dice, I skip all of the nitty-gritty and just return the score which saves tons of time. Time spent calculating went from about 1-1.5 minutes to <strong>1-3 seconds</strong>.</p>
 
@@ -122,5 +129,6 @@ def getAvgPoints(num_remaining, tanks, rays, humans, chickens, cows ):
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
   <script src="/js/tabs.js"></script>
-  <script src="/js/prettify.js"></script>
+  <script type="text/javascript" src="http://use.typekit.com/ofy2ive.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </html>

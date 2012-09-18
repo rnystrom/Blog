@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CSS3 Experimenting
+title: "CSS3 Experimenting"
 ---
 
 > This is a post from my original Wordpress blog. It has some valuable information so I decided to reinstate some of these old posts. Originally posted on September 21, 2010.

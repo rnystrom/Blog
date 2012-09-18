@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Multithreading Beginners Tutorial
+title: "Multithreading Beginners Tutorial"
 ---
 
 #### [See the original post here](http://www.raywenderlich.com/4295/multithreading-and-grand-central-dispatch-on-ios-for-beginners-tutorial)

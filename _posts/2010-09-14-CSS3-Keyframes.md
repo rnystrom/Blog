@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CSS3 Keyframes
+title: "CSS3 Keyframes"
 ---
 
 > This is a post from my original Wordpress blog. It has some valuable information so I decided to reinstate some of these old posts. Originally posted on September 14, 2010.

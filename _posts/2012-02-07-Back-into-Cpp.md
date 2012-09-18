@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C++ Update
+title: "My C++ Update"
 ---
 
 It's been well over two years since I've written any C++. Yesterday I decided to jump [into a new book](http://shop.oreilly.com/product/9780596804831.do) on 3d programming for the iPhone. I know there are tons of engines and SDKs out there that can do 3d on iOS pretty well, but I'm not really concerned with making a 3d game at the moment. Honestly, I just want to dust off my C++ skills and apply them to these devices that have been captivating me.

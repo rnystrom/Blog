@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/prettify.css" />
     <link rel="stylesheet" href="/css/custom.css" />
+    <link rel="stylesheet" href="/css/syntax.css" />
 
     <link rel="shortcut icon" href="/media/images/favicon.ico">
     <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
@@ -26,7 +27,7 @@
     <link rel="apple-touch-icon" sizes="114x114" href="/media/images/apple-touch-icon-114x114.png">
     <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"/>
 
-    <title>Guide to iOS Web Apps</title>
+    <title>Mobile Web App Frameworks</title>
 
     <script type="text/javascript">
         var _gaq = _gaq || [];
@@ -42,13 +43,15 @@
 
   <body>
     <div class="container">
-        <header class="sixteen columns" id="site-header">
-            <h1 class="remove-bottom">Ryan Nystrom</h1>
-            <nav>
+        <header class="" id="site-header">
+            <div class="eight columns">
+                <h1>Ryan Nystrom</h1>
+            </div>
+            <nav class="eight columns">
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/work">Work</a></li>
                     <li><a href="/about">About</a></li>
-                    <li><a href="/work">My Work</a></li>
+                    <li><a href="/">Blog</a></li>
                 </ul>
             </nav>
             <hr />
@@ -56,7 +59,7 @@
         <section id="posts" class="sixteen columns">
           <div class="single-post">
   <div id="post">
-    <h1></h1>
+    <h2>Mobile Web App Frameworks</h2>
     <blockquote><p>This is a post from my original Wordpress blog. It has some valuable information so I decided to reinstate some of these old posts. Originally posted on April 11, 2011.</p></blockquote>
 
 <p>I've been experimenting with several web apps in and out of work lately, both of which demanded rigorous mobile UI's. After spending a lot of time customizing my own mobile UI's but always wasting hours of time, I decided to check out a couple good APIs for mobile web. I played with a <em>lot</em> of APIs and only two stood out as contenders: Sencha Touch and jQuery Mobile.</p>
@@ -71,7 +74,7 @@
 
 <p>Finally, take a look at jQuery Mobile's list of supported devices. This is pretty insane.</p>
 
-<p>Apple iOS 3.2-5.0 beta: Tested on the original iPad (3.2 / 4.3), iPad 2 (4.3), original iPhone (3.1), iPhone 3 (3.2), 3GS (4.3), and 4 (4.3 / 5.0 beta)
+<pre><code>Apple iOS 3.2-5.0 beta: Tested on the original iPad (3.2 / 4.3), iPad 2 (4.3), original iPhone (3.1), iPhone 3 (3.2), 3GS (4.3), and 4 (4.3 / 5.0 beta)
 Android 2.1-2.3: Tested on the HTC Incredible (2.2), original Droid (2.2), Nook Color (2.2), HTC Aria (2.1), emulator (2.3). Functional on 1.5 &amp; 1.6 but performance may be sluggish, tested on Google G1 (1.5)
 Windows Phone 7: Tested on the HTC 7 Surround
 Blackberry 6.0: Tested on the Torch 9800 and Style 9670
@@ -87,7 +90,8 @@ Opera Desktop 10-11 - Tested on OS X 10.6.7 and Windows 7
 Blackberry 5.0: Tested on the Storm 2 9550, Bold 9770
 Opera Mini (5.0-6.0) - Tested on iOS 3.2/4.3
 Windows Phone 6.5 – Tested on the HTC
-Blackberry4.x: Tested on the Curve 8330</p>
+Blackberry4.x: Tested on the Curve 8330
+</code></pre>
 
 <p>Just nuts. I give the guys at jQuery a lot of credit for really focusing on useability, like they usually do. Kudos guys.</p>
 
@@ -116,5 +120,6 @@ Blackberry4.x: Tested on the Curve 8330</p>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
   <script src="/js/tabs.js"></script>
-  <script src="/js/prettify.js"></script>
+  <script type="text/javascript" src="http://use.typekit.com/ofy2ive.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </html>

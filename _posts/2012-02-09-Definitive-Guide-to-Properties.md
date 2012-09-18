@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Definitive Guide To Properties
+title: "Definitive Guide To Properties"
 ---
 
 #### [See the original post here](http://www.iphonedevsdk.com/forum/iphone-sdk-tutorials/26587-slicks-definitive-guide-properties.html)
