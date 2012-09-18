@@ -109,6 +109,11 @@ code {
     text-align: center;
     margin-left:15px;
 }
+@media only screen and (min-width: 768px) {
+    .logo, .icon {
+        margin-top: 33px;
+    }
+}
 @media only screen and (max-width: 767px) {
     #site-header {
         text-align: center;
