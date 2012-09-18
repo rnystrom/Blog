@@ -8,7 +8,7 @@
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
     <meta name="viewport" content="width=device-width" />
     <meta name="author" content="Ryan Nystrom" />
 
@@ -43,7 +43,7 @@
 
   <body>
     <div class="container">
-        <header class="" id="site-header">
+        <header class="row" id="site-header">
             <div class="eight columns">
                 <h1>Ryan Nystrom</h1>
             </div>
@@ -55,8 +55,9 @@
                 </ul>
             </nav>
             <hr />
-        </header>
-        <section id="posts" class="sixteen columns content">
+        </header><!-- /header -->
+
+        <section id="posts" class="sixteen columns content row">
           <div class="single-post">
   <div id="post">
     <h2>Memoization in Python</h2>
@@ -123,8 +124,31 @@
   </div>
 </div>
 
-        </section>
-      </div>
+        </section><!-- /content -->
+
+        <footer id="site-footer" class="row">
+            <hr />
+            <div class="eight columns left">
+                <p>&copy Ryan Nystrom 2012</p>
+                <p>This site is powered by <a href="http://github.com/mojombo/jekyll">Jekyll</a> with icons by <a href="http://icomoon.io/#toHome">IcoMoon</a>.
+            </div>
+            <div class="eight columns right">
+                <a href="http://twitter.com/nystrorm">
+                    <img src="/img/twitter.png" onmouseover="this.src='/img/twitter-color.png'" onmouseout="this.src='/img/twitter.png'" />
+                </a>
+                <a href="http://github.com/rnystrom">
+                    <img src="/img/github.png" onmouseover="this.src='/img/github-color.png'" onmouseout="this.src='/img/github.png'" />
+                </a>
+                <a href="mailTo:rnystrom@whoisryannystrom.com">
+                    <img src="/img/mail.png" onmouseover="this.src='/img/mail-color.png'" onmouseout="this.src='/img/mail.png'" />
+                </a>
+                <a href="http://itunes.apple.com/us/artist/ryan-nystrom/id517642218">
+                    <img src="/img/apple.png" onmouseover="this.src='/img/apple-color.png'" onmouseout="this.src='/img/apple.png'" />
+                </a>
+            </div>
+        </footer><!-- /footer -->
+
+      </div><!-- /container -->
   </body>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>

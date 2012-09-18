@@ -4,7 +4,7 @@ title: Ryan Nystrom
 ---
 
 {% for post in site.posts %}
-<article class="link">
+<article class="link row">
     <header>
         <h2>
             <a href="{{ post.url }}">{{ post.title }}</a>
@@ -13,6 +13,7 @@ title: Ryan Nystrom
         <p>
             <time datetime="{{ post.date | date: "%B %e, %Y" }}" pubdate="pubdate">{{ post.date | date: "%B %e, %Y" }}</time>
         </p>
+        
     </header>
 </article>
 {% endfor %}
