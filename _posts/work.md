@@ -32,42 +32,8 @@ I was finally able to get my hands on an app in the app store while working at <
 
 The new version of the application is not live yet, but will be coming very soon. Again, the code is proprietary so no open source!
 
-### [Tremolo](http://tremoloapp.com/)
-
-Tremolo is another great app that I took part in while working at <a href="http://topicdesign.com" target="_blank">Topic Design</a>. The app runs on a heavily customized version of jQuery Mobile running on top of CodeIgniter. In the process of making this app, we had several trial runs while developing using different frameworks. I had the opportunity to learn Backbone.js, CouchDB, and CouchApp. Though we scrapped all of that original code, it was an amazing learning experience (as a sidenote, Backbone.js is a <i>great</i> OOP framework for Javascript, highly recommend!).
-
-The app and site are a work in progress.
-
-### [Martian Dice](https://github.com/rnystrom/MartionDemo)
-
-For my senior design project at the University of Cincinnati, my peers and I decided to contact the company <a href="http://playtmg.com/" target="_blank">Tasty Minstrel Games</a> to make an iOS and Android version of their new game <i>Martian Dice</i>. In order to begin making the app, I had to not only teach myself iOS, but also a 2D game engine. In this case I decided to run with Cocos2D. I needed to make 3D sprites that looked like rolling dice. After many hours of struggling, I finally was able to use Blender to make a 3D die model, animate it, break that animation into images, and turn them into a sprite sheet. The entire process was pretty intense, but it was a blast learning. Just this demo alone has turned me into a confident iOS developer and animator.
-
-The code is all open source, no license. None of the code or images will be used in the final product, so feel free to play with it. We do have limited ownership of the Martian Dice IP however, so any attempt to sell this will be in direct violation of Tasty Minstrel Games' license.
-
-Look out for the real version to hit the app store within a couple months!
-
 ### [OTR Living Mobile](http://otrliving.com/m/)
 
 I got the opportunity early on while working at <a href="http://topicdesign.com" target="_blank">Topic Design</a> to develope a mobile version of <a href="http://otrliving.com" target="_blank">OTR Living</a>. This task seemed a bit daunting at first, but since I had been working with jQuery Mobile even before I was hired, I decided to use it along with an API written by our developers to pull data off the main site to feed a Javascript powered mobile version. The site is 100% asynchronous and is driven only by Javascript. The app has no hard refreshes or page loads. This improved load time significantly.
 
 No source code for this one! The site is proprietary.
-
-### [Draw With Me](http://whoisryannystrom.com/tests/drawwithme/)
-
-*Draw With Me* is my first real release of a web application. I developed *Draw With Me* for iOS mobile devices and Webkit capable browsers. I got a lot of my inspiration from an experimental developer, <a href="" target="_blank">Mr. Doob</a>. 
-
-In this web app, users are able to connect, all in the same room, and draw together. The drawing functions utilize HTML5's canvas element and Websocket server. Stability is currently a major issue for me. My home desktop is running my Websocket server. Security flaws aside,
-I frequently restart and power down my home PC. The problem would be easily solved by purchasing a virtual server, however funds are a bit of a restraint.
-*Draw With Me* is one of the first web applications to allow users to draw together on iOS devices. There are currently no applications, both native and web based, that do this. So far I have received significant traffic because of this.The biggest flaw with the app, however, is the
-design. I am no designer. However much I independently study web design, I feel I cannot stay on top of modern design trends. Draw With Me is the furthest I have pushed my preplanning abilities to come up with a better design and layout for iPhones and iPads while maintaing a
-				similar theme on PC browsers.
-                
-Currently, the app has been deprecated due to resources. I'm trying to get another server running to support web sockets. You can play with the app now, it's just solo only.
-
-### [Aviation Weather Mobile](http://whoisryannystrom.com/apps/avweather/)
-
-Being a pilot, staying up to date on weather data is most important. <i>Aviation Weather Mobile</i> is a quick and easy way to get airport weather data, either forecasts or in real time, from <a href="http://aviationweather.gov">AviationWeather.gov</a>'s website. I use a simple PHP
-HTML lookup class (similar to jQuery) to find the elements I need from the web pages. This is about as close to data mining a government site as I could get!
-
-The other important tool for this app is <a href="http://jqtouch.com/" target="_blank">jQTouch</a>. I like building my apps without APIs so I can have complete control, but sometimes when you want to get somewhere fast, there is no need to reinvent the wheel. To my surprise, jQTouch
-is a really well made API! Out of all of the mobile UI Javascript API's that I tested, jQTouch had the best speed and feedback.

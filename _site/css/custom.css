@@ -36,25 +36,22 @@ h2, h3, h4 {
 #site-header nav ul li a:hover{
     color:#444;
 }
-#posts a{
+.content a{
     text-decoration:none;
     color: #3366ff;
     text-shadow:0 1px 1px #fff;
 }
-#posts a:visited{
+.content a:visited{
     color: #3366ff;
 }
-#posts a:hover{
+.content a:hover{
     color:black;
 }
-#posts .single-post{
-    text-align:left;
-}
-#posts ul li{
+.content ul li{
     list-style:circle;
     margin-left:20px;
 }
-#posts ol li{
+.content ol li{
     text-align:decimal;
     margin-left:20px;
 }
@@ -76,7 +73,6 @@ blockquote, blockquote p {
     line-height:16px;
 }
 code {
-    width:100%;
     display:block;
     word-wrap:break-word;
     background:#fff;
@@ -84,9 +80,6 @@ code {
     padding:5px 10px;
     font-size:0.8em;
     font-family: Inconsolata, monospace;
-}
-img{
-    max-width:100%;
 }
 .highlight {
     margin-bottom: 20px;
@@ -102,4 +95,25 @@ img{
 }
 .typekit-badge {
     display: none !important;
+}
+.project {
+    margin-bottom: 21px;
+}
+.project .icon img {
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+    /*margin-top:35px;*/
+    height:64px;
+    width: 64px;
+}
+.project .logo img {
+    border-radius: 10px;
+    /*box-shadow: 0 2px 2px rgba(0,0,0,0.5);*/
+    /*margin-top:35px;*/
+    /*height:64px;*/
+    width: 64px;
+}
+#projects > h2 {
+    text-align: center;
+    margin-left:15px;
 }
