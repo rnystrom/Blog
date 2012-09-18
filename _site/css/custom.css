@@ -84,15 +84,6 @@ code {
 .highlight {
     margin-bottom: 20px;
 }
-@media only screen and (max-width: 767px) {
-    #site-header {
-        text-align: center;
-    }
-    #site-header nav {
-        position: relative;;
-        text-align: center;
-    }
-}
 .typekit-badge {
     display: none !important;
 }
@@ -116,4 +107,20 @@ code {
 #projects > h2 {
     text-align: center;
     margin-left:15px;
+}
+@media only screen and (max-width: 767px) {
+    #site-header {
+        text-align: center;
+    }
+    #site-header nav {
+        position: relative;;
+        text-align: center;
+    }
+    #projects > h2 {
+        width:100%;
+        margin-left: 0;
+    }
+    .icon, .logo {
+        text-align: center;
+    }
 }
