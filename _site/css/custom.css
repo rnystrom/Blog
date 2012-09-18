@@ -94,15 +94,16 @@ code {
     border-radius: 10px;
     box-shadow: 0 2px 2px rgba(0,0,0,0.5);
     /*margin-top:35px;*/
-    height:64px;
+    height: 64px;
     width: 64px;
 }
+.project .logo {
+    text-align: center;
+    margin-left:5px;
+}
 .project .logo img {
-    border-radius: 10px;
-    /*box-shadow: 0 2px 2px rgba(0,0,0,0.5);*/
-    /*margin-top:35px;*/
-    /*height:64px;*/
-    width: 64px;
+    /*max-width: 64px;*/
+    max-height: 64px;
 }
 #projects > h2 {
     text-align: center;
@@ -122,5 +123,8 @@ code {
     }
     .icon, .logo {
         text-align: center;
+    }
+    .project .logo {
+        margin-left:0;
     }
 }
