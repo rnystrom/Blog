@@ -3,9 +3,7 @@
  * Created by Ryan Nystrom
 */
 body{
-    /*font: 14px/21px "Georgia", Georgia, "Times New Roman", Times New Roman, serif;*/
     font: 16px/21px "museo-sans", Helvetica, sans-serif;
-    /*text-align:center;*/
     background: #f2f2f2;
     padding-top: 7px;
 }
@@ -27,7 +25,6 @@ h2, h3, h4 {
 }
 #site-header nav ul li{
     display: inline;
-    /*padding:0 0 10px;*/
     margin-left: 30px;
 }
 #site-header nav ul li a{
@@ -53,9 +50,6 @@ h2, h3, h4 {
 #posts .single-post{
     text-align:left;
 }
-#posts .single-post header{
-    /*text-align:center;*/
-}
 #posts ul li{
     list-style:circle;
     margin-left:20px;
@@ -65,7 +59,6 @@ h2, h3, h4 {
     margin-left:20px;
 }
 article header h2{
-    /*font-size:1.5em;*/
     margin-bottom:0;
 }
 article header p{
@@ -82,9 +75,6 @@ blockquote, blockquote p {
     font-size:14px;
     line-height:16px;
 }
-p {
-    /*margin-bottom:15px;*/
-}
 code {
     width:100%;
     display:block;
@@ -94,7 +84,6 @@ code {
     padding:5px 10px;
     font-size:0.8em;
     font-family: Inconsolata, monospace;
-    /*font-weight: bold;*/
 }
 img{
     max-width:100%;
@@ -110,4 +99,7 @@ img{
         position: relative;;
         text-align: center;
     }
+}
+.typekit-badge {
+    display: none !important;
 }
