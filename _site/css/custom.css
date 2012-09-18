@@ -137,4 +137,10 @@ code {
     .project .logo {
         margin-left:0;
     }
+    .right {
+        text-align: center;
+    }
+    #site-footer p {
+        margin-bottom: 10px;
+    }
 }
