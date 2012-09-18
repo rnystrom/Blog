@@ -116,6 +116,9 @@ code {
 .right {
     text-align: right;
 }
+.preload {
+    display:none;
+}
 @media only screen and (min-width: 768px) {
     
 }
