@@ -97,9 +97,12 @@ code {
     height: 64px;
     width: 64px;
 }
-.project .logo {
+/*.project .logo {
     text-align: center;
     margin-left:5px;
+}*/
+.project .logo, .project .icon {
+    text-align: center;
 }
 .project .logo img {
     /*max-width: 64px;*/
@@ -107,12 +110,12 @@ code {
 }
 #projects > h2 {
     text-align: center;
-    margin-left:15px;
+    margin-left:20px;
 }
 @media only screen and (min-width: 768px) {
-    .logo, .icon {
+    /*.logo, .icon {
         margin-top: 33px;
-    }
+    }*/
 }
 @media only screen and (max-width: 767px) {
     #site-header {
