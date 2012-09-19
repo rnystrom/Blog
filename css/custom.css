@@ -55,10 +55,10 @@ h2, h3, h4 {
     text-align:decimal;
     margin-left:20px;
 }
-article header h2{
+.link h2{
     margin-bottom:0;
 }
-article header p{
+.link p{
     margin: -0.5em 0 1.5em 0;
 }
 hr{
