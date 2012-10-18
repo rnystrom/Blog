@@ -1,35 +1,35 @@
 <!DOCTYPE HTML>
 
 <html>
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="description" content="">
     <meta name="author" content="">
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="author" content="Ryan Nystrom" />
+        <![endif]-->
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="author" content="Ryan Nystrom" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="stylesheet" href="/css/base.css" />
-    <link rel="stylesheet" href="/css/skeleton.css" />
-    <link rel="stylesheet" href="/css/layout.css" />
-    <link rel="stylesheet" href="/css/prettify.css" />
-    <link rel="stylesheet" href="/css/custom.css" />
-    <link rel="stylesheet" href="/css/syntax.css" />
+        <link rel="stylesheet" href="/css/base.css" />
+        <link rel="stylesheet" href="/css/skeleton.css" />
+        <link rel="stylesheet" href="/css/layout.css" />
+        <link rel="stylesheet" href="/css/prettify.css" />
+        <link rel="stylesheet" href="/css/custom.css" />
+        <link rel="stylesheet" href="/css/syntax.css" />
 
-    <link rel="shortcut icon" href="/media/images/favicon.ico">
-    <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/media/images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/media/images/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"/>
+        <link rel="shortcut icon" href="/media/images/favicon.ico">
+        <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/media/images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/media/images/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"/>
 
-    <title>Memoization in Python</title>
+        <title>Memoization in Python</title>
 
-    <script type="text/javascript">
+        <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-29022599-1']);
         _gaq.push(['_trackPageview']);
@@ -38,25 +38,25 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
-    </script>
-  </head>
+        </script>
+    </head>
 
-  <body>
-    <div class="container">
-        <header class="row" id="site-header">
-            <div class="eight columns">
-                <h1>Ryan Nystrom</h1>
-            </div>
-            <nav class="eight columns">
-                <a href="/">Blog</a>
-                <a href="/about.html">About</a>
-                <a href="/work.html">Work</a>
-            </nav>
-            <hr />
-        </header><!-- /header -->
+    <body>
+        <div class="container">
+            <header class="row" id="site-header">
+                <div class="eight columns">
+                    <h1>Ryan Nystrom</h1>
+                </div>
+                <nav class="eight columns">
+                    <a href="/">Blog</a>
+                    <a href="/about.html">About</a>
+                    <a href="/work.html">Work</a>
+                </nav>
+                <hr />
+            </header><!-- /header -->
 
-        <section id="posts" class="sixteen columns content row">
-          <div class="single-post">
+            <section id="posts" class="sixteen columns content row">
+              <div class="single-post">
   <div id="post">
     <h2>Memoization in Python</h2>
     <p>I ran into a pretty interesting problem last week. I was working on an AI for my senior thesis (its an iOS game), and I wanted it done in python to be able to test it out on any machine before porting it over to Objective C (though it'll likely be done in C for speed reasons). The algorithm used a <em>lot</em> of recursion. I basically did the following:</p>
@@ -122,41 +122,58 @@
   </div>
 </div>
 
-        </section><!-- /content -->
+          </section><!-- /content -->
 
-        <footer id="site-footer" class="row">
+          <footer id="site-footer" class="row">
             <hr />
             <div class="eight columns left">
                 <p>&copy Ryan Nystrom 2012</p>
                 <p>This site is powered by <a href="http://github.com/mojombo/jekyll">Jekyll</a> with icons by <a href="http://icomoon.io/#toHome">IcoMoon</a>.
-            </div>
-            <div class="eight columns right">
-                <a href="http://twitter.com/nystrorm">
-                    <img src="/img/twitter.png" onmouseover="this.src='/img/twitter-color.png'" onmouseout="this.src='/img/twitter.png'" />
-                </a>
-                <a href="http://github.com/rnystrom">
-                    <img src="/img/github.png" onmouseover="this.src='/img/github-color.png'" onmouseout="this.src='/img/github.png'" />
-                </a>
-                <a href="mailTo:rnystrom@whoisryannystrom.com">
-                    <img src="/img/mail.png" onmouseover="this.src='/img/mail-color.png'" onmouseout="this.src='/img/mail.png'" />
-                </a>
-                <a href="http://itunes.apple.com/us/artist/ryan-nystrom/id517642218">
-                    <img src="/img/apple.png" onmouseover="this.src='/img/apple-color.png'" onmouseout="this.src='/img/apple.png'" />
-                </a>
-            </div>
-        </footer><!-- /footer -->
+                </div>
+                <div class="eight columns right">
+                    <a href="http://twitter.com/nystrorm">
+                        <img src="/img/twitter.png" onmouseover="this.src='/img/twitter-color.png'" onmouseout="this.src='/img/twitter.png'" />
+                    </a>
+                    <a href="http://github.com/rnystrom">
+                        <img src="/img/github.png" onmouseover="this.src='/img/github-color.png'" onmouseout="this.src='/img/github.png'" />
+                    </a>
+                    <a href="mailTo:rnystrom@whoisryannystrom.com">
+                        <img src="/img/mail.png" onmouseover="this.src='/img/mail-color.png'" onmouseout="this.src='/img/mail.png'" />
+                    </a>
+                    <a href="http://itunes.apple.com/us/artist/ryan-nystrom/id517642218">
+                        <img src="/img/apple.png" onmouseover="this.src='/img/apple-color.png'" onmouseout="this.src='/img/apple.png'" />
+                    </a>
+                </div>
+            </footer><!-- /footer -->
 
-      </div><!-- /container -->
+        </div><!-- /container -->
 
-      <!-- preload images -->
-      <img class="preload" src="/img/twitter-color.png" />
-      <img class="preload" src="/img/github-color.png" />
-      <img class="preload" src="/img/apple-color.png" />
-      <img class="preload" src="/img/mail-color.png" />
-  </body>
+        <!-- preload images -->
+        <img class="preload" src="/img/twitter-color.png" />
+        <img class="preload" src="/img/github-color.png" />
+        <img class="preload" src="/img/apple-color.png" />
+        <img class="preload" src="/img/mail-color.png" />
+    </body>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script src="/js/tabs.js"></script>
-  <script type="text/javascript" src="//use.typekit.net/vwv8xxu.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</html>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="/js/tabs.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/vwv8xxu.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript">
+    var GoSquared = {};
+    GoSquared.acct = "GSN-761127-S";
+    (function(w){
+        function gs(){
+            w._gstc_lt = +new Date;
+            var d = document, g = d.createElement("script");
+            g.type = "text/javascript";
+            g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+            var s = d.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(g, s);
+        }
+        w.addEventListener ?
+        w.addEventListener("load", gs, false) :
+        w.attachEvent("onload", gs);
+    })(window);
+    </script>
+    </html>
