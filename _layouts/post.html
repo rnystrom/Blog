@@ -1,10 +1,10 @@
 ---
 layout: default
 ---
+<h2 class="article-title">{{ page.title }}</h2>
 
-<div class="single-post">
-  <div id="post">
-    <h2>{{ page.title }}</h2>
-    {{ content }}
-  </div>
-</div>
+<time class="timestamp" datetime="{{ page.date | date: "%B %e, %Y" }}" pubdate>{{ page.date | date: "%A, %e %B %Y" }}</time>
+
+{{ content }}
+
+<a title="Tweet this Post" href="https://twitter.com/share" class="twitter-share-button" data-lang="en" class="twitter-share-button" data-url="{{ site.url }}{{ page.url }}" data-text="{{ page.title }}" data-via="_ryannystrom">Tweet</a>

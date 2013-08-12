@@ -1,11 +1,22 @@
 auto: true
 permalink: /:year/:month/:day/:title
 rdiscount extensions: [smart]
-
 pygments: true
 markdown: rdiscount
 
 description: 'I am an iOS developer in Columbus, OH that specializes in User Experience optimization. This is my blog that I use to rant, rave, and review various parts of my career.'
 root_desc: 'Whoisryannystrom.com - iOS and development ponderings'
 
-url: http://whoisryannystrom.com
+author: "Ryan Nystrom"
+url: "http://whoisryannystrom.com"
+email: "rnystrom@whoisryannystrom.com"
+github: "https://github.com/rnystrom"
+twitter: "https://twitter.com/_ryannystrom"
+itunes: "http://itunes.apple.com/us/artist/ryan-nystrom/id517642218"
+
+apps: "/apps.html"
+blog: "/"
+about: "/about.html"
+archive: "/archive.html"
+
+iconSize: 32

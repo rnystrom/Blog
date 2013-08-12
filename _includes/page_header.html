@@ -1,0 +1,24 @@
+<header id="site-header">
+
+	<div class="social-links">
+		<a title="Twitter" class="social twitter" href="{{ site.twitter }}">{% include twitter.svg %}</a>
+		<a title="Github" class="social github" href="{{ site.github }}">{% include github.svg %}</a>
+		<a title="Email Ryan" class="social mail" href="mailTo:{{ site.email }}">{% include mail.svg %}</a>
+		<a title="RSS Feed" class="social feed" href="{{ site.url }}/feed.xml">{% include feed.svg %}</a>
+	</div>
+
+	<a title="Toggle Menu" id="mobile-navigation" href="#">Menu</a>
+
+	<h1 id="masthead"><a title="Home" href="/">{{ site.author }}</a></h1>
+
+	<hr id="header-divider" class="clear" />
+
+	<ul id="navigation">
+		<li><a title="Blog" href="{{ site.blog }}">Blog</a></li>
+		<li><a title="About" href="{{ site.about }}">About</a></li>
+		<li><a title="Archive" href="{{ site.archive }}">Archive</a></li>
+		<li><a title="Apps" href="{{ site.apps }}">Apps</a></li>
+		<li class="stretch"></li>
+	</ul>
+
+</header>

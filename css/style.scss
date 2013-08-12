@@ -1,0 +1,312 @@
+/************Reset**************/
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+html, body, div, object, iframe, fieldset { 
+	margin: 0; 
+	padding: 0; 
+	border: 0;
+} 
+ol, ul { 
+	list-style: none;
+	margin: 0;
+	padding: 0;
+} 
+table { 
+	border-collapse: collapse; 
+	border-spacing: 0; 
+}
+header, footer, nav, section, article, hgroup, figure {
+	display: block;	
+}
+legend {
+	display: none;
+}
+/************End Reset**************/
+
+/************Global**************/
+body {
+	background: #fff;
+	color: #333;
+	font: 100%/1.4 "Noto Serif", Georgia, serif;
+	padding: 0;
+	-webkit-text-size-adjust: none;
+}
+a {
+	color: #dd1144;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	color: #900628;
+}
+p {
+	margin: 0 0 1em;
+}
+img, object, video {
+	max-width: 100%;
+	border: 0;
+}
+a img {
+	border: 0;
+	outline: 0;
+}
+h1 {
+	font-size: 3em;
+	line-height: 1;
+	letter-spacing: -0.02em;
+	margin: 0.5em 0;
+}
+h2 {
+	font-size: 2em;
+	line-height: 1.1;
+	margin: 0.2em 0;
+}
+h3 {
+	font-weight: normal;
+	line-height: 1.1;
+	padding-bottom: 0.4em;
+}
+h1 a, h2 a, h3 a {
+	display: block;
+	color: #333;
+}
+h1 a:hover, h2 a:hover, h3 a:hover {
+	color: #dd1144;
+}
+blockquote {
+	border-left: 0.5em solid #dd1144;
+	padding-left: 1em;
+	margin-left: 1em;
+	font-style: italic;
+	margin: 2em 0;
+}
+small {
+	color: #dd1144;
+}
+input[type=search] {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+::-webkit-input-placeholder {
+	color: #808080;
+}
+:-moz-placeholder {  
+	color: #808080;
+}
+pre, code {
+	font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+em {
+	font-weight: bold;
+	font-style: normal;
+}
+/************End Global**************/
+
+/************Custom**************/
+#container {
+	padding: 0 1em;
+	max-width: 34.9em;
+	margin: 0 auto;
+	position: relative;
+}
+.clear,
+.clear:after {
+	clear: both;
+}
+#masthead {
+	margin: 0.25em 0 0 0;
+	font-weight: normal;
+	font-size: 1.5em;
+	display: inline-block;
+}
+.social-links {
+	float: right;
+	margin-top: 2em;
+	display: none;
+}
+.social svg {
+	height: 1em;
+	width: 1em;
+	margin-left: 0.44em;
+	fill: #ddd;
+}
+.twitter svg:hover, .twitter svg:focus {
+	fill: #00acee;
+}
+.github svg:hover, .github svg:focus {
+	fill: #dd1144;
+}
+.mail svg:hover, .mail svg:focus {
+	fill: #ffcc33;
+}
+.feed svg:hover, .feed svg:focus {
+	fill: #ee802f;
+}
+#mobile-navigation {
+	float: right;
+	margin: 0.25em 0;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	line-height: 2;
+}
+#mobile-menu {
+	background-color: #333;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	text-transform: uppercase;
+	max-height: 0;
+	overflow: hidden;
+
+	-webkit-transition: all 0.5s ease-out;  
+	-moz-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+
+	.menu-option {
+		display: block;
+		padding: 0.5em 1em;
+		color: #fff;
+		height: 100%;
+		width: 100%;
+	}
+	.menu-option:hover, .menu-option:focus {
+		background-color: #dd1144;
+	}
+	li {
+		border-bottom: 1px solid #444;
+	}
+	.mobile-social {
+		text-align: center;
+		padding: 0.5em 1em;
+	}
+	.social svg {
+		font-size: 150%;
+		margin: 0 5%;
+	}
+}
+#mobile-menu.active {
+	max-height: 999px;
+}
+#header-divider {
+	border: 0;
+	height: 0;
+	border-bottom: 1px solid #ddd;
+}
+#navigation {
+	text-align: justify;
+	list-style-type: none;
+	margin-bottom: -2em;
+	display: none;
+
+	li {
+		display: inline;
+	}
+	li a {
+		color: #333;
+	}
+	li a:hover, #navigation li a:focus {
+		color: #dd1144;
+	}
+	.stretch {
+		display: inline-block;
+		width: 100%;
+		zoom: 1;
+		height: 0;
+	}
+}
+.article:not(:last-child) {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 1em;
+}
+.article-title {
+	margin-bottom: 0;
+}
+.timestamp {
+	display: block;
+	color: #999;
+	padding: 0.5em 0 1em 0;
+	font-size: 0.8em;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.highlight {
+	background-color: #f8f8f8;
+	overflow: auto;
+	border: 1px solid #ddd;
+	padding: 0 1em;
+	border-radius: 3px;
+	margin: 2em 0;
+}
+#site-footer {
+	border-top: 1px solid #ddd;
+	font-size: 0.8em;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	color: #999;
+	text-align: center;
+	padding: 1em 0;
+	margin-top: 1em;
+}
+.archive-month {
+	font-size: 1em;
+	font-weight: bold;
+}
+.archive-timestamp:before {
+	content: ' ';
+	margin-left: 1em;
+}
+.archive-timestamp {
+	font-size: 0.8em;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.center-image {
+	display: block;
+	width: 9em;
+	margin: 1em auto 0 auto;
+}
+.app-title {
+	margin-top: 0;
+}
+/************End Custom**************/
+
+/************Media Queries**************/
+@media screen and (min-width: 37.500em) { /*600px*/
+	#container {width:85%;}
+	#site-header {text-align: left;}
+	#masthead {font-size: 3em;}
+	.social-links {display: block;}
+	.timestamp {padding: 0 0 1em 0;}
+	#navigation {display: block;}
+	#mobile-navigation {display: none;}
+	#mobile-menu {max-height: 0 !important;}
+	body {font-size: 112.5%;line-height: 1.6;}
+	h2, h3, h4, h5 {font-size: 1.875em;line-height: 1.3em;}
+	h5 {font-size: 1.375em;}
+	h2 {margin-top: 1em;}
+}
+@media screen and (min-width: 50.000em) { /*800px*/
+	body {font-size: 125%;}
+}
+@media screen and (min-width: 64.375em){ /*1030px*/
+	#container {padding: 0;}
+	body {font-size: 137.5%;}
+	.wide {
+		width: 40.45em;
+		margin-left: -2.775em;
+		max-width: none;
+	}
+	.extrawide {
+		width: 46em;
+		margin-left: -5.55em;
+		max-width: none;
+	}
+}
+@media screen and (min-width: 75.000em) and (min-height:31.250em) { /*1200px X 500px*/
+	body {font-size: 150%;}
+}
+@media screen and (min-width: 106.875em) and (min-height:50.000em)  { /*1710px X 800px*/
+	body {font-size: 162.5%;}
+	#container {max-width:1360px;}
+}
+/************Highlighting**************/
+@import "github";
+/************End Highlighting**************/

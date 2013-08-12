@@ -1,65 +1,201 @@
 <!DOCTYPE HTML>
-
 <html>
 <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="author" content="Ryan Nystrom" />
+<meta name="description" content="I am an iOS developer in Columbus, OH that specializes in User Experience optimization. This is my blog that I use to rant, rave, and review various parts of my career.">
+<meta name="author" content="Ryan Nystrom">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
-        <link rel="stylesheet" href="/css/base.css" />
-        <link rel="stylesheet" href="/css/skeleton.css" />
-        <link rel="stylesheet" href="/css/layout.css" />
-        <link rel="stylesheet" href="/css/prettify.css" />
-        <link rel="stylesheet" href="/css/custom.css" />
-        <link rel="stylesheet" href="/css/syntax.css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 
-        <link rel="shortcut icon" href="/media/images/favicon.ico">
-        <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/media/images/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/media/images/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        <title>Memoization in Python</title>
+<link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- Unminified stylesheet http://whoisryannystrom.com/css/style.css" /> -->
+<!-- <link rel="stylesheet" href="/css/style.min.css" /> -->
+<!-- <link rel="stylesheet" href="/css/github.css" /> -->
+<link rel="stylesheet" href="/css/style.css" />
 
-        <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-29022599-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-        </script>
-    </head>
+<link rel="shortcut icon" href="/favicon.ico">
 
-    <body>
-        <div class="container">
-            <header class="row" id="site-header">
-                <div class="eight columns">
-                    <h1>Ryan Nystrom</h1>
-                </div>
-                <nav class="eight columns">
-                    <a href="/">Blog</a>
-                    <a href="/about.html">About</a>
-                    <a href="/work.html">Work</a>
-                </nav>
-                <hr />
-            </header><!-- /header -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/img/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
 
-            <section id="posts" class="sixteen columns content row">
-              <div class="single-post">
-  <div id="post">
-    <h2>Memoization in Python</h2>
-    <p>I ran into a pretty interesting problem last week. I was working on an AI for my senior thesis (its an iOS game), and I wanted it done in python to be able to test it out on any machine before porting it over to Objective C (though it'll likely be done in C for speed reasons). The algorithm used a <em>lot</em> of recursion. I basically did the following:</p>
+<title>Memoization in Python</title>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-29022599-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</head>
+<body>
+	<ul id="mobile-menu">
+	<li class="mobile-social">
+		<a title="Twitter" class="social twitter" href="https://twitter.com/_ryannystrom"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M512,97.209c-18.838,8.354-39.082,14.001-60.33,16.54c21.686-13,38.343-33.585,46.186-58.115
+	c-20.298,12.039-42.778,20.78-66.705,25.49c-19.16-20.415-46.461-33.17-76.673-33.17c-58.011,0-105.044,47.029-105.044,105.039
+	c0,8.233,0.929,16.25,2.72,23.939c-87.3-4.382-164.701-46.2-216.509-109.753c-9.042,15.514-14.223,33.558-14.223,52.809
+	c0,36.444,18.544,68.596,46.73,87.433c-17.219-0.546-33.416-5.271-47.577-13.139c-0.01,0.438-0.01,0.878-0.01,1.321
+	c0,50.894,36.209,93.348,84.261,103c-8.813,2.4-18.094,3.686-27.674,3.686c-6.769,0-13.349-0.66-19.764-1.886
+	c13.368,41.73,52.16,72.103,98.126,72.948c-35.95,28.175-81.243,44.967-130.458,44.967c-8.479,0-16.84-0.497-25.058-1.47
+	c46.486,29.805,101.701,47.197,161.021,47.197c193.211,0,298.868-160.062,298.868-298.872c0-4.554-0.103-9.084-0.305-13.59
+	C480.11,136.773,497.918,118.273,512,97.209z"/>
+</svg>
+</a>
+		<a title="Github" class="social github" href="https://github.com/rnystrom"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M408.028,408.028
+	c-19.759,19.758-42.756,35.266-68.354,46.093c-6.503,2.75-13.107,5.164-19.8,7.246V423c0-20.167-6.917-35-20.75-44.5
+	c8.667-0.833,16.625-2,23.875-3.5s14.917-3.667,23-6.5s15.333-6.208,21.75-10.125s12.583-9,18.5-15.25s10.875-13.333,14.875-21.25
+	s7.167-17.417,9.5-28.5s3.5-23.292,3.5-36.625c0-25.833-8.417-47.833-25.25-66c7.667-20,6.833-41.75-2.5-65.25l-6.25-0.75
+	c-4.333-0.5-12.125,1.333-23.375,5.5s-23.875,11-37.875,20.5c-19.833-5.5-40.417-8.25-61.75-8.25c-21.5,0-42,2.75-61.5,8.25
+	c-8.833-6-17.208-10.958-25.125-14.875c-7.917-3.917-14.25-6.583-19-8s-9.167-2.292-13.25-2.625s-6.708-0.417-7.875-0.25
+	s-2,0.333-2.5,0.5c-9.333,23.667-10.167,45.417-2.5,65.25c-16.833,18.167-25.25,40.167-25.25,66c0,13.333,1.167,25.542,3.5,36.625
+	s5.5,20.583,9.5,28.5s8.958,15,14.875,21.25s12.083,11.333,18.5,15.25s13.667,7.292,21.75,10.125s15.75,5,23,6.5
+	s15.208,2.667,23.875,3.5c-13.667,9.333-20.5,24.167-20.5,44.5v39.115c-7.549-2.247-14.99-4.902-22.3-7.994
+	c-25.597-10.827-48.594-26.335-68.353-46.093c-19.758-19.759-35.267-42.756-46.093-68.354C46.679,313.195,41,285.043,41,256
+	s5.679-57.195,16.879-83.675c10.827-25.597,26.335-48.594,46.093-68.353s42.756-35.267,68.353-46.093
+	C198.805,46.679,226.957,41,256,41s57.195,5.679,83.675,16.879c25.598,10.827,48.595,26.335,68.354,46.093
+	c19.758,19.758,35.266,42.756,46.093,68.353C465.321,198.805,471,226.957,471,256s-5.679,57.195-16.879,83.675
+	C443.294,365.272,427.786,388.27,408.028,408.028z"/>
+</svg>
+</a>
+		<a title="Email Ryan" class="social mail" href="mailTo:rnystrom@whoisryannystrom.com"><?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg 
+ version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px"
+	 height="512px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"
+><g id="7935ec95c421cee6d86eb22ecd12600d"><g></g><path style="display: inline;" d="M170.591,239.406L1.584,429.263c-0.433-1.911-1.084-3.759-1.084-5.852V88.589
+		c0-2.541,0.71-4.837,1.356-7.144L170.591,239.406z M493.987,65.524c-1.238-0.277-2.424-0.876-3.79-0.876H21.819
+		c-1.297,0-2.456,0.599-3.769,0.876l237.961,222.734L493.987,65.524z M262.808,313.021c-1.954,1.869-4.372,2.777-6.797,2.777
+		c-2.419,0-4.842-0.908-6.775-2.777l-62.21-58.217L16.656,446.145c1.698,0.523,3.364,1.207,5.163,1.207h468.378
+		c1.89,0,3.534-0.684,5.243-1.207L325.082,254.804L262.808,313.021z M341.494,239.406l168.98,189.836
+		c0.459-1.911,1.025-3.759,1.025-5.831V88.589c0-2.499-0.62-4.837-1.26-7.133L341.494,239.406z"></path></g></svg></a>
+		<a title="RSS Feed" class="social feed" href="http://whoisryannystrom.com/feed.xml"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<g>
+	<path d="M68.147,375.465c-37.598,0-68.146,30.667-68.146,68.038c0,37.577,30.55,67.901,68.146,67.901
+		c37.733,0,68.247-30.324,68.247-67.901C136.393,406.132,105.882,375.465,68.147,375.465z"/>
+	<path d="M0.078,173.965v98.129c63.892,0,123.979,24.986,169.229,70.256c45.192,45.159,70.141,105.518,70.141,169.65h98.561
+		C338.008,325.59,186.368,173.965,0.078,173.965z"/>
+	<path d="M0.194,0v98.178c227.891,0,413.378,185.667,413.378,413.822H512C512,229.765,282.373,0,0.194,0z"/>
+</g>
+</svg>
+</a>
+	</li>
+	<li><a title="Blog" class="menu-option" href="/">Blog</a></li>
+	<li><a title="About" class="menu-option" href="/about.html">About</a></li>
+	<li><a title="Archive" class="menu-option" href="/archive.html">Archive</a></li>
+	<li><a title="Apps" class="menu-option" href="/apps.html">Apps</a></li>
+</ul>
+    <div id="container">
+        <header id="site-header">
+
+	<div class="social-links">
+		<a title="Twitter" class="social twitter" href="https://twitter.com/_ryannystrom"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M512,97.209c-18.838,8.354-39.082,14.001-60.33,16.54c21.686-13,38.343-33.585,46.186-58.115
+	c-20.298,12.039-42.778,20.78-66.705,25.49c-19.16-20.415-46.461-33.17-76.673-33.17c-58.011,0-105.044,47.029-105.044,105.039
+	c0,8.233,0.929,16.25,2.72,23.939c-87.3-4.382-164.701-46.2-216.509-109.753c-9.042,15.514-14.223,33.558-14.223,52.809
+	c0,36.444,18.544,68.596,46.73,87.433c-17.219-0.546-33.416-5.271-47.577-13.139c-0.01,0.438-0.01,0.878-0.01,1.321
+	c0,50.894,36.209,93.348,84.261,103c-8.813,2.4-18.094,3.686-27.674,3.686c-6.769,0-13.349-0.66-19.764-1.886
+	c13.368,41.73,52.16,72.103,98.126,72.948c-35.95,28.175-81.243,44.967-130.458,44.967c-8.479,0-16.84-0.497-25.058-1.47
+	c46.486,29.805,101.701,47.197,161.021,47.197c193.211,0,298.868-160.062,298.868-298.872c0-4.554-0.103-9.084-0.305-13.59
+	C480.11,136.773,497.918,118.273,512,97.209z"/>
+</svg>
+</a>
+		<a title="Github" class="social github" href="https://github.com/rnystrom"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M408.028,408.028
+	c-19.759,19.758-42.756,35.266-68.354,46.093c-6.503,2.75-13.107,5.164-19.8,7.246V423c0-20.167-6.917-35-20.75-44.5
+	c8.667-0.833,16.625-2,23.875-3.5s14.917-3.667,23-6.5s15.333-6.208,21.75-10.125s12.583-9,18.5-15.25s10.875-13.333,14.875-21.25
+	s7.167-17.417,9.5-28.5s3.5-23.292,3.5-36.625c0-25.833-8.417-47.833-25.25-66c7.667-20,6.833-41.75-2.5-65.25l-6.25-0.75
+	c-4.333-0.5-12.125,1.333-23.375,5.5s-23.875,11-37.875,20.5c-19.833-5.5-40.417-8.25-61.75-8.25c-21.5,0-42,2.75-61.5,8.25
+	c-8.833-6-17.208-10.958-25.125-14.875c-7.917-3.917-14.25-6.583-19-8s-9.167-2.292-13.25-2.625s-6.708-0.417-7.875-0.25
+	s-2,0.333-2.5,0.5c-9.333,23.667-10.167,45.417-2.5,65.25c-16.833,18.167-25.25,40.167-25.25,66c0,13.333,1.167,25.542,3.5,36.625
+	s5.5,20.583,9.5,28.5s8.958,15,14.875,21.25s12.083,11.333,18.5,15.25s13.667,7.292,21.75,10.125s15.75,5,23,6.5
+	s15.208,2.667,23.875,3.5c-13.667,9.333-20.5,24.167-20.5,44.5v39.115c-7.549-2.247-14.99-4.902-22.3-7.994
+	c-25.597-10.827-48.594-26.335-68.353-46.093c-19.758-19.759-35.267-42.756-46.093-68.354C46.679,313.195,41,285.043,41,256
+	s5.679-57.195,16.879-83.675c10.827-25.597,26.335-48.594,46.093-68.353s42.756-35.267,68.353-46.093
+	C198.805,46.679,226.957,41,256,41s57.195,5.679,83.675,16.879c25.598,10.827,48.595,26.335,68.354,46.093
+	c19.758,19.758,35.266,42.756,46.093,68.353C465.321,198.805,471,226.957,471,256s-5.679,57.195-16.879,83.675
+	C443.294,365.272,427.786,388.27,408.028,408.028z"/>
+</svg>
+</a>
+		<a title="Email Ryan" class="social mail" href="mailTo:rnystrom@whoisryannystrom.com"><?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg 
+ version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px"
+	 height="512px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"
+><g id="7935ec95c421cee6d86eb22ecd12600d"><g></g><path style="display: inline;" d="M170.591,239.406L1.584,429.263c-0.433-1.911-1.084-3.759-1.084-5.852V88.589
+		c0-2.541,0.71-4.837,1.356-7.144L170.591,239.406z M493.987,65.524c-1.238-0.277-2.424-0.876-3.79-0.876H21.819
+		c-1.297,0-2.456,0.599-3.769,0.876l237.961,222.734L493.987,65.524z M262.808,313.021c-1.954,1.869-4.372,2.777-6.797,2.777
+		c-2.419,0-4.842-0.908-6.775-2.777l-62.21-58.217L16.656,446.145c1.698,0.523,3.364,1.207,5.163,1.207h468.378
+		c1.89,0,3.534-0.684,5.243-1.207L325.082,254.804L262.808,313.021z M341.494,239.406l168.98,189.836
+		c0.459-1.911,1.025-3.759,1.025-5.831V88.589c0-2.499-0.62-4.837-1.26-7.133L341.494,239.406z"></path></g></svg></a>
+		<a title="RSS Feed" class="social feed" href="http://whoisryannystrom.com/feed.xml"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<g>
+	<path d="M68.147,375.465c-37.598,0-68.146,30.667-68.146,68.038c0,37.577,30.55,67.901,68.146,67.901
+		c37.733,0,68.247-30.324,68.247-67.901C136.393,406.132,105.882,375.465,68.147,375.465z"/>
+	<path d="M0.078,173.965v98.129c63.892,0,123.979,24.986,169.229,70.256c45.192,45.159,70.141,105.518,70.141,169.65h98.561
+		C338.008,325.59,186.368,173.965,0.078,173.965z"/>
+	<path d="M0.194,0v98.178c227.891,0,413.378,185.667,413.378,413.822H512C512,229.765,282.373,0,0.194,0z"/>
+</g>
+</svg>
+</a>
+	</div>
+
+	<a title="Toggle Menu" id="mobile-navigation" href="#">Menu</a>
+
+	<h1 id="masthead"><a title="Home" href="/">Ryan Nystrom</a></h1>
+
+	<hr id="header-divider" class="clear" />
+
+	<ul id="navigation">
+		<li><a title="Blog" href="/">Blog</a></li>
+		<li><a title="About" href="/about.html">About</a></li>
+		<li><a title="Archive" href="/archive.html">Archive</a></li>
+		<li><a title="Apps" href="/apps.html">Apps</a></li>
+		<li class="stretch"></li>
+	</ul>
+
+</header>
+        <section id="site-content">
+            <h2 class="article-title">Memoization in Python</h2>
+
+<time class="timestamp" datetime="March 13, 2012" pubdate>Tuesday, 13 March 2012</time>
+
+<p>I ran into a pretty interesting problem last week. I was working on an AI for my senior thesis (its an iOS game), and I wanted it done in python to be able to test it out on any machine before porting it over to Objective C (though it'll likely be done in C for speed reasons). The algorithm used a <em>lot</em> of recursion. I basically did the following:</p>
 
 <ul>
 <li>Find all possible states of the game
@@ -117,61 +253,29 @@
 
 <p>Now how to implement all of this into a real-time game AI.</p>
 
-  </div>
-</div>
 
-          </section><!-- /content -->
+<a title="Tweet this Post" href="https://twitter.com/share" class="twitter-share-button" data-lang="en" class="twitter-share-button" data-url="http://whoisryannystrom.com/2012/03/13/Memoization-in-Python" data-text="Memoization in Python" data-via="_ryannystrom">Tweet</a>
+        </section>
+        <footer id="site-footer">
+	Powered by <a title="Jekyll" href="http://jekyllrb.com/">Jekyll</a> with icons by <a title="IcoMoon" href="http://icomoon.io/#toHome">IcoMoon</a>.
+	<br>&copy Ryan Nystrom 2013.
+</footer>
+    </div>
+    <script>
+// toggle mobile menu
+var b = document.getElementById('mobile-navigation');
+b.onclick = function(e) {
+	e.preventDefault();
+	document.getElementById('mobile-menu').classList.toggle('active');
+	return false;
+};
 
-          <footer id="site-footer" class="row">
-            <hr />
-            <div class="eight columns left">
-                <p>&copy Ryan Nystrom 2012</p>
-                <p>This site is powered by <a href="http://github.com/mojombo/jekyll">Jekyll</a> with icons by <a href="http://icomoon.io/#toHome">IcoMoon</a>.
-                </div>
-                <div class="eight columns right">
-                    <a href="http://twitter.com/_ryannystrom">
-                        <img src="/img/twitter.png" onmouseover="this.src='/img/twitter-color.png'" onmouseout="this.src='/img/twitter.png'" />
-                    </a>
-                    <a href="http://github.com/rnystrom">
-                        <img src="/img/github.png" onmouseover="this.src='/img/github-color.png'" onmouseout="this.src='/img/github.png'" />
-                    </a>
-                    <a href="mailTo:rnystrom@whoisryannystrom.com">
-                        <img src="/img/mail.png" onmouseover="this.src='/img/mail-color.png'" onmouseout="this.src='/img/mail.png'" />
-                    </a>
-                    <a href="http://itunes.apple.com/us/artist/ryan-nystrom/id517642218">
-                        <img src="/img/apple.png" onmouseover="this.src='/img/apple-color.png'" onmouseout="this.src='/img/apple.png'" />
-                    </a>
-                </div>
-            </footer><!-- /footer -->
-
-        </div><!-- /container -->
-
-        <!-- preload images -->
-        <img class="preload" src="/img/twitter-color.png" />
-        <img class="preload" src="/img/github-color.png" />
-        <img class="preload" src="/img/apple-color.png" />
-        <img class="preload" src="/img/mail-color.png" />
-    </body>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script src="/js/tabs.js"></script>
-    <script type="text/javascript" src="//use.typekit.net/vwv8xxu.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <script type="text/javascript">
-    var GoSquared = {};
-    GoSquared.acct = "GSN-761127-S";
-    (function(w){
-        function gs(){
-            w._gstc_lt = +new Date;
-            var d = document, g = d.createElement("script");
-            g.type = "text/javascript";
-            g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
-            var s = d.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(g, s);
-        }
-        w.addEventListener ?
-        w.addEventListener("load", gs, false) :
-        w.attachEvent("onload", gs);
-    })(window);
-    </script>
-    </html>
+window.twttr = (function (d,s,id) {
+	var t, js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+	js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+	return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+}(document, "script", "twitter-wjs"));
+</script>
+</body>
+</html>
