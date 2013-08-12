@@ -4,18 +4,15 @@
     <meta charset="UTF-8" />
 <meta name="description" content="I am an iOS developer in Columbus, OH that specializes in User Experience optimization. This is my blog that I use to rant, rave, and review various parts of my career.">
 <meta name="author" content="Ryan Nystrom">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
 <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 <!-- Unminified stylesheet http://whoisryannystrom.com/css/style.css" /> -->
-<!-- <link rel="stylesheet" href="/css/style.min.css" /> -->
-<!-- <link rel="stylesheet" href="/css/github.css" /> -->
-<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/style.min.css" />
 
 <link rel="shortcut icon" href="/favicon.ico">
 
@@ -104,9 +101,9 @@ _gaq.push(['_trackPageview']);
 </a>
 	</li>
 	<li><a title="Blog" class="menu-option" href="/">Blog</a></li>
-	<li><a title="About" class="menu-option" href="/about.html">About</a></li>
-	<li><a title="Archive" class="menu-option" href="/archive.html">Archive</a></li>
-	<li><a title="Apps" class="menu-option" href="/apps.html">Apps</a></li>
+	<li><a title="About" class="menu-option" href="/about">About</a></li>
+	<li><a title="Archive" class="menu-option" href="/archive">Archive</a></li>
+	<li><a title="Apps" class="menu-option" href="/apps">Apps</a></li>
 </ul>
     <div id="container">
         <header id="site-header">
@@ -183,9 +180,9 @@ _gaq.push(['_trackPageview']);
 
 	<ul id="navigation">
 		<li><a title="Blog" href="/">Blog</a></li>
-		<li><a title="About" href="/about.html">About</a></li>
-		<li><a title="Archive" href="/archive.html">Archive</a></li>
-		<li><a title="Apps" href="/apps.html">Apps</a></li>
+		<li><a title="About" href="/about">About</a></li>
+		<li><a title="Archive" href="/archive">Archive</a></li>
+		<li><a title="Apps" href="/apps">Apps</a></li>
 		<li class="stretch"></li>
 	</ul>
 
@@ -193,119 +190,51 @@ _gaq.push(['_trackPageview']);
         <section id="site-content">
             
 <article class="article">
-    <h2 class="article-title"><a title="Testing Formats" href="/2013/08/10/2013-08-03-Testing-Formats">Testing Formats</a></h2>
-    <time class="timestamp" datetime="August 10, 2013" pubdate>Saturday, 10 August 2013</time>
-    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. <a href="#">Nulla vitae</a> elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante <em>venenatis</em> dapibus posuere velit aliquet.</p>
-
-<div class="extrawide">
-
-<div class="highlight"><pre><code class="objc"><span class="n">NSNumber</span> <span class="o">*</span><span class="n">searchKey</span> <span class="o">=</span> <span class="err">@</span><span class="p">(</span><span class="mi">123456</span><span class="p">);</span>
-<span class="n">NSMutableArray</span> <span class="o">*</span><span class="n">store</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">[</span><span class="n">store</span> <span class="n">addObject</span><span class="o">:</span><span class="err">@</span><span class="p">(</span><span class="n">i</span><span class="p">)];</span>
-<span class="p">}</span>
-
-<span class="n">NSDate</span> <span class="o">*</span><span class="n">start</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
-<span class="n">NSPredicate</span> <span class="o">*</span><span class="n">predicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSPredicate</span> <span class="n">predicateWithFormat</span><span class="o">:</span><span class="s">@&quot;self = %@&quot;</span><span class="p">,</span><span class="n">searchKey</span><span class="p">];</span>
-<span class="n">NSNumber</span> <span class="o">*</span><span class="n">r1</span> <span class="o">=</span> <span class="p">[[</span><span class="n">store</span> <span class="n">filteredArrayUsingPredicate</span><span class="o">:</span><span class="n">predicate</span><span class="p">]</span> <span class="n">lastObject</span><span class="p">];</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Filtered search completed in %f&quot;</span><span class="p">,</span><span class="o">-</span><span class="p">[</span><span class="n">start</span> <span class="n">timeIntervalSinceNow</span><span class="p">]);</span>
-
-<span class="n">start</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
-<span class="n">NSInteger</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">store</span> <span class="n">indexOfObjectPassingTest</span><span class="o">:^</span><span class="kt">BOOL</span> <span class="p">(</span><span class="n">NSNumber</span> <span class="o">*</span><span class="n">num</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">BOOL</span> <span class="o">*</span><span class="n">stop</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">num</span> <span class="o">==</span> <span class="n">searchKey</span><span class="p">;</span>
-<span class="p">}];</span>
-<span class="n">r1</span> <span class="o">=</span> <span class="n">store</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Pass test search completed in %f&quot;</span><span class="p">,</span><span class="o">-</span><span class="p">[</span><span class="n">start</span> <span class="n">timeIntervalSinceNow</span><span class="p">]);</span>
-</code></pre></div>
-
-</div>
-
-
-<p><i>Cras justo odio</i>, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-<p>Donec ullamcorper <em>nulla non metus</em> auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue.</p>
-
-<div class="highlight"><pre><code class="objc"><span class="c1">// SVProgressHUD.m</span>
-<span class="k">@interface</span> <span class="nc">SVProgressHUD</span><span class="p">()</span>
-<span class="c1">// properties and methods here</span>
-<span class="k">@end</span>
-</code></pre></div>
-
-
-<blockquote><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum.</p></blockquote>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui.</p>
-
-<div class="wide">
-
-<div class="highlight"><pre><code class="objc"><span class="n">NSString</span> <span class="o">*</span><span class="n">dateString</span> <span class="o">=</span> <span class="s">@&quot;2012/12/04 15:20:00&quot;</span><span class="p">;</span>
-<span class="n">NSString</span> <span class="o">*</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="s">@&quot;yyyy/MM/dd HH:mm:ss&quot;</span><span class="p">;</span>
-<span class="n">NSDateFormatter</span> <span class="o">*</span><span class="n">formatter</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSDateFormatter</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-<span class="n">formatter</span><span class="p">.</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="n">dateFormat</span><span class="p">;</span>
-<span class="n">NSDate</span> <span class="o">*</span><span class="n">date</span> <span class="o">=</span> <span class="p">[</span><span class="n">formatter</span> <span class="n">dateFromString</span><span class="o">:</span><span class="n">dateString</span><span class="p">];</span>
-
-<span class="n">formatter</span><span class="p">.</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="s">@&quot;yyyy/MM/dd&quot;</span><span class="p">;</span>
-
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,[</span><span class="n">formatter</span> <span class="n">stringFromDate</span><span class="o">:</span><span class="n">date</span><span class="p">]);</span>
-</code></pre></div>
-
-</div>
-
-
-<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+    <h2 class="article-title"><a title="Avoiding Circular Reference" href="/2012/10/13/Circular-Ref">Avoiding Circular Reference</a></h2>
+    <time class="timestamp" datetime="October 13, 2012" pubdate>Saturday, 13 October 2012</time>
+    <p>This is just a collection of tips and tricks that I've learned in the past year on how to properly strucutre your files, classes, and protocols to avoid any circular reference errors/warnings. These errors are usually LLVM compiler warnings where the compiler gets mixed up due to circular <code>#import</code> references. It's pretty easy to avoid but can be a tremendous headache to debug.</p>
 
 </article>
 
 <article class="article">
-    <h2 class="article-title"><a title="Animating Highlight with UICollectionView" href="/2013/08/10/2013-08-20-Animating-UICollectionView-Highlight">Animating Highlight with UICollectionView</a></h2>
-    <time class="timestamp" datetime="August 10, 2013" pubdate>Saturday, 10 August 2013</time>
-    <p>On a recent app at <a href="http://dynamit.us">Dynamit</a>, <a href="TWITTER%20LINK">Mike Waclo</a> suggested we create a subtle scale animation as visual feedback on cell selection.</p>
+    <h2 class="article-title"><a title="Native vs HTML5" href="/2012/09/15/Native-vs-HTML5">Native vs HTML5</a></h2>
+    <time class="timestamp" datetime="September 15, 2012" pubdate>Saturday, 15 September 2012</time>
+    <p>In the world of mobile computing, nothing aside from Android vs iOS has sparked more debate than Native vs HTML5 code for the creation of apps. Both Android and iOS devices, the two most popular mobile platforms, are capable of consuming and displaying rich web content and media. This includes text, images, and video, which are the basic building-blocks of any app. Furthermore, both operating systems are able to run, parse, and execute Javascript. Javascript is a language created to be executed by browsers and enrich our web experiences by making sites interactive. The best thing about Javascript is that it is written once and can be executed on almost any desktop browser as well as almost every mobile browser. With Apple’s adoption of the V8 Javascript engine, execution on iPhone and iPads is faster than ever.</p>
 
-<p>UITableViews even have a blue selection animation by default. One would think that with the boilerplate code <a href="CREATE%20CELL%20CODE">improvements</a> that UICollectionView has over UITableView, that selection indication would be a no-brainer.</p>
+<p>That’s incredibly appealing isn’t it? Write some Javascript here and there and bam, your app works on mobile and web! So not only have you saved development time, but the amount of money spent on development is going to be significantly lower. Now before everyone runs off to find a web developer to make the next big-selling app, let’s walk through a simple scenario.</p>
 
-<p>It turned out to be more difficult than I had hoped.</p>
+<p>A client has come up with an app idea that they want available on all mobile devices. The client hires a web developer to create the app. The app displays some pictures and text, has a user signup, and lets you send information to Twitter. The app is published and links are sent out, everything seems to be going great. However for version 2.0 the client decides that the app should be able to take pictures. Simple enough, right? Every major app out there is able to take pictures and store them somewhere. Well the developer searches through the Javascript documentation to see how to pull up a camera and take a picture, but suddenly finds that there are no documents out there on how to do so. Why? Because it is impossible.</p>
 
-<p>I ended up spending a good couple hours playing with different code and sifting Stack Overflow for answers. It turns out there is no default animation. Furthermore, when a UICollectionViewCell is selected, UICollectionView freezes state changes with the layout and views.</p>
+<p>This is one of many situations of an API that Javascript cannot access. Several other APIs include the microphone, filesystem, iCloud, contacts, calendar, push notifications…the list goes on. These are sometime critical features for apps. Who would use Instagram if they couldn’t take their own photos and upload them? What about Shazam and its use of the microphone? If either of these apps had been made in HTML5 they would have been useless. Now every day progress is made on bringing these APIs to HTML5 for use in web apps, but it will never have priority over the native system. Ever.</p>
 
-<p>UICollectionView has unfortunately named methods and poor documentation. It seemed the obvious to override <code>-collectionView:didHighlight:</code> and <code>-collectionView:didUnhighlight:</code> to invoke animations, but that turned up fruitless.</p>
+<p>But say our client changes his mind on the camera. The show can go on without it. After the app picks up and is starting to spread there starts to be more and more content being created. There is a ton of rich text and media to be consumed. But, all of a sudden, the complaints start to roll in. Words like “sluggish,” “stuttering,” and “slow” start appearing. That’s no good. The developer looks into it and finds that the stuttering and slowness happens when a user scrolls a list. Well there isn’t any way to control how the phone performs a scroll, so they just have to deal with it. But pretty soon those reviews are going to make an impact on how users perceive that app.</p>
 
-<p>After a while of playing guess and check I found out that the best time to fire any animations are when UICollectionViewCell changes the value of its <code>highlighted</code> property. To do this you override the <code>-setHighlighted:</code> method of your UICollectionViewCell subclass.</p>
+<p>Why is performance worse when displaying HTML? Because as stated before, native always gets priority. The device has to download the HTML, parse it, render it, display it, then manage it. That’s a lot of work. With native code all the phone has to do is render because it knows everything else about the content and layout already since it is already loaded into the app. Now there are tricks to improving HTML rendering and responsiveness, but they will only go so far.</p>
 
-<p>Here is an example of a simple animation for highlighting a UICollectionViewCell.</p>
+<p><a href="https://www.facebook.com/notes/facebook-engineering/under-the-hood-rebuilding-facebook-for-ios/10151036091753920">The story of Facebook’s redesign</a> is a great example of starting with an HTML5 app and eventually shifting to native code due to pressure from users. <a href="http://branch.com/b/a-blow-to-html5">There has been a lot of debate</a> on Facebook’s switch from tech bloggers, but users have poured out their support of the changing claiming that the app finally feels better.</p>
 
-<div class="highlight"><pre><code class="objc"><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setHighlighted:</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nv">highlighted</span> <span class="p">{</span>
-    <span class="p">[</span><span class="n">super</span> <span class="n">setHighlighted</span><span class="o">:</span><span class="n">highlighted</span><span class="p">];</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">highlighted</span> <span class="o">!=</span> <span class="n">self</span><span class="p">.</span><span class="n">highlighted</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">CGFloat</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.f</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">highlighted</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5f</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="p">[</span><span class="n">UIView</span> <span class="n">animateWithDuration</span><span class="o">:</span><span class="mf">0.25</span> <span class="n">animations</span><span class="o">:^</span><span class="p">{</span>
-            <span class="n">self</span><span class="p">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">;</span>
-        <span class="p">}];</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-
+<p>So in the end, why is native code better? Because it is native to that device. That is how it is supposed to be run and that is what will always receive priority before HTML. For the sake of your users and your sanity, start with native and end with native. Don’t give it a second thought because your users should always come first, and your users want native.</p>
 
 </article>
 
 <article class="article">
-    <h2 class="article-title"><a title="On the Importance of Conferences" href="/2013/08/10/2013-08-27-Importance-of-Conferences">On the Importance of Conferences</a></h2>
-    <time class="timestamp" datetime="August 10, 2013" pubdate>Saturday, 10 August 2013</time>
-    <p>This weekend I had the pleasure of attending a conference in Ottawa, Canada called <a href="http://nsnorth.ca">NSNorth</a>. The conference was relatively small, being capped at 100 attendees. Prices were a little higher to facilitate a weekend free of sponsors and recruiters. It also likely ensured that only people serious about the industry attend. Two wonderful people, <a href="LINK%20GOES%20HERE">Dan Byers</a> and (Philipe LAST NAME)[LINK GOES HERE], did all of the legwork setting up the event and deserve the utmost respect and praise for gathering all of the resources to put it on.</p>
+    <h2 class="article-title"><a title="Dot Syntax" href="/2012/07/23/Dot-Syntax">Dot Syntax</a></h2>
+    <time class="timestamp" datetime="July 23, 2012" pubdate>Monday, 23 July 2012</time>
+    <p>I can't say I totally agree with this. The post by <a href="http://inessential.com/">Bret Simmons</a> is well written and brings up some good points. However, I tend to feel that dot-syntax in Objective-C was introduced merely to appease the masses who found bracket-syntax unappealing. Dot-syntax doesn't actually offer your writing anything new aside from a <em>different</em> way to do things. It doesn't compile faster (actually, it may even compile <em>slower</em> because it is an added feature).</p>
 
-<p>NSNorth was the first time I really stepped foot into Canada. Aside from seeing Niagara Falls, I really hadn't found a need to travel up north. This was also the first Cocoa-only conference that I had attended, not to mention one of only four tech conferences I've been to in my life.</p>
+<p>That being said, I have my own quarrels with dot syntax. Sometimes I use it to break up the day and make my code look a little more interesting. However I refuse to set any property with dot syntax.</p>
 
-<p>The weekend resulted in a newly found sense of humanity in iOS and Mac development world. Meeting all of these wonderful people who have populated my RSS feeds for the past couple years gave me a realization that we are all <strong>people</strong> making software for  <strong>people</strong>. There was <a href="LINK%20GOES%20HERE">Ash Furrow</a>, <a href="LINK%20GOES%20HERE">Gus Mueller</a>, <a href="LINK%20GOES%20HERE">Sam Vermette</a>, <a href="LINK%20GOES%20HERE">Rob Rhine SPELLING</a>, and many more. People that I respect and look up to for guidance in the Apple world, all sharing stories over a pint or two.</p>
+<div class="highlight"><pre><code class="objc"><span class="n">self</span><span class="p">.</span><span class="n">property</span> <span class="o">=</span> <span class="n">newValue</span><span class="p">;</span>
+</code></pre></div>
 
-<p>I especially enjoyed my chats with <a href="LINK%20GOES%20HERE">Jason Brennan</a> from the New York Times. He's just a bit younger than I am but already finding himself at the forefront of Cocoa development. Jason is not only smart and talented, but  charismatic and a hell of a listener. It's people like Jason that inspire me to further push my capabilities in this field and to encourage others to do so as well.</p>
 
-<p>The camaraderie within the community this weekend was also amazing. Speakers were greeted with applause, developers at larger corporations dined with independents, and I was able to have a delightful conversation with <a href="http://kickingbear.com">Guy English</a>. We shared stories about apps we've created, about our project methodology, and more. I saw people sifting through source code, trying to help each other fix bugs.</p>
+<p>Just say no to this. Maybe getting a property with dot-syntax can be allowed.</p>
 
-<p>At the end of it all, NSNorth filled me with even more passion and joy about my craft by exposing me to other smarter, and more passionate developers making amazing software. It is incredibly humbling to be able to sit and just listen to how other developers create and iterate their work.</p>
+<div class="highlight"><pre><code class="objc"><span class="n">self</span> <span class="n">setProperty</span><span class="o">:</span><span class="n">newValue</span><span class="p">;</span>
+</code></pre></div>
 
-<p>Conferences, especially the smaller ones, are an incredible opportunity to expose yourself to people better at your craft than you are but are also extremely willing to extend their knowledge and answer any questions you might have. I strongly encourage everyone to give a small conference a shot.</p>
+
+<p>Much better.</p>
 
 </article>
 
