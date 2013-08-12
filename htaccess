@@ -3,7 +3,7 @@ layout: none
 permalink: .htaccess
 ---
 
-## EXPIRES CACHING ##
+# EXPIRES CACHING ##
 <IfModule mod_expires.c>
 ExpiresActive On
 ExpiresByType image/jpg "access 1 year"
