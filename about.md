@@ -3,7 +3,7 @@ layout: default
 title: About
 ---
 
-<img alt="Profile Picture" title="Meet Ryan" class="center-image" src="/img/ryan.png" />
+<img alt="Profile Picture" title="Meet Ryan" class="center-image" src="/img/ryan.jpg" />
 
 I am a passionate mobile developer currently living in Columbus, Ohio. Most of my days are spent at [Dynamit](http://dynamit.us) in downtown Columbus where I run our up-and-coming mobile development. I've been making native and web apps since [2008](DRAW WITH ME), when I was in school at the [University of Cincinnati](http://uc.edu).
 
