@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
 <meta name="description" content="I am an iOS developer in Columbus, OH that specializes in User Experience optimization. This is my blog that I use to rant, rave, and review various parts of my career.">
 <meta name="author" content="Ryan Nystrom">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
@@ -190,6 +190,21 @@ _gaq.push(['_trackPageview']);
         <section id="site-content">
             
 <article class="article">
+    <h2 class="article-title"><a title="Rewritten" href="/2013/08/20/Rewritten">Rewritten</a></h2>
+    <time class="timestamp" datetime="August 20, 2013" pubdate>Tuesday, 20 August 2013</time>
+    <p>For a while now I've been wanting to get back into writing. Getting myself to sit still and focus has been quite a struggle. I spent several days on vacation redesigning my website with the hopes that I would be excited to get back into writing.</p>
+
+<p>However, that didn't happen. I would use the excuse that I was busy, but in reality that just wasn't the case. I have plenty of time that I spend browsing <a href="https://news.ycombinator.com/">Hacker News</a> which could easily be used to write and edit.</p>
+
+<p>So instead of making excuses, I'm setting a strict schedule of producing a piece of work every two weeks. That leaves myself a week to write and a week to edit.</p>
+
+<p>This will be a challenge that will take some discipline, but if I can really get into a groove I'll slowly build up my communication skills. My end goal is to have the confidence to write a small book on iOS development.</p>
+
+<p>As with most of my work, this entire site is hosted <a href="https://github.com/rnystrom/Blog">on Github</a>. If you ever find a correction that needs to be made, please submit a pull request.</p>
+
+</article>
+
+<article class="article">
     <h2 class="article-title"><a title="Avoiding Circular Reference" href="/2012/10/13/Circular-Ref">Avoiding Circular Reference</a></h2>
     <time class="timestamp" datetime="October 13, 2012" pubdate>Saturday, 13 October 2012</time>
     <p>This is just a collection of tips and tricks that I've learned in the past year on how to properly strucutre your files, classes, and protocols to avoid any circular reference errors/warnings. These errors are usually LLVM compiler warnings where the compiler gets mixed up due to circular <code>#import</code> references. It's pretty easy to avoid but can be a tremendous headache to debug.</p>
@@ -214,27 +229,6 @@ _gaq.push(['_trackPageview']);
 <p><a href="https://www.facebook.com/notes/facebook-engineering/under-the-hood-rebuilding-facebook-for-ios/10151036091753920">The story of Facebook’s redesign</a> is a great example of starting with an HTML5 app and eventually shifting to native code due to pressure from users. <a href="http://branch.com/b/a-blow-to-html5">There has been a lot of debate</a> on Facebook’s switch from tech bloggers, but users have poured out their support of the changing claiming that the app finally feels better.</p>
 
 <p>So in the end, why is native code better? Because it is native to that device. That is how it is supposed to be run and that is what will always receive priority before HTML. For the sake of your users and your sanity, start with native and end with native. Don’t give it a second thought because your users should always come first, and your users want native.</p>
-
-</article>
-
-<article class="article">
-    <h2 class="article-title"><a title="Dot Syntax" href="/2012/07/23/Dot-Syntax">Dot Syntax</a></h2>
-    <time class="timestamp" datetime="July 23, 2012" pubdate>Monday, 23 July 2012</time>
-    <p>I can't say I totally agree with this. The post by <a href="http://inessential.com/">Bret Simmons</a> is well written and brings up some good points. However, I tend to feel that dot-syntax in Objective-C was introduced merely to appease the masses who found bracket-syntax unappealing. Dot-syntax doesn't actually offer your writing anything new aside from a <em>different</em> way to do things. It doesn't compile faster (actually, it may even compile <em>slower</em> because it is an added feature).</p>
-
-<p>That being said, I have my own quarrels with dot syntax. Sometimes I use it to break up the day and make my code look a little more interesting. However I refuse to set any property with dot syntax.</p>
-
-<div class="highlight"><pre><code class="objc"><span class="n">self</span><span class="p">.</span><span class="n">property</span> <span class="o">=</span> <span class="n">newValue</span><span class="p">;</span>
-</code></pre></div>
-
-
-<p>Just say no to this. Maybe getting a property with dot-syntax can be allowed.</p>
-
-<div class="highlight"><pre><code class="objc"><span class="n">self</span> <span class="n">setProperty</span><span class="o">:</span><span class="n">newValue</span><span class="p">;</span>
-</code></pre></div>
-
-
-<p>Much better.</p>
 
 </article>
 

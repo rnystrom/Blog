@@ -42,7 +42,7 @@ a:hover, a:focus {
 	color: #900628;
 }
 p {
-	margin: 0 0 1em;
+	margin: 0 0 1.5em;
 }
 img, object, video {
 	max-width: 100%;
@@ -97,10 +97,6 @@ input[type=search] {
 }
 pre, code {
 	font-family: Consolas, "Liberation Mono", Courier, monospace;
-}
-em {
-	font-weight: bold;
-	font-style: normal;
 }
 /************End Global**************/
 
@@ -274,7 +270,7 @@ em {
 	#site-header {text-align: left;}
 	#masthead {font-size: 3em;}
 	.social-links {display: block;}
-	.timestamp {padding: 0 0 1em 0;}
+	.timestamp {padding: 0 0 1.5em 0;}
 	#navigation {display: block;}
 	#mobile-navigation {display: none;}
 	#mobile-menu {max-height: 0 !important;}
