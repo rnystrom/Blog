@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Apps
+description: A list of apps made by Ryan for learning and as side-projects.
 ---
 
 <img alt="Poetreat Icon" title="Poetreat Icon" class="center-image app-icon" src="/img/poetreat.jpg" />

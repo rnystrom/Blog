@@ -1,14 +1,31 @@
 <meta charset="UTF-8" />
-<meta name="description" content="{{ site.description }}">
 <meta name="author" content="{{ site.author }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@_ryannystrom">
+<meta name="twitter:creator" content="@_ryannystrom">
+<meta name="twitter:title" content="{{ page.title }}">
+
+<meta content="{{ site.author }}" property="og:site_name"/>
+<meta content="{{ page.title }}" property="og:title"/>
+<meta content="{{ site.url }}" property="og:url"/>
+
+{% if page.description %}
+<meta name="description" content="{{ page.description }}">
+<meta name="twitter:description" content="{{ page.description }}">
+<meta content="{{ page.description }}" property="og:description"/>
+{% else %}
+<meta name="description" content="{{ site.description }}">
+<meta name="twitter:description" content="{{ site.description }}">
+<meta content="{{ site.description }}" property="og:description"/>
+{% endif %}
 
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 
 <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
-<!-- Unminified stylesheet http://whoisryannystrom.com/css/style.css" /> -->
 <link rel="stylesheet" href="/css/style.min.css" />
 
 <link rel="shortcut icon" href="/favicon.ico">

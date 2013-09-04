@@ -1,17 +1,18 @@
 ---
 layout: default
 title: About
+description: Ryan's education, the purpose of his website, and contact information.
 ---
 
-<img alt="Profile Picture" title="Meet Ryan" class="center-image" src="/img/ryan.jpg" />
+<a href="/img/ryan.jpg"><img alt="Profile Picture" title="Meet Ryan" class="center-image" src="/img/ryan.jpg" /></a>
 
-I am a passionate mobile developer currently living in Columbus, Ohio. Most of my days are spent at [Dynamit](http://dynamit.us) in downtown Columbus where I run our up-and-coming mobile development. I've been making native and web apps since [2008](DRAW WITH ME), when I was in school at the [University of Cincinnati](http://uc.edu).
+I am a passionate mobile developer currently living in Columbus, Ohio. Most of my days are spent at [Dynamit](http://dynamit.us) in downtown Columbus where I run our up-and-coming mobile development. I've been making native and web apps since 2008, when I was in school at the [University of Cincinnati](http://uc.edu).
 
 ### Learning
 
 Outside of my day job I create apps for learning experiences. I've been a wishful entrepreneur for some time now, and every app I release is an experiment in marketing, engineering, and design (I've managed to get an [app](http://poetreatapp.com/) featured on the App Store). My goal is to create a sustainable side-gig to slowly scale and experiment with even further.
 
-I also like to invest a good deal of time into open source projects on <a href="https://github.com/rnystrom">Github</a>. I feel an ethical obligation to contribute software back into the wild as much of what I use was born from free and open collaberation on the web.
+I also like to invest a good deal of time into open source projects on [Github](https://github.com/rnystrom. I feel an ethical obligation to contribute software back into the wild as much of what I use was born from free and open collaberation on the web.
 
 I frequently challenge myself by [designing](http://ryannystrom.dunked.com) my own native and web mobile apps. Design has been incredibly challenging but very rewarding for myself, my business, and my coworkers.
 
@@ -23,4 +24,4 @@ I am a [tech editor](http://www.raywenderlich.com/about#rnystrom) for [RayWender
 
 ### Contact
 
-If you're interested in getting in touch about contract work, consulting, speaking, or just to chat, please reach out at anytime either by <a href="mailTo:rnystrom@whoisryannystrom.com">email</a> or <a href="https://twitter.com/_ryannystrom">Twitter</a>.
+If you're interested in getting in touch about contract work, consulting, speaking, or just to chat, please reach out at anytime either by <a href="mailTo:rnystrom@whoisryannystrom.com">email</a> or [Twitter](https://twitter.com/_ryannystrom).
