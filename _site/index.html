@@ -209,21 +209,31 @@ _gaq.push(['_trackPageview']);
     <time class="timestamp" datetime="September 15, 2013" pubdate>Sunday, 15 September 2013</time>
     <p>Lately I have been seeing a lot of designers on <a href="http://dribbble.com/search?q=ios+blur">Dribbble</a> using blurs in UI concept animations for iOS 7. These designs are usually flat and apply a gaussian blur to the contents beneath views. Apple has demonstrated this technique in their design of iOS 7 with Safari's tool bar and Contact's tab bar.</p>
 
-<p>Below is an example iOS 7 custom control design by <a href="https://twitter.com/Jakubantalik">Jakub Antalik</a>. I took this beautiful design as a challenge to recreate it as an open source iOS control. I had done these sort of challenges <a href="https://github.com/rnystrom/RNRippleTableView">before</a>, so I didn't think it would be too difficult.</p>
+<p>In design, blur is primarily used to corral your eyes towards an object. If you are presenting a modal atop a busy background, a blurred background will naturally guide your eyes towards the crisp and <em>in focus</em> text or images.</p>
+
+<p>Blurs also help present additional information while remaining within the context of the previous screen.</p>
+
+<p><a href="http://whoisryannystrom.com/img/2013-09-17/ios-7-message.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-09-17/ios-7-message.jpg" alt="iOS 7 Alert View" /></a></p>
+
+<p>Below is an example iOS 7 custom control design by <a href="https://twitter.com/Jakubantalik">Jakub Antalik</a>. I took this beautiful design as a challenge to recreate it as an open source iOS control. I've done these sort of challenges <a href="https://github.com/rnystrom/RNRippleTableView">before</a>, so I didn't think it would be too difficult.</p>
 
 <p><a href="https://twitter.com/Jakubantalik"><img src="http://whoisryannystrom.com/img/2013-09-17/dribbble-frosted.gif" alt="Sidebar calendar animation" /></a></p>
 
-<p>Unfortunately in the latest iOS SDK, there still does not exist any API to do live blurring of a view. When I say "live blurring" I mean applying a gaussian blur to a screenshot of the contents beneath a view.</p>
+<p>Unfortunately in the latest iOS 7 SDK, there is no API to do live blurring of a view. When I say "live blurring" I mean applying a gaussian blur to a screenshot of the contents beneath a view.</p>
 
 <p>There have been some great attempts at creating "live" blur views for iOS, the two most notable being <a href="https://github.com/nicklockwood/FXBlurView">FXBlurView</a> and <a href="https://github.com/alexdrone/ios-realtimeblur">ios-realtimeblur</a>, but these projects work by continuously polling the runtime, grabbing screenshots of the current view (which occurs on the CPU and main thread), applying a blur to the screenshot, and then adding the image to the view. The "live" effect happens by quickly swapping the blurred image with another, working just like frames of film.</p>
 
-<p>The big bottleneck with most of these implementations is the screenshot. This has to occur <strong>on the CPU</strong> which delays other, more critical operations, and can lag and stutter on older devices.</p>
+<p>The big bottleneck with most of these implementations is the screenshot process. This operation has to occur <strong>on the CPU</strong> which delays other, more critical operations, and can lag and stutter on older devices.</p>
 
-<p><a href="http://stackoverflow.com/a/17299759">Rumors have hinted</a> that Apple is blurring directly on the GPU, but that creating an API could create a security risk, and we've seen Apple during a security breach.</p>
+<p><a href="http://stackoverflow.com/a/17299759">Rumors have hinted</a> that Apple is blurring directly on the GPU, but creating such an API would open up security risks, and we've seen how Apple deals with security issues.</p>
 
-<p>One trick that I've played with is using the <code>UIViewContentMode</code> property of <code>UIView</code> (specifically <code>UIImageView</code>) and animate the height or width of the view to give the appearance that a frosted view is animating on top of another view. I implemented this trick in my <a href="https://github.com/rnystrom/RNFrostedSidebar">RNFrostedSidebar</a> UI control.</p>
+<p>One trick that I've experimented with is changing the <code>UIViewContentMode</code> property of <code>UIView</code> (usually <code>UIImageView</code>) to be fixed to a side, and then animate the height or width of the view so it looks like a live-blurred view is sliding in.</p>
 
 <p><a href="http://whoisryannystrom.com/img/2013-09-17/animation-explanation.jpg"><img src="http://whoisryannystrom.com/img/2013-09-17/animation-explanation.jpg" width="1024" alt="RNFrostedSidebar blur hack" /></a></p>
+
+<p>I implemented this trick in my <a href="https://github.com/rnystrom/RNFrostedSidebar">RNFrostedSidebar</a> UI control and I think the effects are quite nice.</p>
+
+<p><a href="http://whoisryannystrom.com/img/2013-09-17/open.gif"><img src="http://whoisryannystrom.com/img/2013-09-17/open.gif" alt="RNFrostedSidebar open animation" /></a></p>
 
 <p>Until such an API opens up, I strongly urge designers to be mindful of the blurs they use for production apps. Blurring is easy, but live blurring is a performance nightmare. We would be better of if we stopped drooling over blurs and design with performance in mind.</p>
 
