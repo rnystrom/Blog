@@ -3,7 +3,13 @@ layout: post
 title: "Live Blur in iOS7"
 ---
 
-Lately I have been seeing a lot of designers on [Dribbble](http://dribbble.com/search?q=ios+blur) using blurs in gorgeous animations for iOS 7 concepts. These designs usually fall in line with the iOS 7 paradigm of being flat and blurring the contents underneath the views. Apple has demonstrated this technique in their design of iOS 7 with Safari's tool bar and Contact's tab bar.
+Lately I have been seeing a lot of designers on [Dribbble](http://dribbble.com/search?q=ios+blur) using blurs in UI concept animations for iOS 7. These designs are usually flat and apply a gaussian blur to the contents beneath views. Apple has demonstrated this technique in their design of iOS 7 with Safari's tool bar and Contact's tab bar.
+
+In design, blur is primarily used to corral your eyes towards an object. If you are presenting a modal atop a busy background, a blur will naturally guide your eyes towards the crisp and *in focus* text. 
+
+Blurs also help present additional information while remaining within the context of the previous screen.
+
+[<img src="http://whoisryannystrom.com/img/2013-09-17/ios-7-message.jpg" alt="iOS 7 Alert View" />](http://whoisryannystrom.com/img/2013-09-17/ios-7-message.jpg)
 
 Below is an example iOS 7 custom control design by [Jakub Antalik](https://twitter.com/Jakubantalik). I took this beautiful design as a challenge to recreate it as an open source iOS control. I had done these sort of challenges [before](https://github.com/rnystrom/RNRippleTableView), so I didn't think it would be too difficult.
 
