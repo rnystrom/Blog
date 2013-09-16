@@ -1,3 +1,5 @@
+port: 4100
+
 permalink: /:year/:month/:day/:title
 rdiscount extensions: [smart]
 pygments: true

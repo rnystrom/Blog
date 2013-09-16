@@ -15,7 +15,7 @@ Below is an example iOS 7 custom control design by [Jakub Antalik](https://twitt
 
 [![Sidebar calendar animation](http://whoisryannystrom.com/img/2013-09-17/dribbble-frosted.gif)](https://twitter.com/Jakubantalik)
 
-Unfortunately in the latest iOS 7 SDK, there is no API to do live blurring of a view. When I say "live blurring" I mean applying a gaussian blur to a screenshot of the contents beneath a view.
+Unfortunately in the latest iOS 7 SDK, there is no API to do live blurring of a view. When I say "live blurring" I mean applying a gaussian blur to a screenshot of the contents beneath a view and **maintaining the blur effect throughout animation and state changes** of the background.
 
 There have been some great attempts at creating "live" blur views for iOS, the two most notable being [FXBlurView](https://github.com/nicklockwood/FXBlurView) and [ios-realtimeblur](https://github.com/alexdrone/ios-realtimeblur), but these projects work by continuously polling the runtime, grabbing screenshots of the current view (which occurs on the CPU and main thread), applying a blur to the screenshot, and then adding the image to the view. The "live" effect happens by quickly swapping the blurred image with another, working just like frames of film.
 
@@ -31,4 +31,4 @@ I implemented this trick in my [RNFrostedSidebar](https://github.com/rnystrom/RN
 
 [![RNFrostedSidebar open animation](http://whoisryannystrom.com/img/2013-09-17/open.gif)](http://whoisryannystrom.com/img/2013-09-17/open.gif)
 
-Until such an API opens up, I strongly urge designers to be mindful of the blurs they use for production apps. Blurring is easy, but live blurring is a performance nightmare. We would be better of if we stopped drooling over blurs and design with performance in mind.
+Until a background blur API opens up, I strongly suggest keeping blurs in your designs to a minimum because they can be pretty taxing on the device and hurt user experience. Just remember to keep performance in mind as we design and develop our UIs to match this new iOS.
