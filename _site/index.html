@@ -241,19 +241,19 @@ _gaq.push(['_trackPageview']);
 
 <p>Afterwards you're left with view controller B presented, and, by calling <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIViewControllerAnimatedTransitioning/animationEnded:"><code>animationEnded:</code></a>, the presentation is completed.</p>
 
-<p>I started experimenting and quickly found what I thought to be a bug. On July 15th I filed my first bug report with Apple (#14444833, thanks for those who resubmitted). I also created a thread on the dev forums that got <a href="https://devforums.apple.com/thread/196451?start=0&amp;tstart=0">quite popular</a>.</p>
-
-<p>No one ever got an official answer.</p>
-
 <p>Recently <a href="https://twitter.com/ashfurrow">Ash Furrow</a> and <a href="https://twitter.com/jbradforddillon">Bradford Dillon</a> created some really great posts on custom UIViewController transitions on <a href="http://www.teehanlax.com/blog/custom-uiviewcontroller-transitions/">Teehan &amp; Lax's</a> and <a href="http://www.doubleencore.com/2013/09/ios-7-custom-transitions/">Double Encore's</a> blogs, respectfully.</p>
 
 <p>Both guides are great and do a good job at explaining how to create your own custom UIViewController custom transitions from scratch. However, both fail to explain how to implement proper orientation support.</p>
 
 <p><img src="http://whoisryannystrom.com/img/2013-10-01/teehan.jpg" alt="Teehan example orientations" /></p>
 
-<p>After a lot of digging, I found that the container view's <strong>frame</strong> is always laid out in portrait, even if the device is in landscape.</p>
+<p>I started experimenting and quickly found what I thought to be a bug. On July 15th I filed my first bug report with Apple (#14444833, thanks for those who resubmitted). I also created a thread on the dev forums that got <a href="https://devforums.apple.com/thread/196451?start=0&amp;tstart=0">quite popular</a>.</p>
 
-<p>This piece of the puzzle was likely biggest source of <a href="https://devforums.apple.com/message/891193#891193">confusion</a>.</p>
+<p>No one ever got an official answer.</p>
+
+<p>After some digging, I found that the container view's <strong>frame</strong> is always laid out in portrait, even if the device is in landscape.</p>
+
+<p>The frame layout was likely our biggest source of <a href="https://devforums.apple.com/message/891193#891193">confusion</a>.</p>
 
 <p>It took a lot of tinkering, but I finally found a useful solution. Even though the frame of the container view is stuck in portrait, I found that the <strong>bounds</strong> of the container view is always corrected for device orientation.</p>
 
@@ -267,7 +267,7 @@ _gaq.push(['_trackPageview']);
 
 <blockquote><p>The bounds rectangle, which describes the view’s location and size in its own coordinate system.</p></blockquote>
 
-<p>I think the API is <em>too vague</em>. More sample code and documentation really needs to be provided. But for now, if you're going to use custom view controller transitions, make sure to adjust your new views with the bounds of the container.</p>
+<p>The view controller transition API is simply <em>too vague</em> in its current form. More sample code and documentation really needs to be provided. But for now, if you're going to use custom view controller transitions, make sure to adjust your new views with the bounds of the container.</p>
 
 <p>I've setup a <a href="https://github.com/rnystrom/TransitionExample">Github project</a> with examples using code, NIBs, and Storyboards. Please feel free to use the code from my <a href="https://github.com/rnystrom/TransitionExample/blob/master/TransitionExample/TransitionController.m#L38-45">transition controller</a> as a starting point. Hopefully this will provide a good starting point to perform awesome, oriented animations.</p>
 
