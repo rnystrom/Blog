@@ -11,7 +11,7 @@ This new API, the core of which uses the protocol [<code>UIViewControllerAnimate
 
 This is how Apple describes the new API:
 
-![View Controller Custom Transitions described by Apple](http://whoisryannystrom.com/img/2013-10-01/teehan.jgp)
+![View Controller Custom Transitions described by Apple](http://whoisryannystrom.com/img/2013-10-01/apple-transitions.jpg)
 
 That image just about sums up the entire session 218 video **and the sample code**.
 
@@ -45,4 +45,5 @@ Both guides are great and do a good job at explaining how to create your own cus
 
 However, both fail to explain how to implement proper orientation support.
 
-![Teehan example orientations](http://cl.ly/image/3I420r0O2M3M/teehan.png)
+![Teehan example orientations](http://whoisryannystrom.com/img/2013-10-01/teehan.jpg)
+
