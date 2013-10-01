@@ -5,7 +5,7 @@ title: Custom View Controller Transitions with Orientation
 
 When iOS 7 was announced at WWDC in 2013, there were an incredible amount of new APIs that caught my eye. Watching one of the developer sessions from my couch in Ohio a few hours after it took place, I stumbled upon session 218: *Custom Transitions Using View Controllers*.
 
-This session contained a lot of confusing information about an incredibly exciting new API. I say "incredibly exciting" because graphics and user interaction on iOS are what really get me excited. I love exploring and [discovering](http://capptivate.co/ "Capptivate") new ways to delight my users.
+This session contained a lot of confusing information about an incredibly exciting new API. I say "incredibly exciting" because graphics and user interaction on iOS are what really get me going. I love exploring and [discovering](http://capptivate.co/ "Capptivate") new ways to delight my users.
 
 The core functionality of this new API uses the protocol [<code>UIViewControllerAnimatedTransitioning</code>](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/Reference/Reference.html "Apple Documentation").
 
