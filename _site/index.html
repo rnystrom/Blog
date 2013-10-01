@@ -205,6 +205,55 @@ _gaq.push(['_trackPageview']);
         <section id="site-content">
             
 <article class="article">
+    <h2 class="article-title"><a title="View Controller Transitions with Orientation" href="/2013/09/30/2013-10-01-View-Controller-Transition-Orientation">View Controller Transitions with Orientation</a></h2>
+    <time class="timestamp" datetime="September 30, 2013" pubdate>Monday, 30 September 2013</time>
+    <p>When iOS 7 was announced at WWDC in 2013, there were an incredible amount of new APIs that caught my eye. Watching one of the developer sessions from my couch in Ohio a few hours after it took place, I stumbled upon session 218: <em>Custom Transitions Using View Controllers</em>.</p>
+
+<p>This session contained a lot of confusing information about an incredibly exciting new API. I say "incredibly exciting" because graphics and user interaction on iOS are what really get me excited. I love exploring and <a href="http://capptivate.co/">discovering</a> new ways to delight my users.</p>
+
+<p>This new API, the core of which uses the protocol <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/Reference/Reference.html"><code>UIViewControllerAnimatedTransitioning</code></a>. Yes, it's a mouthful of a class name.</p>
+
+<p>This is how Apple describes the new API:</p>
+
+<p><img src="http://whoisryannystrom.com/img/2013-10-01/teehan.jgp" alt="View Controller Custom Transitions described by Apple" /></p>
+
+<p>That image just about sums up the entire session 218 video <strong>and the sample code</strong>.</p>
+
+<p>I was really hoping we'd get to see some examples of how Apple created their custom transitions, but the only sample provided performs a weak transition using a <code>UICollectionView</code> which is more niche than a plain ol' <code>UIViewController</code>.</p>
+
+<p>I'll attempt to explain how <code>UIViewControllerAnimatedTransitioning</code> works as briefly as I can:</p>
+
+<p>You are currently looking at view controller A and want to present view controller B.</p>
+
+<p><img src="http://whoisryannystrom.com/img/2013-10-01/1.jpg" alt="Two View Controllers" /></p>
+
+<p>You initialize a transition and are given a <em>container view</em> that facilitates the animation of your transition.</p>
+
+<p><img src="http://whoisryannystrom.com/img/2013-10-01/2.jpg" alt="Container View" /></p>
+
+<p>Add view controller B's view to the container.</p>
+
+<p><img src="http://whoisryannystrom.com/img/2013-10-01/3.jpg" alt="Adding B to the container" /></p>
+
+<p>Perform an animation.</p>
+
+<p><img src="http://whoisryannystrom.com/img/2013-10-01/4.jpg" alt="Simplest of all animations" /></p>
+
+<p>Afterwards you're left with view controller B presented and, by calling <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIViewControllerAnimatedTransitioning/animationEnded:"><code>animationEnded:</code></a>, the presentation is completed.</p>
+
+<p>I took to my own devices and quickly found what I thought to be a bug. On July 15th I filed my first bug report with Apple (#14444833, thanks for those who resubmitted). I also created a thread on the dev forums that got <a href="https://devforums.apple.com/message/898394">quite popular</a>. None of us ever got an answer.</p>
+
+<p>Recently <a href="https://twitter.com/ashfurrow">Ash Furrow</a> and <a href="https://twitter.com/jbradforddillon">Bradford Dillon</a> created some really great posts on custom UIViewController transitions on <a href="http://www.teehanlax.com/blog/custom-uiviewcontroller-transitions/">Teehan &amp; Lax's</a> and <a href="http://www.doubleencore.com/2013/09/ios-7-custom-transitions/">Double Encore's</a> blogs, respectfully.</p>
+
+<p>Both guides are great and do a good job at explaining how to create your own custom UIViewController custom transitions from scratch.</p>
+
+<p>However, both fail to explain how to implement proper orientation support.</p>
+
+<p><img src="http://cl.ly/image/3I420r0O2M3M/teehan.png" alt="Teehan example orientations" /></p>
+
+</article>
+
+<article class="article">
     <h2 class="article-title"><a title="Live Blur in iOS7" href="/2013/09/17/Live-blur-in-iOS7">Live Blur in iOS7</a></h2>
     <time class="timestamp" datetime="September 17, 2013" pubdate>Tuesday, 17 September 2013</time>
     <p>Lately I have been seeing a lot of designers on <a href="http://dribbble.com/search?q=ios+blur">Dribbble</a> using blurs in UI concept animations for iOS 7. These designs are usually flat and apply a gaussian blur to the contents beneath views. Apple has demonstrated this technique in their design of iOS 7 with Safari's tool bar and Contact's tab bar.</p>
@@ -251,70 +300,6 @@ _gaq.push(['_trackPageview']);
 <p>This will be a challenge that will take some discipline, but if I can really get into a groove I'll slowly build up my communication skills. My end goal is to have the confidence to write a small book on iOS development.</p>
 
 <p>As with most of my work, this entire site is hosted <a href="https://github.com/rnystrom/Blog">on Github</a>. If you ever find a correction that needs to be made, please submit a pull request.</p>
-
-</article>
-
-<article class="article">
-    <h2 class="article-title"><a title="Testing Formats" href="/2013/08/10/2013-08-03-Testing-Formats">Testing Formats</a></h2>
-    <time class="timestamp" datetime="August 10, 2013" pubdate>Saturday, 10 August 2013</time>
-    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. <a href="#">Nulla vitae</a> elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante <em>venenatis</em> dapibus posuere velit aliquet.</p>
-
-<div class="extrawide">
-
-<div class="highlight"><pre><code class="objc"><span class="n">NSNumber</span> <span class="o">*</span><span class="n">searchKey</span> <span class="o">=</span> <span class="err">@</span><span class="p">(</span><span class="mi">123456</span><span class="p">);</span>
-<span class="n">NSMutableArray</span> <span class="o">*</span><span class="n">store</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">[</span><span class="n">store</span> <span class="n">addObject</span><span class="o">:</span><span class="err">@</span><span class="p">(</span><span class="n">i</span><span class="p">)];</span>
-<span class="p">}</span>
-
-<span class="n">NSDate</span> <span class="o">*</span><span class="n">start</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
-<span class="n">NSPredicate</span> <span class="o">*</span><span class="n">predicate</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSPredicate</span> <span class="n">predicateWithFormat</span><span class="o">:</span><span class="s">@&quot;self = %@&quot;</span><span class="p">,</span><span class="n">searchKey</span><span class="p">];</span>
-<span class="n">NSNumber</span> <span class="o">*</span><span class="n">r1</span> <span class="o">=</span> <span class="p">[[</span><span class="n">store</span> <span class="n">filteredArrayUsingPredicate</span><span class="o">:</span><span class="n">predicate</span><span class="p">]</span> <span class="n">lastObject</span><span class="p">];</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Filtered search completed in %f&quot;</span><span class="p">,</span><span class="o">-</span><span class="p">[</span><span class="n">start</span> <span class="n">timeIntervalSinceNow</span><span class="p">]);</span>
-
-<span class="n">start</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">];</span>
-<span class="n">NSInteger</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">store</span> <span class="n">indexOfObjectPassingTest</span><span class="o">:^</span><span class="kt">BOOL</span> <span class="p">(</span><span class="n">NSNumber</span> <span class="o">*</span><span class="n">num</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">BOOL</span> <span class="o">*</span><span class="n">stop</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">num</span> <span class="o">==</span> <span class="n">searchKey</span><span class="p">;</span>
-<span class="p">}];</span>
-<span class="n">r1</span> <span class="o">=</span> <span class="n">store</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Pass test search completed in %f&quot;</span><span class="p">,</span><span class="o">-</span><span class="p">[</span><span class="n">start</span> <span class="n">timeIntervalSinceNow</span><span class="p">]);</span>
-</code></pre></div>
-
-</div>
-
-
-<p><i>Cras justo odio</i>, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-<p>Donec ullamcorper <em>nulla non metus</em> auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue.</p>
-
-<div class="highlight"><pre><code class="objc"><span class="c1">// SVProgressHUD.m</span>
-<span class="k">@interface</span> <span class="nc">SVProgressHUD</span><span class="p">()</span>
-<span class="c1">// properties and methods here</span>
-<span class="k">@end</span>
-</code></pre></div>
-
-
-<blockquote><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum.</p></blockquote>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui.</p>
-
-<div class="wide">
-
-<div class="highlight"><pre><code class="objc"><span class="n">NSString</span> <span class="o">*</span><span class="n">dateString</span> <span class="o">=</span> <span class="s">@&quot;2012/12/04 15:20:00&quot;</span><span class="p">;</span>
-<span class="n">NSString</span> <span class="o">*</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="s">@&quot;yyyy/MM/dd HH:mm:ss&quot;</span><span class="p">;</span>
-<span class="n">NSDateFormatter</span> <span class="o">*</span><span class="n">formatter</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSDateFormatter</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-<span class="n">formatter</span><span class="p">.</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="n">dateFormat</span><span class="p">;</span>
-<span class="n">NSDate</span> <span class="o">*</span><span class="n">date</span> <span class="o">=</span> <span class="p">[</span><span class="n">formatter</span> <span class="n">dateFromString</span><span class="o">:</span><span class="n">dateString</span><span class="p">];</span>
-
-<span class="n">formatter</span><span class="p">.</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="s">@&quot;yyyy/MM/dd&quot;</span><span class="p">;</span>
-
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,[</span><span class="n">formatter</span> <span class="n">stringFromDate</span><span class="o">:</span><span class="n">date</span><span class="p">]);</span>
-</code></pre></div>
-
-</div>
-
-
-<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 
 </article>
 
