@@ -1,6 +1,6 @@
 ---
 layout: post
-title: View Controller Transitions with Orientation
+title: Custom View Controller Transitions with Orientation
 ---
 
 When iOS 7 was announced at WWDC in 2013, there were an incredible amount of new APIs that caught my eye. Watching one of the developer sessions from my couch in Ohio a few hours after it took place, I stumbled upon session 218: *Custom Transitions Using View Controllers*.
