@@ -209,13 +209,13 @@ _gaq.push(['_trackPageview']);
     <time class="timestamp" datetime="October  1, 2013" pubdate>Tuesday,  1 October 2013</time>
     <p>When iOS 7 was announced at WWDC in 2013, there were an incredible amount of new APIs that caught my eye. Watching one of the developer sessions from my couch in Ohio a few hours after it took place, I stumbled upon session 218: <em>Custom Transitions Using View Controllers</em>.</p>
 
-<p>This session contained a lot of confusing information about an incredibly exciting new API. I say "incredibly exciting" because graphics and user interaction on iOS are what really get me excited. I love exploring and <a href="http://capptivate.co/">discovering</a> new ways to delight my users.</p>
+<p>This session contained a lot of confusing information about an incredibly exciting new API. I say "incredibly exciting" because graphics and user interaction on iOS are what really get me excited. I love exploring and <a href="http://capptivate.co/" title="Capptivate">discovering</a> new ways to delight my users.</p>
 
-<p>The core functionality of this new API uses the protocol <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/Reference/Reference.html"><code>UIViewControllerAnimatedTransitioning</code></a>.</p>
+<p>The core functionality of this new API uses the protocol <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/Reference/Reference.html" title="Apple Documentation"><code>UIViewControllerAnimatedTransitioning</code></a>.</p>
 
 <p>This is how Apple describes the new API:</p>
 
-<p><img src="http://whoisryannystrom.com/img/2013-10-01/apple-transitions.jpg" alt="View Controller Custom Transitions described by Apple" /></p>
+<p><a href="http://whoisryannystrom.com/img/2013-10-01/apple-transitions.jpg" title="WWDC Session 218 Screen Cap"><img src="http://whoisryannystrom.com/img/2013-10-01/apple-transitions.jpg" title="WWDC Session 218 Screen Cap" alt="View Controller Custom Transitions described by Apple" /></a></p>
 
 <p>If you're confused, don't worry, so was I. This screen cap just about sums up the entire session 218 video <strong>as well as the sample code</strong>.</p>
 
@@ -225,51 +225,51 @@ _gaq.push(['_trackPageview']);
 
 <p>You are currently looking at view controller A and want to present view controller B.</p>
 
-<p><img src="http://whoisryannystrom.com/img/2013-10-01/1.jpg" alt="Two View Controllers" /></p>
+<p><a href="http://whoisryannystrom.com/img/2013-10-01/1.jpg" title="View Controllers A and B"><img src="http://whoisryannystrom.com/img/2013-10-01/1.jpg" title="View Controllers A and B" alt="View Controllers A and B" /></a></p>
 
 <p>You initialize a transition and are given a <em>container view</em> that facilitates the animation of your transition.</p>
 
-<p><img src="http://whoisryannystrom.com/img/2013-10-01/2.jpg" alt="Container View" /></p>
+<p><a href="http://whoisryannystrom.com/img/2013-10-01/2.jpg" title="Adding VCs to Container View"><img src="http://whoisryannystrom.com/img/2013-10-01/2.jpg" title="Adding VCs to Container View" alt="Adding VCs to Container View" /></a></p>
 
 <p>Add view controller B's view to the container.</p>
 
-<p><img src="http://whoisryannystrom.com/img/2013-10-01/3.jpg" alt="Adding B to the container" /></p>
+<p><a href="http://whoisryannystrom.com/img/2013-10-01/3.jpg" title="Adding B to the container"><img src="http://whoisryannystrom.com/img/2013-10-01/3.jpg" title="Adding B to the container" alt="Adding B to the container" /></a></p>
 
 <p>Perform an animation on the views of view controllers A and B (<strong>not</strong> on the container).</p>
 
-<p><img src="http://whoisryannystrom.com/img/2013-10-01/4.jpg" alt="Simplest of all animations" /></p>
+<p><a href="http://whoisryannystrom.com/img/2013-10-01/4.jpg" title="Simplest of all animations"><img src="http://whoisryannystrom.com/img/2013-10-01/4.jpg" title="Simplest of all animations" alt="Simplest of all animations" /></a></p>
 
-<p>Afterwards you're left with view controller B presented, and, by calling <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIViewControllerAnimatedTransitioning/animationEnded:"><code>animationEnded:</code></a>, the presentation is completed.</p>
+<p>Afterwards you're left with view controller B presented, and, by calling <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIViewControllerAnimatedTransitioning/animationEnded:" title="Apple Documentation"><code>animationEnded:</code></a>, the presentation is completed.</p>
 
-<p>Recently <a href="https://twitter.com/ashfurrow">Ash Furrow</a> and <a href="https://twitter.com/jbradforddillon">Bradford Dillon</a> created some really great posts on custom UIViewController transitions on <a href="http://www.teehanlax.com/blog/custom-uiviewcontroller-transitions/">Teehan &amp; Lax's</a> and <a href="http://www.doubleencore.com/2013/09/ios-7-custom-transitions/">Double Encore's</a> blogs, respectfully.</p>
+<p>Recently <a href="https://twitter.com/ashfurrow" title="@ashfurrow">Ash Furrow</a> and <a href="https://twitter.com/jbradforddillon" title="@jbradforddillon">Bradford Dillon</a> created some really great posts on custom UIViewController transitions on <a href="http://www.teehanlax.com/blog/custom-uiviewcontroller-transitions/" title="Custom UIViewController Transitions">Teehan &amp; Lax's</a> and <a href="http://www.doubleencore.com/2013/09/ios-7-custom-transitions/" title="iOS 7: Custom Transitions">Double Encore's</a> blogs, respectfully.</p>
 
 <p>Both guides are great and do a good job at explaining how to create your own custom UIViewController custom transitions from scratch. However, both fail to explain how to implement proper orientation support.</p>
 
-<p><img src="http://whoisryannystrom.com/img/2013-10-01/teehan.jpg" alt="Teehan example orientations" /></p>
+<p><a href="http://whoisryannystrom.com/img/2013-10-01/teehan.jpg" title="Teehan example orientations"><img src="http://whoisryannystrom.com/img/2013-10-01/teehan.jpg" title="Teehan example orientations" alt="Teehan example orientations" /></a></p>
 
-<p>I started experimenting and quickly found what I thought to be a bug. On July 15th I filed my first bug report with Apple (#14444833, thanks for those who resubmitted). I also created a thread on the dev forums that got <a href="https://devforums.apple.com/thread/196451?start=0&amp;tstart=0">quite popular</a>.</p>
+<p>I started experimenting and quickly found what I thought to be a bug. On July 15th I filed my first bug report with Apple (#14444833, thanks for those who resubmitted). I also created a thread on the dev forums that got <a href="https://devforums.apple.com/thread/196451?start=0&amp;tstart=0" title="Apple Developer Forums">some attention</a>.</p>
 
 <p>No one ever got an official answer.</p>
 
 <p>After some digging, I found that the container view's <strong>frame</strong> is always laid out in portrait, even if the device is in landscape.</p>
 
-<p>The frame layout was likely our biggest source of <a href="https://devforums.apple.com/message/891193#891193">confusion</a>.</p>
+<p>The frame layout was likely our biggest source of <a href="https://devforums.apple.com/message/891193#891193" title="Apple Developer Forums">confusion</a>.</p>
 
 <p>It took a lot of tinkering, but I finally found a useful solution. Even though the frame of the container view is stuck in portrait, I found that the <strong>bounds</strong> of the container view is always corrected for device orientation.</p>
 
 <p>I'm not entirely sure that this is intended, but since the container view should be agnostic of your view controller hierarchy, it shouldn't necessarily adjust for orientation.</p>
 
-<p>From the <a href="[Frame](https://developer.apple.com/library/ios/documentation/uikit/reference/uiview_class/UIView/UIView.html#//apple_ref/occ/instp/UIView/frame">frame documentation</a>:</p>
+<p>From the <a href="[Frame](https://developer.apple.com/library/ios/documentation/uikit/reference/uiview_class/UIView/UIView.html#//apple_ref/occ/instp/UIView/frame" title="Apple Documentation">frame documentation</a>:</p>
 
 <blockquote><p>The frame rectangle, which describes the view’s location and size in its superview’s coordinate system.</p></blockquote>
 
-<p>From the <a href="https://developer.apple.com/library/ios/documentation/uikit/reference/uiview_class/UIView/UIView.html#//apple_ref/occ/instp/UIView/bounds">bounds documentation</a>:</p>
+<p>From the <a href="https://developer.apple.com/library/ios/documentation/uikit/reference/uiview_class/UIView/UIView.html#//apple_ref/occ/instp/UIView/bounds" title="Apple Documentation">bounds documentation</a>:</p>
 
 <blockquote><p>The bounds rectangle, which describes the view’s location and size in its own coordinate system.</p></blockquote>
 
 <p>The view controller transition API is simply <em>too vague</em> in its current form. More sample code and documentation really needs to be provided. But for now, if you're going to use custom view controller transitions, make sure to adjust your new views with the bounds of the container.</p>
 
-<p>I've setup a <a href="https://github.com/rnystrom/TransitionExample">Github project</a> with examples using code, NIBs, and Storyboards. Please feel free to use the code from my <a href="https://github.com/rnystrom/TransitionExample/blob/master/TransitionExample/TransitionController.m#L38-45">transition controller</a> as a starting point. Hopefully this will provide a good starting point to perform awesome, oriented animations.</p>
+<p>I've setup a <a href="https://github.com/rnystrom/TransitionExample" title="TransitionExample on Github">Github project</a> with examples using code, NIBs, and Storyboards. Please feel free to use the code from my <a href="https://github.com/rnystrom/TransitionExample/blob/master/TransitionExample/TransitionController.m#L38-45" title="TransitionController">transition controller</a> as a starting point. Hopefully this will provide a good starting point to perform awesome, oriented animations.</p>
 
 </article>
 
