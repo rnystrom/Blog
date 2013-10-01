@@ -13,7 +13,7 @@ This is how Apple describes the new API:
 
 ![View Controller Custom Transitions described by Apple](http://whoisryannystrom.com/img/2013-10-01/apple-transitions.jpg)
 
-If you're confused, don't worry. This about sums up the entire session 218 video **and the sample code**.
+If you're confused, don't worry, so was I. This screen cap just about sums up the entire session 218 video **as well as the sample code**.
 
 I was really hoping we'd get to see some examples of how Apple created their custom transitions, but the only sample provided performs a simple transition using <code>UICollectionViewCell</code> animations, which is a little different than the <code>UIViewController</code> transitions they demo in the session.
 
