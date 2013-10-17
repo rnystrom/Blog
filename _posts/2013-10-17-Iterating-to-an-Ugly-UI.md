@@ -51,7 +51,7 @@ The only information that really matters on this view is the yardage for each te
 
 I also removed every animation. Course data is loaded from local resources, so a fancy animation isn't masking any work. Users would just end up waiting, and they frequently [like to complain](http://www.marco.org/2013/08/27/along-for-the-ride) about how annoying pointless animations can be.
 
-I'm quite happy with the final design, but you won't catch me posting it on Dribbble, because it doesn't really follow any design trends.
+I'm quite happy with the final design, but you won't catch me posting it on Dribbble, because it doesn't really follow any design trends. It's _ugly_.
 
 And that's a good thing.
 
