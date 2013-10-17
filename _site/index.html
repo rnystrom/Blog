@@ -205,55 +205,61 @@ _gaq.push(['_trackPageview']);
         <section id="site-content">
             
 <article class="article">
-    <h2 class="article-title"><a title="Iterating to an Ugly UI" href="/2013/10/17/2013-10-16-Iterating-to-an-Ugly-UI">Iterating to an Ugly UI</a></h2>
+    <h2 class="article-title"><a title="Iterating to an Ugly UI" href="/2013/10/17/Iterating-to-an-Ugly-UI">Iterating to an Ugly UI</a></h2>
     <time class="timestamp" datetime="October 17, 2013" pubdate>Thursday, 17 October 2013</time>
-    <p>Lately I've been working on a golfing app that shows ranges and weather conditions for a course. The concept and app are quite simple. I decided to spend significantly more time on perfecting the utilitarian design.</p>
+    <p>I've been working on an app for golf courses that gives golfers range finding and the latest weather. The concept and app are rather simple, so I decided to spend some time perfecting the design.</p>
 
-<p>After designing the basic tab-bar navigation, I needed to design the very first view that the user would see. The first view is a list of holes on the course with some branding and supplementary information.</p>
-
-<p>Here are some table cell sketches I made for the course view.</p>
+<p>After deciding on tab bar navigation, I needed to create the view the user sees immediately after launch. The first view is a list of holes on the course with some branding and supplementary information.</p>
 
 <p><a href="http://whoisryannystrom.com/img/2013-10-17/sketch.jpg" title="http://whoisryannystrom.com/img/2013-10-17/sketch.jpg"><img class="wide" src="http://whoisryannystrom.com/img/2013-10-17/sketch.jpg" alt="Initial course list sketch" /></a></p>
 
-<p>My natural inclination is to hop onto <a href="http://dribbble.com">Dribbble</a> and see what the latest trends are. I've studied search tags long enough to immediately search for <a href="http://dribbble.com/search?q=ios7+list">"ios7 list"</a> and sort by "Most Popular".</p>
+<p>My usual first step, when I start a brand new design, is to hop onto <a href="http://dribbble.com">Dribbble</a> and see what the latest trends are. I've done enough searching on Dribbble to know to first search <a href="http://dribbble.com/search?q=ios7+list">"ios7 list"</a> and sort by "Popular".</p>
 
-<p><a href="http://whoisryannystrom.com/img/2013-10-17/search_results.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-10-17/search_results.jpg" alt="Dribbble results for iOS7+List" /></a></p>
+<p><a href="http://whoisryannystrom.com/img/2013-10-17/search_results.jpg"><img width="480" src="http://whoisryannystrom.com/img/2013-10-17/search_results.jpg" alt="Dribbble results for iOS7+List" /></a></p>
 
 <p>I took the Dribbble search results and created my first design.</p>
 
 <p><a href="http://whoisryannystrom.com/img/2013-10-17/1.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-10-17/1.jpg" alt="First Design Concept" /></a></p>
 
-<p>This first design uses iOS 7 style blurring with the background image. The information layout is pretty sparse though. Each hole only shows the hole number, par, and yardage for a single tee. Pretty weak use of space.</p>
+<p>I tried to make the app look "iOS 7" by blurring a photo of one of the holes and placing it in the background. Each hole only shows the hole number, par, and yardage for a single tee.</p>
 
-<p>The spacing between each hole would allow for some fun, staggered animations. Maybe keep the blurred background and fade in the map of the hole? Its iOS 7 right? Animations to the dome.</p>
+<p>The spacing between each hole would give me room to create some dynamic animations. Maybe keep the blurred background in place and slide in the map of the hole.</p>
 
-<p>One thing that I really took away from the first design is the hole number green with white inner border. Golfers should be familiar with <a href="http://cdn.firespring.com/images/6be767fc-d804-45d5-b4d3-aa4411785276.jpg">this style</a> of signage.</p>
+<p>If you ask me, this is a weak use of screen real-estate.</p>
+
+<p>I really liked the hole number green with a white, inner border.  <a href="http://cdn.firespring.com/images/6be767fc-d804-45d5-b4d3-aa4411785276.jpg">The style</a> should be familiar to most golfers.</p>
 
 <p><a href="http://whoisryannystrom.com/img/2013-10-17/2.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-10-17/2.jpg" alt="Second Design Concept" /></a></p>
 
-<p>The second design iterates on the first by only adding a feint line connecting each hole. The line reinforces the order of each hole, mimicking the golf cart trail between each. The actual data that's displayed doesn't change from the first design.</p>
+<p>This second design iterates on the first only adding a feint line connecting each hole. The line reinforces order, kind of like a golf cart trail between each hole. The actual data that's displayed doesn't change at all.</p>
 
 <p><a href="http://whoisryannystrom.com/img/2013-10-17/3.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-10-17/3.jpg" alt="Third Design Concept" /></a></p>
 
-<p>Nothing much to see here, just a layout rearrangement. The benefit is that there are more holes on the screen at a time.</p>
+<p>Not much changed on the third iteration, only the cell layout. Putting everything on the same line and reducing sizes put more holes on the screen at once.</p>
 
 <p><a href="http://whoisryannystrom.com/img/2013-10-17/4.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-10-17/4.jpg" alt="Fourth Design Concept" /></a></p>
 
-<p>The fourth design is complete chaos. I got carried away with the idea that "more holes on the screen" = "better layout". I'm sure you can see how chaotic this screen is.</p>
+<p>I ended up getting carried away with the idea that <em>more holes on the screen</em> means <em>better layout</em>.</p>
+
+<p>Its a wreck.</p>
+
+<p>Taking a step back, I saw how I had been digging a deeper and deeper hole. I was staring at the tree and completely forgetting about the forest.</p>
 
 <p><a href="http://whoisryannystrom.com/img/2013-10-17/5.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-10-17/5.jpg" alt="Final Design Concept" /></a></p>
 
-<p>The fifth and final design heads in a completely different direction than where I started. I decided to refocus my efforts, delete my "Dribbble Inspiration" folder, and think critically about the usage of this single view.</p>
+<p>The fifth and final design heads in a new direction. I refocused my efforts, deleted my "Dribbble Inspiration" folder, and thought critically about how this screen will be viewed.</p>
 
-<p>I realized that high-contrast was extremely important because golfers were very likely to be in direct sunlight trying to read on a glossy, finger-smudged screen. So, I got rid of the background blur.</p>
+<p>I realized that golfers were very likely to be in direct sunlight trying to read on a glossy, finger-smudged screen. I got rid of the background blur and used black text on white for maximum contrast and readability.</p>
 
-<p>The only information that really matters on this view is the hole number, handicap, par, and total yardages for each tee box.  The rest of the data can be contained in the hole view or elsewhere in the app. The layout of the data provides a good weight without being cumbersome or imbalanced.</p>
+<p>The only information that really matters on this view is the yardage for each tee box, hole number, handicap, and par. The rest of the data should be in the hole views or elsewhere in the app. The layout of the data is light and balanced.</p>
 
-<p>I completely removed all ideas about animations as well because all of the course data is loaded locally. Animations would just make the user wait around, and people <a href="http://www.marco.org/2013/08/27/along-for-the-ride">have complained</a> about how annoying it is to wait on animations to complete.</p>
+<p>I also removed every animation. The course data is loaded from local resources, so there isn't any work to mask with a fancy animation. The users would just end up waiting, and they frequently <a href="http://www.marco.org/2013/08/27/along-for-the-ride">like to complain</a> about how annoying pointless animations can be.</p>
 
-<p>In the end I'm actually extremely happy with my design, but you won't catch me posting it on Dribbble because it doesn't really follow any design trends.</p>
+<p>I'm quite happy with the final design, but you won't catch me posting it on Dribbble, because it doesn't really follow any design trends.</p>
 
-<p>And that's just fine.</p>
+<p>And that's a good thing.</p>
+
+<p>The final interface serves its purpose. It presents basic course information, removes distractions, and is completely accessible. Sometimes following trends for the sake of being trendy creates <a href="http://insideintercom.io/the-dribbblisation-of-design/">Dribbblisation</a> and hurts the usability of your product.</p>
 
 </article>
 
