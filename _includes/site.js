@@ -1,6 +1,8 @@
+<script src="/js/fastclick.min.js"></script>
 <script>
 // toggle mobile menu
 var b = document.getElementById('mobile-navigation');
+new FastClick(b);
 b.onclick = function(e) {
 	e.preventDefault();
 	document.getElementById('mobile-menu').classList.toggle('active');
