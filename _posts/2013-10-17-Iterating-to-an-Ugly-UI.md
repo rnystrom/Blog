@@ -39,17 +39,17 @@ I ended up getting carried away with the idea that _more holes on the screen_ me
 
 Its a wreck.
 
-Taking a step back, I saw how I had been digging a deeper and deeper hole. I was staring at the tree and completely forgetting about the forest.
+Taking a step back, I saw how I was digging a deeper and deeper hole. I needed to stop staring at the trees and start focusing on the forest.
 
 [<img width="320" src="http://whoisryannystrom.com/img/2013-10-17/5.jpg" alt="Final Design Concept" />](http://whoisryannystrom.com/img/2013-10-17/5.jpg)
 
-The fifth and final design heads in a new direction. I refocused my efforts, deleted my "Dribbble Inspiration" folder, and thought critically about how this screen will be viewed.
+The fifth and final design heads in a new direction. I refocused my efforts, deleted my _Dribbble Inspiration_ folder, and thought critically about how this screen would be viewed.
 
-I realized that golfers were very likely to be in direct sunlight trying to read on a glossy, finger-smudged screen. I got rid of the background blur and used black text on white for maximum contrast and readability.
+I realized that golfers were going to be in direct sunlight trying to read text on a glossy, finger-smudged screen. I got rid of the background blur and used black text on white for maximum contrast and readability.
 
-The only information that really matters on this view is the yardage for each tee box, hole number, handicap, and par. The rest of the data should be in the hole views or elsewhere in the app. The layout of the data is light and balanced.
+The only information that really matters on this view is the yardage for each tee box, hole number, handicap, and par. The rest of the data should be in the hole views or elsewhere in the app. The new data layout is light and balanced.
 
-I also removed every animation. The course data is loaded from local resources, so there isn't any work to mask with a fancy animation. The users would just end up waiting, and they frequently [like to complain](http://www.marco.org/2013/08/27/along-for-the-ride) about how annoying pointless animations can be.
+I also removed every animation. Course data is loaded from local resources, so a fancy animation isn't masking any work. Users would just end up waiting, and they frequently [like to complain](http://www.marco.org/2013/08/27/along-for-the-ride) about how annoying pointless animations can be.
 
 I'm quite happy with the final design, but you won't catch me posting it on Dribbble, because it doesn't really follow any design trends.
 
