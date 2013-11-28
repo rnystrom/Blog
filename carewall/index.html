@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- Meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<title>Carewall</title>
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="css/ios7-switch.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="nav-container">
+    <div class="nav-title-container">
+        <div class="title-left-container">
+            <div id="nav-menu-button">
+                <img id="nav-burger-icon" src="img/navigation/burger.png" width="40" height="40" />
+                <span id="nav-menu-label">Menu</span>
+            </div>
+        </div>
+        <div class="title-middle-container">
+            <img id="nav-hospital-logo" src="img/navigation/hospital-logo.png" />
+        </div>
+        <div class="title-right-container">
+            <div id="nav-patient-button">
+                <span id="nav-patient-name">Kevin</span>
+                <span id="nav-patient-room">(Room 771)</span>
+                <img id="nav-patient-thumbnail" src="img/placeholders/kevin.png" width="40" height="40" />
+            </div>
+        </div>
+    </div>
+    <div class="nav-tabbar-container">
+        <ul>
+    <li id="tabbar-carewall-button" class="selected">
+        <img src="img/navigation/carewall-selected.png" width="40" height="40" />
+        <span class="tabbar-title">My CareWall</span>
+    </li>
+    <li id="tabbar-forms-button">
+        <img src="img/navigation/resources.png" width="40" height="40" />
+        <span class="tabbar-title">Resources &amp; Forms</span>
+    </li>
+    <li id="tabbar-assistance-button">
+        <img src="img/navigation/assistance.png" width="40" height="40" />
+        <span class="tabbar-title">Request Assistance</span>
+    </li>
+</ul>
+    </div>
+</div>
+<div class="tabbar-container">
+    <ul>
+    <li id="tabbar-carewall-button" class="selected">
+        <img src="img/navigation/carewall-selected.png" width="40" height="40" />
+        <span class="tabbar-title">My CareWall</span>
+    </li>
+    <li id="tabbar-forms-button">
+        <img src="img/navigation/resources.png" width="40" height="40" />
+        <span class="tabbar-title">Resources &amp; Forms</span>
+    </li>
+    <li id="tabbar-assistance-button">
+        <img src="img/navigation/assistance.png" width="40" height="40" />
+        <span class="tabbar-title">Request Assistance</span>
+    </li>
+</ul>
+</div>
+
+    <div id="post-new-message">
+	<div class="badges">
+		<img class="avatar" src="img/placeholders/kevin.png" />
+	</div>
+	<div class="box-element chat message">
+		<div id="select-post-message-button" class="system">
+			Post a written message<span class="hideme"> to your circle or care team</span>.
+		</div>
+		<div id="select-post-mood-button" class="system">
+			Update your mood.
+		</div>
+		<div id="create-new-post" class="create-new">
+			<div class="input-bucket">
+				<div class="back-button" data-state-id="post-new-message">Back</div>
+				<textarea id="create-new-post-textarea" placeholder="Create a new message..."></textarea>
+			</div>
+			<div class="circle-bucket clearfix">
+				<div class="system">Who is permitted to see this post?</div>
+				<div id="circle-everyone" class="circle selected">
+					Everyone in my circle.
+				</div>
+				<div id="circle-limited" class="circle">
+					Certain people in my circle.
+				</div>
+				<div id="circle-private" class="circle">
+					Private 1-on-1 message.
+				</div>
+				<div id="circle-org" class="circle">
+					My care team.
+				</div>
+			</div>
+			<div class="select-circles-bucket clearfix">
+				<div class="system">Tap to remove or add viewers from this message.</div>
+				<div class="buttons">
+					<div id="include-all-limited" class="button positive">Include All</div>
+					<div id="remove-all-limited" class="button negative">Remove All</div>
+				</div>
+				<div class="circle">
+					<img src="img/placeholders/emma.png" width="80" height="80" />
+					Emma
+				</div>
+				<div class="circle">
+					<img src="img/placeholders/jason.png" width="80" height="80" />
+					Jason
+				</div>
+				<div class="circle">
+					<img src="img/placeholders/alexander.png" width="80" height="80" />
+					Alexander
+				</div>
+				<div class="circle">
+					<img src="img/placeholders/samantha.png" width="80" height="80" />
+					Samantha
+				</div>
+				<div class="circle">
+					<img src="img/placeholders/amelia.png" width="80" height="80" />
+					Amelia
+				</div>
+				<div class="circle">
+					<img src="img/placeholders/rory.png" width="80" height="80" />
+					Rory
+				</div>
+				<div class="circle">
+					<img src="img/placeholders/karen.png" width="80" height="80" />
+					Karen
+				</div>
+				<div class="circle">
+					<img src="img/placeholders/david.png" width="80" height="80" />
+					David
+				</div>
+			</div>
+			<div class="post-bucket clearfix">
+				<div class="left-bucket">
+					<span class="system">Share on social networks?</span>
+					<input type="checkbox" id="post-twitter-switch" />
+					<input type="checkbox" id="post-facebook-switch" />
+				</div>
+				<div class="right-bucket">
+					<div class="aux-call-to-action cancel-button">Cancel</div>
+					<div id="post-message-button" class="call-to-action">Post to Carewall</div>
+				</div>
+			</div>
+		</div>
+		<div id="create-new-mood" class="create-new">
+			Create New Mood
+		</div>
+	</div>
+</div><!-- /post new message -->
+
+<div id="action-banner" class="action-post">
+	<div id="action-banner-button">
+		<span class="system expanded-prompt">How are you feeling today, Kevin?</span>
+		<span class="system prompt">Say something...</span>
+	</div>
+	<div id="action-post" class="action"></div>
+	<div id="action-search" class="action"></div>
+</div><!-- /action banner -->
+
+<div id="thread-container">
+
+	<div class="thread">
+
+		<div class="post">
+			<div class="badges">
+				<img class="avatar" src="img/placeholders/kevin.png" />
+				<div class="circle everyone"></div>
+			</div>
+			<div class="box-element chat message">
+				<ul class="options">
+					<li class="postdate">9:15 am</li>
+					<li class="button remove-button"></li>
+					<li class="button options-button"></li>
+					<li class="button expand-button"></li>
+				</ul>
+				<span class="username">Kevin</span>
+				<p>
+					Thanks so much for visiting me yesterday, everyone! It was really nice seeing all of your smiling faces in my room!
+				</p>
+			</div>
+		</div>
+
+		<div class="post">
+			<div class="badges">
+				<img class="avatar" src="img/placeholders/emma.png" />
+			</div>
+			<div class="box-element chat message">
+				<ul class="options">
+					<li class="postdate">10:12 am</li>
+					<li class="button remove-button"></li>
+					<li class="button options-button"></li>
+					<li class="button expand-button"></li>
+				</ul>
+				<span class="username">Emma</span>
+				<p>
+					So glad you’re feeling better now, Grandpa!
+				</p>
+			</div>
+		</div>
+
+		<div class="post unread">
+			<div class="badges">
+				<img class="avatar" src="img/placeholders/jason.png" />
+			</div>
+			<div class="box-element chat message">
+				<ul class="options">
+					<li class="postdate">2:08 pm</li>
+					<li class="button remove-button"></li>
+					<li class="button options-button"></li>
+					<li class="button expand-button"></li>
+				</ul>
+				<span class="username">Jason</span>
+				<p>
+					We’ll be stopping by again this afternoon if you feel up to it, Dad.
+				</p>
+			</div>
+		</div>
+
+		<div class="post reply">
+			<div class="badges">
+				<img class="avatar" src="img/placeholders/kevin.png" />
+			</div>
+			<div class="aux-box-element chat message">
+				<div class="input">
+					<input type="text" placeholder="Post a reply..." />
+					<div class="call-to-action submit-button">Post to Carewall</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="thread-disclose-button"></div>
+
+	</div><!-- /thread -->
+
+	<div class="thread">
+
+		<div class="post official">
+			<div class="badges">
+				<img class="avatar" src="img/placeholders/doctor.png" />
+				<div class="circle"></div>
+			</div>
+			<div class="box-element chat message">
+				<ul class="options">
+					<li class="postdate">9:15 am</li>
+					<li class="button remove-button"></li>
+					<li class="button options-button"></li>
+					<li class="button expand-button"></li>
+				</ul>
+				<span class="username">Dr. Abramson</span>
+				<p>
+					Kevin, I hope you slept well. I'll be making my rounds before lunchtime; I'll want to see how your sutures are holding up this morning.
+				</p>
+			</div>
+		</div>
+
+		<div class="post reply">
+			<div class="badges">
+				<img class="avatar" src="img/placeholders/kevin.png" />
+			</div>
+			<div class="aux-box-element chat message">
+				<div class="input">
+					<input type="text" placeholder="Post a reply..." />
+					<div class="call-to-action submit-button">Post to Carewall</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="thread-disclose-button"></div>
+
+	</div><!-- /thread -->
+
+</div><!-- /thread container -->
+
+<div class="img-preload" style="display: none;">
+	<img src="img/circles/everyone-selected.png" />
+	<img src="img/circles/everyone.png" />
+	<img src="img/circles/limited-selected.png" />
+	<img src="img/circles/limited.png" />
+	<img src="img/circles/lock-selected.png" />
+	<img src="img/circles/lock.png" />
+	<img src="img/circles/org-selected.png" />
+	<img src="img/circles/org.png" />
+	<img src="img/facebook-icon-on.png" />
+	<img src="img/twitter-icon-on.png" />
+</div>
+    
+    <!-- Scripts -->
+    <script src="js/jquery-2.0.0.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/spin.min.js"></script>
+    <script src="js/ios7-switch.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

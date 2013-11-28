@@ -1,0 +1,41 @@
+@mixin vendor-prefix($name, $value) {
+	@each $vendor in ('', '-webkit-', '-moz-', '-ms-', '-o-') {
+		#{$vendor}#{$name}: #{$value};
+	}
+}
+
+@mixin gradient($from, $to, $height, $pie:"false") {
+	background-color: $to;
+
+	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background-image: -webkit-linear-gradient($from, $to);
+	background-image: -moz-linear-gradient($from, $to);
+	background-image: -o-linear-gradient($from, $to);
+	background-image: -ms-linear-gradient($from, $to);
+	background-image: linear-gradient($from, $to);
+
+	@if $pie == "true" {
+		// For CSS3PIE
+		-pie-background: linear-gradient(90deg, $from,$to);
+	}
+
+	background-repeat: repeat-x;
+
+	@include vendor-prefix(background-size, 100% $height);
+}
+@mixin element-shadow() {
+	@include vendor-prefix(box-shadow, 0 2px 3px #e5e5e5);
+	@include vendor-prefix(box-shadow, 0 2px 3px rgba(0.015686275, 0.015686275, 0.015686275, 0.05));
+}
+@mixin avatar-shadow() {
+	@include vendor-prefix(box-shadow, 0 2px 3px #e5e5e5);
+    @include vendor-prefix(box-shadow, 0 2px 3px rgba(0.015686275, 0.015686275, 0.015686275, 0.25));
+}
+
+@import "colors.scss";
+@import "fonts.scss";
+@import "base.scss";
+@import "navigation.scss";
+@import "carewall.scss";
+@import "alerts.scss";
+@import "queries.scss";

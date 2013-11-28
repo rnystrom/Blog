@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+$fontSize: 18px;
+@mixin avenir($weight, $weightName, $style:normal) {
+    @font-face {
+        font-family: 'Avenir';
+        src: url('../fonts/AvenirLTStd-#{$weight}.otf');
+        font-weight: $weightName;
+        font-style: $style;
+    }
+}
+
+@include avenir("Heavy", bold);
+@include avenir("HeavyOblique", bold, italic);
+@include avenir("Light", lighter);
+@include avenir("LightOblique", lighter, italic);
+@include avenir("Oblique", normal, italic);
+@include avenir("Roman", normal);
