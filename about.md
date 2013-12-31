@@ -12,7 +12,7 @@ I am a passionate mobile developer currently living in Columbus, Ohio. Most of m
 
 Outside of my day job I create apps for learning experiences. I've been a wishful entrepreneur for some time now, and every app I release is an experiment in marketing, engineering, and design (I've managed to get an [app](http://poetreatapp.com/) featured on the App Store). My goal is to create a sustainable side-gig to slowly scale and experiment with even further.
 
-I also like to invest a good deal of time into open source projects on [Github](https://github.com/rnystrom. I feel an ethical obligation to contribute software back into the wild as much of what I use was born from free and open collaberation on the web.
+I also like to invest a good deal of time into open source projects on [Github](https://github.com/rnystrom). I feel an ethical obligation to contribute software back into the wild as much of what I use was born from free and open collaberation on the web.
 
 I frequently challenge myself by [designing](http://ryannystrom.dunked.com) my own native and web mobile apps. Design has been incredibly challenging but very rewarding for myself, my business, and my coworkers.
 
