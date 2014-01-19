@@ -17,9 +17,9 @@
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.abbott.be</string>
+				<string>com.njasap.NJASAP</string>
 				<key>bundle-version</key>
-				<string>1.0</string>
+				<string>0.9</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
