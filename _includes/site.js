@@ -1,7 +1,7 @@
 <script src="/js/fastclick.min.js"></script>
 <script src="/js/instantclick.min.js"></script>
 <script data-no-instant>
-InstantClick.init();
+InstantClick.init(true);
 
 // toggle mobile menu
 var b = document.getElementById('mobile-navigation');
