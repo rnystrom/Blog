@@ -2,7 +2,7 @@ port: 4100
 
 permalink: /:year/:month/:day/:title
 rdiscount extensions: [smart]
-pygments: true
+highlighter: true
 markdown: rdiscount
 
 description: 'Ryan Nystrom is an iOS developer in Columbus, OH. This is a journal of his findings and experiences developing as a profession and hobby.'

@@ -9,11 +9,6 @@ html, body, div, object, iframe, fieldset {
   padding: 0;
   border: 0; }
 
-ol, ul {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-
 table {
   border-collapse: collapse;
   border-spacing: 0; }
@@ -41,11 +36,13 @@ a:hover, a:focus {
   color: #900628; }
 
 p {
-  margin: 0 0 1em; }
+  margin: 0 0 1.5em; }
 
 img, object, video {
   max-width: 100%;
-  border: 0; }
+  border: 0;
+  margin: 0 auto;
+  display: block; }
 
 a img {
   border: 0;
@@ -96,10 +93,6 @@ input[type=search] {
 
 pre, code {
   font-family: Consolas, "Liberation Mono", Courier, monospace; }
-
-em {
-  font-weight: bold;
-  font-style: normal; }
 
 /************End Global**************/
 /************Custom**************/
@@ -154,6 +147,7 @@ em {
   text-transform: uppercase;
   max-height: 0;
   overflow: hidden;
+  margin: 0;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   -ms-transition: all 0.5s ease-out;
@@ -269,7 +263,7 @@ em {
     display: block; }
 
   .timestamp {
-    padding: 0 0 1em 0; }
+    padding: 0 0 1.5em 0; }
 
   #navigation {
     display: block; }

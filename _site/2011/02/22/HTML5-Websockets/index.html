@@ -27,7 +27,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 
 <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/css/style.min.css" />
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="shortcut icon" href="/favicon.ico">
 
@@ -216,92 +216,90 @@
 
 <p><strong>Mobile Browser</strong></p>
 
-<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">ax</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-<span class="nx">ay</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-<span class="nx">vx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-<span class="nx">vy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-<span class="nx">rate</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
-<span class="nx">interval</span><span class="p">,</span>
-<span class="nx">user</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">99999</span><span class="p">);</span>
-<span class="kd">function</span> <span class="nx">init</span><span class="p">(){</span>
-    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="s2">&quot;WebSocket&quot;</span> <span class="k">in</span> <span class="nb">window</span><span class="p">)){</span>
-    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-        <span class="k">try</span><span class="p">{</span>
-            <span class="nx">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="nx">host</span><span class="p">);</span>       
-            <span class="nx">socket</span><span class="p">.</span><span class="nx">onopen</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> 
-                <span class="nx">interval</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span><span class="nx">startTilt</span><span class="p">();},</span><span class="nx">rate</span><span class="p">);</span>
-            <span class="p">}</span>
-            <span class="nx">socket</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">msg</span><span class="p">){</span> <span class="p">}</span>
-            <span class="nx">socket</span><span class="p">.</span><span class="nx">onclose</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> 
-                <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">interval</span><span class="p">);</span>
-                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#id&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;Connection lost&#39;</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">ex</span><span class="p">){</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#id&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;ERROR:&#39;</span><span class="o">+</span><span class="nx">ex</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>    
-<span class="kd">function</span> <span class="nx">startTilt</span><span class="p">(){</span>
-    <span class="nx">socket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span>
-        <span class="s1">&#39;{&quot;tiltdemo&quot;:&quot;yes&quot;,&quot;ax&quot;:&quot;&#39;</span><span class="o">+</span><span class="nx">ax</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;&quot;,</span>
-<span class="s1">       &quot;ay&quot;:&quot;&#39;</span><span class="o">+</span><span class="nx">ay</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;&quot;,&quot;user&quot;:&quot;&#39;</span><span class="o">+</span><span class="nx">user</span><span class="o">+</span><span class="s1">&#39;&quot;}&#39;</span>
-    <span class="p">);</span>
-<span class="p">}</span>    
-<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#id&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;Your iOS id:&#39;</span><span class="o">+</span><span class="nx">user</span><span class="p">);</span>
-    <span class="nb">window</span><span class="p">.</span><span class="nx">ondevicemotion</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">ax</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">accelerationIncludingGravity</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
-        <span class="nx">ay</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">accelerationIncludingGravity</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>          
-    <span class="p">}</span>
-    <span class="nx">init</span><span class="p">();</span>
-<span class="p">});</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-js" data-lang="js">var ax = 0,
+ay = 0,
+vx = 0,
+vy = 0,
+rate = 50,
+interval,
+user = Math.floor(Math.random()*99999);
+function init(){
+    if(!(&quot;WebSocket&quot; in window)){
+    }else{
+        try{
+            socket = new WebSocket(host);       
+            socket.onopen = function(){ 
+                interval = setInterval(function(){startTilt();},rate);
+            }
+            socket.onmessage = function(msg){ }
+            socket.onclose = function(){ 
+                clearInterval(interval);
+                $(&#39;#id&#39;).html(&#39;Connection lost&#39;);
+            }
+        } catch(ex){
+            $(&#39;#id&#39;).html(&#39;ERROR:&#39;+ex);
+        }
+    }
+}   
+function startTilt(){
+    socket.send(
+        &#39;{&quot;tiltdemo&quot;:&quot;yes&quot;,&quot;ax&quot;:&quot;&#39;+ax.toString().substring(0,5)+&#39;&quot;,
+        &quot;ay&quot;:&quot;&#39;+ay.toString().substring(0,5)+&#39;&quot;,&quot;user&quot;:&quot;&#39;+user+&#39;&quot;}&#39;
+    );
+}   
+$(document).ready(function(){
+    $(&#39;#id&#39;).html(&#39;Your iOS id:&#39;+user);
+    window.ondevicemotion = function(event) {
+        ax = event.accelerationIncludingGravity.x;
+        ay = event.accelerationIncludingGravity.y;          
+    }
+    init();
+});</code></pre></div>
 
 
 <p>This could be done without jQuery. I'm trying to break the habit I swear!</p>
 
 <p><strong>Normal Browser</strong></p>
 
-<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">user</span><span class="p">;</span>
-<span class="kd">function</span> <span class="nx">init</span><span class="p">(){</span>
-    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="s2">&quot;WebSocket&quot;</span> <span class="k">in</span> <span class="nb">window</span><span class="p">)){</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;No websocket or canvas support, SORRY.&#39;</span><span class="p">);</span>
-    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-        <span class="k">try</span><span class="p">{</span>
-            <span class="nx">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="nx">host</span><span class="p">);</span>       
-            <span class="nx">socket</span><span class="p">.</span><span class="nx">onopen</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> <span class="p">}</span>
-            <span class="nx">socket</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">msg</span><span class="p">){</span><span class="nx">receive</span><span class="p">(</span><span class="nx">msg</span><span class="p">);}</span>
-            <span class="nx">socket</span><span class="p">.</span><span class="nx">onclose</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> <span class="p">}</span>
-        <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">ex</span><span class="p">){</span>                
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="kd">function</span> <span class="nx">receive</span><span class="p">(</span><span class="nx">msg</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">user</span><span class="o">!==</span><span class="kc">undefined</span><span class="p">){</span>
-        <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">tiltdemo</span><span class="o">!==</span><span class="kc">undefined</span><span class="o">&amp;&amp;</span><span class="nx">obj</span><span class="p">.</span><span class="nx">user</span><span class="o">==</span><span class="nx">user</span><span class="p">){</span>
-            <span class="nx">iphone</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">webkitTransform</span> <span class="o">=</span> <span class="s1">&#39;rotateY(&#39;</span> <span class="o">+</span> 
-                <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">ax</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">110</span><span class="p">)).</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;deg) rotateX(&#39;</span> <span class="o">+</span>
-                <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">ay</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">110</span><span class="p">)).</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;deg)&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js">var user;
+function init(){
+    if(!(&quot;WebSocket&quot; in window)){
+        $(&#39;body&#39;).html(&#39;No websocket or canvas support, SORRY.&#39;);
+    }else{
+        try{
+            socket = new WebSocket(host);       
+            socket.onopen = function(){ }
+            socket.onmessage = function(msg){receive(msg);}
+            socket.onclose = function(){ }
+        } catch(ex){                
+        }
+    }
+}
+function receive(msg){
+    if(user!==undefined){
+        var obj = $.parseJSON(msg.data);
+        if(obj.tiltdemo!==undefined&amp;&amp;obj.user==user){
+            iphone.style.webkitTransform = &#39;rotateY(&#39; + 
+                (Math.floor((parseFloat(obj.ax)/10)*110)).toString() + &#39;deg) rotateX(&#39; +
+                (Math.floor((parseFloat(obj.ay)/10)*110)).toString() + &#39;deg)&#39;;
 
-            <span class="nx">back</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">webkitTransform</span> <span class="o">=</span> <span class="s1">&#39;rotateY(&#39;</span> <span class="o">+</span>
-                <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">ax</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">110</span><span class="p">)).</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;deg) rotateX(&#39;</span> <span class="o">+</span>
-                <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">ay</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">110</span><span class="p">)</span><span class="o">+</span><span class="mi">180</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;deg)&#39;</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tb&#39;</span><span class="p">).</span><span class="nx">keydown</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span><span class="o">==</span><span class="mi">13</span><span class="p">)</span>
-            <span class="nx">user</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tb&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
-    <span class="p">}).</span><span class="nx">focus</span><span class="p">();</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#ok&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tb&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">().</span><span class="nx">length</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
-            <span class="nx">user</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tb&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
-    <span class="p">});</span>
-    <span class="nx">init</span><span class="p">();</span>
-<span class="p">});</span>
-</code></pre></div>
+            back.style.webkitTransform = &#39;rotateY(&#39; +
+                (Math.floor((parseFloat(obj.ax)/10)*110)).toString() + &#39;deg) rotateX(&#39; +
+                (Math.floor((parseFloat(obj.ay)/10)*110)+180).toString() + &#39;deg)&#39;;
+        }
+    }
+}
+$(document).ready(function(){
+    $(&#39;#tb&#39;).keydown(function(e){
+        if(e.keyCode==13)
+            user = $(&#39;#tb&#39;).val();
+    }).focus();
+    $(&#39;#ok&#39;).click(function(e){
+        if($(&#39;#tb&#39;).val().length&gt;0)
+            user = $(&#39;#tb&#39;).val();
+    });
+    init();
+});</code></pre></div>
 
 
 <p>Play around with websockets, there is a ton of potential here. Ultimately we could be using our mobile devices as gamepads for browser games. How awesome would that be? I wish I knew some game designers right about now.</p>

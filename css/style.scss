@@ -9,11 +9,11 @@ html, body, div, object, iframe, fieldset {
 	padding: 0; 
 	border: 0;
 } 
-ol, ul { 
-	list-style: none;
-	margin: 0;
-	padding: 0;
-} 
+//ol, ul { 
+//	list-style: none;
+//	margin: 0;
+//	padding: 0;
+//} 
 table { 
 	border-collapse: collapse; 
 	border-spacing: 0; 
@@ -154,6 +154,7 @@ pre, code {
 	text-transform: uppercase;
 	max-height: 0;
 	overflow: hidden;
+	margin: 0;
 
 	-webkit-transition: all 0.5s ease-out;  
 	-moz-transition: all 0.5s ease-out;

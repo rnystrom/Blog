@@ -27,7 +27,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 
 <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/css/style.min.css" />
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="shortcut icon" href="/favicon.ico">
 
@@ -200,14 +200,12 @@
 
 <p>That being said, I have my own quarrels with dot syntax. Sometimes I use it to break up the day and make my code look a little more interesting. However I refuse to set any property with dot syntax.</p>
 
-<div class="highlight"><pre><code class="objc"><span class="n">self</span><span class="p">.</span><span class="n">property</span> <span class="o">=</span> <span class="n">newValue</span><span class="p">;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-objc" data-lang="objc">self.property = newValue;</code></pre></div>
 
 
 <p>Just say no to this. Maybe getting a property with dot-syntax can be allowed.</p>
 
-<div class="highlight"><pre><code class="objc"><span class="n">self</span> <span class="n">setProperty</span><span class="o">:</span><span class="n">newValue</span><span class="p">;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-objc" data-lang="objc">self setProperty:newValue;</code></pre></div>
 
 
 <p>Much better.</p>

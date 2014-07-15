@@ -27,7 +27,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 
 <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/css/style.min.css" />
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="shortcut icon" href="/favicon.ico">
 
@@ -281,19 +281,18 @@
 
 <p>You don't need to be an expert in server-side controls to create a web app for iOS. However, the better you are, the better your apps will be (see the next technology). The biggest thing that you should be able to do is detect an iOS device on the server side and then redirect, or filter, the content that is displayed. In PHP I use this simple script to determine what the user agent is, and then tailor the content I display to fit the limitations of the user:</p>
 
-<div class="highlight"><pre><code class="php5"><span class="cp">&lt;?php</span>
-<span class="k">if</span><span class="p">(</span><span class="nx">strstr</span><span class="p">(</span><span class="nv">$USER_AGENT</span><span class="p">,</span><span class="s1">&#39;iPhone&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="nx">strstr</span><span class="p">(</span><span class="nv">$USER_AGENT</span><span class="p">,</span><span class="s1">&#39;iPod&#39;</span><span class="p">)){</span>
-    <span class="nv">$browser</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span><span class="k">elseif</span><span class="p">(</span><span class="nx">strstr</span><span class="p">(</span><span class="nv">$USER_AGENT</span><span class="p">,</span><span class="s1">&#39;iPad&#39;</span><span class="p">)){</span>
-    <span class="nv">$browser</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span><span class="k">elseif</span><span class="p">(</span><span class="nx">strstr</span><span class="p">(</span><span class="nv">$USER_AGENT</span><span class="p">,</span><span class="s1">&#39;MSIE&#39;</span><span class="p">)){</span><span class="c1">//internet explorer</span>
-    <span class="nv">$browser</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-<span class="p">}</span><span class="k">elseif</span><span class="p">(</span><span class="nx">strstr</span><span class="p">(</span><span class="nv">$USER_AGENT</span><span class="p">,</span><span class="s1">&#39;MOZILLA&#39;</span><span class="p">)){</span>   <span class="c1">//firefox</span>
-    <span class="nv">$browser</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="c1">//chrome or safari (webkit)</span>
-    <span class="nv">$browser</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-php5" data-lang="php5">&lt;?php
+if(strstr($USER_AGENT,&#39;iPhone&#39;) || strstr($USER_AGENT,&#39;iPod&#39;)){
+    $browser = 0;
+}elseif(strstr($USER_AGENT,&#39;iPad&#39;)){
+    $browser = 1;
+}elseif(strstr($USER_AGENT,&#39;MSIE&#39;)){//internet explorer
+    $browser = 2;
+}elseif(strstr($USER_AGENT,&#39;MOZILLA&#39;)){ //firefox
+    $browser = 3;
+}else{//chrome or safari (webkit)
+    $browser = 4;
+}</code></pre></div>
 
 
 <p>As far as languages go, I prefer PHP for my server side control when developing for iOS devices. I initially started using ASP.net, but the more that I got into using AJAX, the more ASP.net was trying to do than was necessary. In general I find ASP.net to be a solid language, but when it comes to minimization and optimization, it usually does more than I ask. Stick to something simple that will control your HTML, CSS, and Javascript output. I have not gotten a chance to experiment with Ruby or even HTTP via Python, but I have heard good things about them.</p>
@@ -318,14 +317,12 @@
 
 <p>Open up whatever image editor you want and create a blank 114x114 pixel PNG. This creates the maximum icon size for the Retina display. Once you have created and uploaded the image, link to it like so:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&#39;apple-touch-icon&#39;</span> <span class="na">href=</span><span class="s">&#39;/images/icon.png&#39;</span> <span class="nt">/&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;link rel=&#39;apple-touch-icon&#39; href=&#39;/images/icon.png&#39; /&gt;</code></pre></div>
 
 
 <p>or if you don't want the gloss overlay:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&#39;apple-touch-icon-precomposed&#39;</span> <span class="na">href=</span><span class="s">&#39;/images/icon.png&#39;</span> <span class="nt">/&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;link rel=&#39;apple-touch-icon-precomposed&#39; href=&#39;/images/icon.png&#39; /&gt;</code></pre></div>
 
 
 <p>The image will automatically be glossed (unless you use the second link) and the corners rounded, so don't worry about applying any of those effects in your image editor.</p>
@@ -335,8 +332,7 @@
 
 <p>Just like the icon, add the following meta tag to the head of your html:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&#39;apple-touch-startup-image&#39;</span> <span class="na">href=</span><span class="s">&#39;/images/splash.png&#39;</span> <span class="nt">/&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;link rel=&#39;apple-touch-startup-image&#39; href=&#39;/images/splash.png&#39; /&gt;</code></pre></div>
 
 
 <p>For the iPhone/iPod, you need to create a PNG that is 320x460px, and for the iPad the image needs to be 768x1004px. Make sure that you create portrait oriented images. Currently the iPad will load an app in landscape mode, but it will still use the 768x1004px image which leaves a blank, see-through, space on the left side of the screen. I haven't found a fix for this, so if anyone has any ideas, let me know!</p>
@@ -348,8 +344,7 @@
 
 <p>This is very simple. In my opinion you should always remove the address bar to give your web app a native app appearance.</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&#39;apple-mobile-web-app-capable&#39;</span> <span class="na">content=</span><span class="s">&#39;yes&#39;</span> <span class="nt">/&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;meta name=&#39;apple-mobile-web-app-capable&#39; content=&#39;yes&#39; /&gt;</code></pre></div>
 
 
 
@@ -361,22 +356,19 @@
 
 <p>For scaling, add to the head:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&#39;viewport&#39;</span> <span class="na">content=</span><span class="s">&#39;user-scalable=no, width=device-width&#39;</span> <span class="nt">/&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;meta name=&#39;viewport&#39; content=&#39;user-scalable=no, width=device-width&#39; /&gt;</code></pre></div>
 
 
 <p>For scrolling, add to your javascript:</p>
 
-<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">block</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span> <span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-js" data-lang="js">function block(e) {
+    e.preventDefault() ;
+}</code></pre></div>
 
 
 <p>and to the body element:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;body</span> <span class="na">ontouchmove=</span><span class="s">&#39;block(e)&#39;</span><span class="nt">&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;body ontouchmove=&#39;block(e)&#39;&gt;</code></pre></div>
 
 
 
@@ -386,8 +378,7 @@
 
 <p>This is another simple aesthetic change. I'd prefer Apple allow the status bar to be removed so that we can take advantage of the entire 1024x768 resolution, but it is always present.</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&#39;apple-mobile-web-app-status-bar-style&#39;</span> <span class="na">content=</span><span class="s">&#39;default&#39;</span> <span class="nt">/&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;meta name=&#39;apple-mobile-web-app-status-bar-style&#39; content=&#39;default&#39; /&gt;</code></pre></div>
 
 
 <p>The other values for <b>content</b> are:</p>
@@ -409,8 +400,7 @@
 
 <p>However, if you do not want to select a stylesheet based on the user_agent, here is a device width technique:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">media=</span><span class="s">&#39;only screen and (max-device-width: 480px)&#39;</span> <span class="na">href=</span><span class="s">&#39;/css/iphone.css&#39;</span> <span class="na">type=</span><span class="err"> </span><span class="s">&#39;text/css&#39;</span> <span class="na">rel=</span><span class="s">&#39;stylesheet&#39;</span> <span class="nt">/&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;link media=&#39;only screen and (max-device-width: 480px)&#39; href=&#39;/css/iphone.css&#39; type= &#39;text/css&#39; rel=&#39;stylesheet&#39; /&gt;</code></pre></div>
 
 
 
@@ -420,9 +410,8 @@
 
 <p>You should also separate your stylesheets based on the device's orientation. I generally put all of the style properties in one file, and in another, correct for the opposite orientation with <b>!important</b> tags on each property I am changing. Usually this leaves me with two stylesheets (and that is all that will be requested on the page load!): one being very large for one orientation, and the other very small with opposite orientation corrections. To determine orientation for stylesheet selection, use this:</p>
 
-<div class="highlight"><pre><code class="html"> <span class="nt">&lt;link</span> <span class="na">type=</span><span class="s">&#39;text/css&#39;</span> <span class="na">rel=</span><span class="s">&#39;Stylesheet&#39;</span> <span class="na">media=</span><span class="s">&#39;all and (orientation:portrait)&#39;</span> <span class="na">charset=</span><span class="s">&#39;utf-8&#39;</span> <span class="na">href=</span><span class="s">&#39;css/ipadp.css&#39;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">type=</span><span class="s">&#39;text/css&#39;</span> <span class="na">rel=</span><span class="s">&#39;Stylesheet&#39;</span> <span class="na">media=</span><span class="s">&#39;all&#39;</span> <span class="na">charset=</span><span class="s">&#39;utf-8&#39;</span> <span class="na">href=</span><span class="s">&#39;css/ipad.css&#39;</span> <span class="nt">/&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;link type=&#39;text/css&#39; rel=&#39;Stylesheet&#39; media=&#39;all and (orientation:portrait)&#39; charset=&#39;utf-8&#39; href=&#39;css/ipadp.css&#39; /&gt;
+    &lt;link type=&#39;text/css&#39; rel=&#39;Stylesheet&#39; media=&#39;all&#39; charset=&#39;utf-8&#39; href=&#39;css/ipad.css&#39; /&gt;</code></pre></div>
 
 
 
@@ -446,8 +435,7 @@
 <li><b>Flickering</b> - Sometimes you will encounter flickering when you animate a large object. This is because to Mobile Safari, each object is a 3D element, which means it has a front and back. When you animate an element, you are only animating one side. Use this to make the backface transparent:
 
 
-<div class="highlight"><pre><code class="css"><span class="nt">-webkit-backface-visibility</span><span class="o">:</span> <span class="nt">hidden</span><span class="o">;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css">-webkit-backface-visibility: hidden;</code></pre></div>
 
 
 <li><b>Page Size</b> - Take advantage of CSS3's ability to create gradients, shadows, and rounded corners and avoid using any &lt;img&gt; tags. This saves page load time and system memory. There are some good guides to making glossy buttons with CSS3, just search around Google.</li>
@@ -455,8 +443,7 @@
 <li><b>Prevent Page Selection</b> - If you are planning on having the user touch elements for more than a second, you might want to consider adding this to your body element in your CSS. This will stop any "Open in New Window" popups, text highlighting, and image copying.
 
 
-<div class="highlight"><pre><code class="css"><span class="nt">-webkit-user-select</span><span class="nd">:none</span><span class="o">;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css">-webkit-user-select:none;</code></pre></div>
 
 
 </ul>
@@ -506,8 +493,7 @@ Always try to minimize.
 <li><b>OnLoad</b> - Make use of jQuery's $(document).ready() or an onload function to assign global variables, call init events, etc. You need to make sure that the DOM elements load. Sometimes it is better to use a timeout function to ensure everything has loaded.
 
 
-<div class="highlight"><pre><code class="js"><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span><span class="nx">init</span><span class="p">();},</span><span class="mi">200</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-js" data-lang="js">setTimeout(function(){init();},200);</code></pre></div>
 
 
 </li>

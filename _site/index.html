@@ -27,7 +27,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 
 <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/css/style.min.css" />
+<link rel="stylesheet" href="/css/style.css" />
 
 <link rel="shortcut icon" href="/favicon.ico">
 
@@ -194,165 +194,134 @@
         <section id="site-content">
             
 <article class="article">
-    <h2 class="article-title"><a title="Iterating to an Ugly UI" href="/2013/10/17/Iterating-to-an-Ugly-UI">Iterating to an Ugly UI</a></h2>
-    <time class="timestamp" datetime="October 17, 2013" pubdate>Thursday, 17 October 2013</time>
-    <p>I've been working on an app for golf courses that gives golfers range finding and the latest weather. The concept and app are rather simple, so I decided to spend some time perfecting the design.</p>
+    <h2 class="article-title"><a title="How I Validated a Niche Idea for $32.19 with Facebook Ads" href="/2014/07/15/Validating-a-niche-with-Facebook-ads">How I Validated a Niche Idea for $32.19 with Facebook Ads</a></h2>
+    <time class="timestamp" datetime="July 15, 2014" pubdate>Tuesday, 15 July 2014</time>
+    <p>I've been itching to build a niche market product for a while now. After making tons of iOS apps, I got bored that nothing really took off. I want to make something that helps people's lives, and I want to do it <em>so well</em> that they'll want to pay for it.</p>
 
-<p>After deciding on tab bar navigation, I needed to create the view the user sees immediately after launch. The first view is a list of holes on the course with some branding and supplementary information.</p>
+<p>Using the book <a href="http://www.amazon.com/Start-Small-Stay-Developers-Launching/dp/0615373968">Start Small, Stay Small</a> as a guide, I found a niche that I could become familiar with by combing through all of my first-degree connections.</p>
 
-<p><a href="http://whoisryannystrom.com/img/2013-10-17/sketch.jpg" title="http://whoisryannystrom.com/img/2013-10-17/sketch.jpg"><img class="wide" src="http://whoisryannystrom.com/img/2013-10-17/sketch.jpg" alt="Initial course list sketch" /></a></p>
+<p>I found some valuable metrics about the niche's membership in an annual report. About 14,000 participants in this niche are paid over $3,000/year. If I could sell a $10/mo subscription to 1% of the members, I'd be pulling in $1,400/mo. That's more than enough to satisfy my itch.</p>
 
-<p>My usual first step, when I start a brand new design, is to hop onto <a href="http://dribbble.com">Dribbble</a> and see what the latest trends are. I've done enough searching on Dribbble to know to first search <a href="http://dribbble.com/search?q=ios7+list">"ios7 list"</a> and sort by "Popular".</p>
+<p>I should note that I'm not shooting for the stars, I just want to build a tool that has real impact.</p>
 
-<p><a href="http://whoisryannystrom.com/img/2013-10-17/search_results.jpg"><img width="480" src="http://whoisryannystrom.com/img/2013-10-17/search_results.jpg" alt="Dribbble results for iOS7+List" /></a></p>
+<p><strong>TL;DR on my experiment</strong></p>
 
-<p>I took the Dribbble search results and created my first design.</p>
+<p>I used <a href="http://www.typeform.com/">Typeform</a> and <a href="https://www.facebook.com/ads/create/">Facebook Ads</a> to validate an idea with a niche market.</p>
 
-<p><a href="http://whoisryannystrom.com/img/2013-10-17/1.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-10-17/1.jpg" alt="First Design Concept" /></a></p>
+<ul>
+<li>$32.19 spend on Facebook Ads</li>
+<li>Ad reached 7,516 people</li>
+<li>240 clicks with 310 unique visitors</li>
+<li>112 surveys answered</li>
+<li>101 emails collected</li>
+</ul>
 
-<p>I tried to make the app look "iOS 7" by blurring a photo of one of the holes and placing it in the background. Each hole only shows the hole number, par, and yardage for a single tee.</p>
 
-<p>The spacing between each hole would give me room to create some dynamic animations. Maybe keep the blurred background in place and slide in the map of the hole.</p>
+<h4>Collecting Feedback</h4>
 
-<p>If you ask me, this is a weak use of screen real-estate.</p>
+<p>I've used Survey Monkey and Google Forms in the past for college projects, but since then I've learned a lot about user experience and wanted something more user friendly. Those tools are quick and easy to get moving, but I needed users to <em>want</em> to fill out the survey.</p>
 
-<p>I really liked the hole number green with a white, inner border.  <a href="http://cdn.firespring.com/images/6be767fc-d804-45d5-b4d3-aa4411785276.jpg">The style</a> should be familiar to most golfers.</p>
+<p>Enter <a href="http://www.typeform.com/">Typeform</a>.</p>
 
-<p><a href="http://whoisryannystrom.com/img/2013-10-17/2.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-10-17/2.jpg" alt="Second Design Concept" /></a></p>
+<p>Typeform is a newer service for building high-quality, responsive forms and surveys. I used Typeform for the first time when I <a href="https://twitter.com/_ryannystrom/status/450313484169777152">user tested</a> one of <a href="https://itunes.apple.com/us/app/moviedo-todo-lists-for-movies/id856463297?ls=1&amp;mt=8">my apps</a>. I created that survey in less than an hour.</p>
 
-<p>This second design iterates on the first only adding a feint line connecting each hole. The line reinforces order, kind of like a golf cart trail between each hole. The actual data that's displayed doesn't change at all.</p>
+<p>The form builder is super simple to use and has a ton of robust features, even at the free tier.</p>
 
-<p><a href="http://whoisryannystrom.com/img/2013-10-17/3.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-10-17/3.jpg" alt="Third Design Concept" /></a></p>
+<p><a href="/img/2014-07-01/typeform-workflow.jpg"><img style="border: 1px solid #eee" src="/img/2014-07-01/typeform-workflow.jpg" alt="Typeform Workflow" /></a></p>
 
-<p>Not much changed on the third iteration, only the cell layout. Putting everything on the same line and reducing sizes put more holes on the screen at once.</p>
+<p>The question builder is even more detailed. You can add images, video, make it required, all types of things.</p>
 
-<p><a href="http://whoisryannystrom.com/img/2013-10-17/4.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-10-17/4.jpg" alt="Fourth Design Concept" /></a></p>
+<p><a href="/img/2014-07-01/typeform-detail.jpg"><img style="border: 1px solid #eee" src="/img/2014-07-01/typeform-detail.jpg" alt="Typeform Detail" /></a></p>
 
-<p>I ended up getting carried away with the idea that <em>more holes on the screen</em> means <em>better layout</em>.</p>
+<p>You can check out one of my <a href="https://rnystrom.typeform.com/to/JzO5qf">old surveys</a> to see how responsive and fluid the forms are. Feel free to save data if you want, I'm not using that form anymore.</p>
 
-<p>Its a wreck.</p>
+<p>You can create basic surveys and forms with Typeform for free. Upgrading gets you access to more complex workflows, like conditional user paths, and advanced data fields.</p>
 
-<p>Taking a step back, I saw how I was digging a deeper and deeper hole. I needed to stop staring at the trees and start focusing on the forest.</p>
+<p>The only bummer is that you can't manage your Typeforms on mobile, including tablets. There's an <a href="http://helpcenter.typeform.com/hc/en-us/articles/200071986-Data-API">API</a>, so if I'm <a href="https://github.com/rnystrom/World-Cup-Matches">bored again</a> I may whip something together.</p>
 
-<p><a href="http://whoisryannystrom.com/img/2013-10-17/5.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-10-17/5.jpg" alt="Final Design Concept" /></a></p>
+<p><strong>Make sure you ask for emails</strong> at the end of your form! It's an easy way to collect emails for early adopters or beta testers.</p>
 
-<p>The fifth and final design heads in a new direction. I refocused my efforts, deleted my <em>Dribbble Inspiration</em> folder, and thought critically about how this screen would be viewed.</p>
+<h4>Reaching Your Market</h4>
 
-<p>I realized that golfers were going to be in direct sunlight trying to read text on a glossy, finger-smudged screen. I got rid of the background blur and used black text on white for maximum contrast and readability.</p>
+<p>A survey is pointless without getting it in front of people. I'm not a marketer, and I don't really know what I'm doing. Lucky for me <a href="http://www.raywenderlich.com/71741/what-every-ios-developer-needs-to-know-about-facebooks-f8-developer-conference">I attended</a> Facebook's <a href="https://fbf8.com/">F8 conference</a> this year and learned about their powerful targeted ad platform.</p>
 
-<p>The only information that really matters on this view is the yardage for each tee box, hole number, handicap, and par. The rest of the data should be in the hole views or elsewhere in the app. The new data layout is light and balanced.</p>
+<p>You can use <a href="https://www.facebook.com/ads/create/">Facebook Ads</a> to create extremely targeted ad campaigns using age, gender, education, interests, etc. Facebook even gives you a gauge to show you roughly how many people your targeting configuration will reach.</p>
 
-<p>I also removed every animation. Course data is loaded from local resources, so a fancy animation isn't masking any work. Users would just end up waiting, and they frequently <a href="http://www.marco.org/2013/08/27/along-for-the-ride">like to complain</a> about how annoying pointless animations can be.</p>
+<p><a href="/img/2014-07-01/facebook-targeting.jpg"><img src="/img/2014-07-01/facebook-targeting.jpg" alt="Facebook targeting" /></a></p>
 
-<p>I'm quite happy with the final design, but you won't catch me posting it on Dribbble, because it doesn't really follow any design trends. It's <em>ugly</em>.</p>
+<p>All you need to create an ad is a Facebook Page and a URL. In my case I created a throw-away page and linked to my Typeform survey.</p>
 
-<p>And that's a good thing.</p>
+<p>I filled in configured the ad towards my niche based on assumptions, and whittled my reach down to about 600,000 people. I capped my budget at $50, let Facebook determine my CPC, and checked out with my credit card (you can use Paypal too).</p>
 
-<p>The final interface serves its purpose. It presents basic course information, removes distractions, and is completely accessible. Sometimes following trends for the sake of being trendy creates <a href="http://insideintercom.io/the-dribbblisation-of-design/">Dribbblisation</a> and hurts the usability of your product.</p>
+<h4>Results</h4>
 
-</article>
+<p>Here are the results of my Facebook Ad with Typeform:</p>
 
-<article class="article">
-    <h2 class="article-title"><a title="Custom View Controller Transitions with Orientation" href="/2013/10/01/View-Controller-Transition-Orientation">Custom View Controller Transitions with Orientation</a></h2>
-    <time class="timestamp" datetime="October  1, 2013" pubdate>Tuesday,  1 October 2013</time>
-    <p>When iOS 7 was announced at WWDC in 2013, there were an incredible amount of new APIs that caught my eye. Watching one of the developer sessions from my couch in Ohio a few hours after it took place, I stumbled upon session 218: <em>Custom Transitions Using View Controllers</em>.</p>
+<p><a href="/img/2014-07-01/facebook-results.jpg"><img style="border: 1px solid #eee" src="/img/2014-07-01/facebook-results.jpg" alt="Facebook Results" /></a></p>
 
-<p>This session contained a lot of confusing information about an incredibly exciting new API. I say "incredibly exciting" because graphics and user interaction on iOS are what really get me going. I love exploring and <a href="http://capptivate.co/" title="Capptivate">discovering</a> new ways to delight my users.</p>
+<p>I got my survey in front of <strong>7,516</strong> people and had <strong>240</strong> clicks all for <strong>$32.19</strong>. That cost me <strong>$0.13/click</strong>. Facebook tells me that it usually costs about $0.60/click.</p>
 
-<p>The core functionality of this new API uses the protocol <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/Reference/Reference.html" title="Apple Documentation"><code>UIViewControllerAnimatedTransitioning</code></a>.</p>
+<p>I have no idea why my ad was so cheap, but that's incredibly valuable since it tells me advertising my product will be <strong>cheap</strong>.</p>
 
-<p>This is how Apple describes the new API:</p>
+<p>I also ended up with <strong>112 survey responses</strong> which included <strong>101 emails</strong>. My questions focused around pain points, and, by analyzing the responses, I found a problem that roughly 85% of participants shared.</p>
 
-<p><a href="http://whoisryannystrom.com/img/2013-10-01/apple-transitions.jpg" title="WWDC Session 218 Screen Cap"><img src="http://whoisryannystrom.com/img/2013-10-01/apple-transitions.jpg" title="WWDC Session 218 Screen Cap" alt="View Controller Custom Transitions described by Apple" /></a></p>
+<p>Typeform contains some basic analytics as well. I got a break down of my audience's devices and found that the majority of users who clicked on the Facebook Ad have smartphones.</p>
 
-<p>If you're confused, don't worry, so was I. This screen cap just about sums up the entire session 218 video <strong>as well as the sample code</strong>.</p>
+<p>Something really unexpected happened too, people were Liking my ad on Facebook! When a user Likes a page or ad that ad is then shared on that person's wall. <strong>Free advertising</strong>. Facebook reported 240 clicks while Typeform reported 310 unique visitors.</p>
 
-<p>I was really hoping we'd get to see some examples of how Apple created their custom transitions, but the only sample provided performs a simple transition using <code>UICollectionViewCell</code> animations, which is a little different than the <code>UIViewController</code> transitions they demo in the session.</p>
+<h4>Hindsight</h4>
 
-<p>I'll attempt to explain how <code>UIViewControllerAnimatedTransitioning</code> works as briefly as I can.</p>
+<p>I spent more time on my survey questions than actually building the survey, which is fine, but I really wish I spent <em>even more</em> time on creating the right questions. I could have vetted the questions with my personal network before sending them into the wild.</p>
 
-<p>You are currently looking at view controller A and want to present view controller B.</p>
+<p>I also ran the ad for a month which was way too long. I could have just as easily ran it for a week. This likely would have raised my CPC, but if that meant getting things over and done with sooner, that's fine.</p>
 
-<p><a href="http://whoisryannystrom.com/img/2013-10-01/1.jpg" title="View Controllers A and B"><img src="http://whoisryannystrom.com/img/2013-10-01/1.jpg" title="View Controllers A and B" alt="View Controllers A and B" /></a></p>
+<h4>Conclusion</h4>
 
-<p>You initialize a transition and are given a <em>container view</em> that facilitates the animation of your transition.</p>
+<p>I highly recommend using Typeform (or any survey tool) with Facebook Ads next time you have an idea or market that needs validating or testing. It's just too cheap and easy not to test before investing time and money building something.</p>
 
-<p><a href="http://whoisryannystrom.com/img/2013-10-01/2.jpg" title="Adding VCs to Container View"><img src="http://whoisryannystrom.com/img/2013-10-01/2.jpg" title="Adding VCs to Container View" alt="Adding VCs to Container View" /></a></p>
+<p>For me, I spent just a pinch over $30 for some solid data. The next step is to figure out exactly how to solve the problem I found, and that's the fun part.</p>
 
-<p>Add view controller B's view to the container.</p>
-
-<p><a href="http://whoisryannystrom.com/img/2013-10-01/3.jpg" title="Adding B to the container"><img src="http://whoisryannystrom.com/img/2013-10-01/3.jpg" title="Adding B to the container" alt="Adding B to the container" /></a></p>
-
-<p>Perform an animation on the views of view controllers A and B (<strong>not</strong> on the container).</p>
-
-<p><a href="http://whoisryannystrom.com/img/2013-10-01/4.jpg" title="Simplest of all animations"><img src="http://whoisryannystrom.com/img/2013-10-01/4.jpg" title="Simplest of all animations" alt="Simplest of all animations" /></a></p>
-
-<p>Afterwards you're left with view controller B presented, and, by calling <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIViewControllerAnimatedTransitioning/animationEnded:" title="Apple Documentation"><code>animationEnded:</code></a>, the presentation is completed.</p>
-
-<p>Recently <a href="https://twitter.com/ashfurrow" title="@ashfurrow">Ash Furrow</a> and <a href="https://twitter.com/jbradforddillon" title="@jbradforddillon">Bradford Dillon</a> created some really great posts on custom UIViewController transitions on <a href="http://www.teehanlax.com/blog/custom-uiviewcontroller-transitions/" title="Custom UIViewController Transitions">Teehan &amp; Lax's</a> and <a href="http://www.doubleencore.com/2013/09/ios-7-custom-transitions/" title="iOS 7: Custom Transitions">Double Encore's</a> blogs, respectfully.</p>
-
-<p>Both guides are great and do a good job at explaining how to create your own custom UIViewController custom transitions from scratch. However, both fail to explain how to implement proper orientation support.</p>
-
-<p><a href="http://whoisryannystrom.com/img/2013-10-01/teehan.jpg" title="Teehan example orientations"><img src="http://whoisryannystrom.com/img/2013-10-01/teehan.jpg" title="Teehan example orientations" alt="Teehan example orientations" /></a></p>
-
-<p>I started experimenting and quickly found what I thought to be a bug. On July 15th I filed my first bug report with Apple (#14444833, thanks for those who resubmitted). I also created a thread on the dev forums that got <a href="https://devforums.apple.com/thread/196451?start=0&amp;tstart=0" title="Apple Developer Forums">some attention</a>.</p>
-
-<p>No one ever got an official answer.</p>
-
-<p>After some digging, I found that the container view's <strong>frame</strong> is always laid out in portrait, even if the device is in landscape.</p>
-
-<p>The frame layout was likely our biggest source of <a href="https://devforums.apple.com/message/891193#891193" title="Apple Developer Forums">confusion</a>.</p>
-
-<p>It took a lot of tinkering, but I finally found a useful solution. Even though the frame of the container view is stuck in portrait, I found that the <strong>bounds</strong> of the container view is always corrected for device orientation.</p>
-
-<p>I'm not entirely sure that this is intended, but since the container view should be agnostic of your view controller hierarchy, it shouldn't necessarily adjust for orientation.</p>
-
-<p>From the <a href="[Frame](https://developer.apple.com/library/ios/documentation/uikit/reference/uiview_class/UIView/UIView.html#//apple_ref/occ/instp/UIView/frame" title="Apple Documentation">frame documentation</a>:</p>
-
-<blockquote><p>The frame rectangle, which describes the view’s location and size in its superview’s coordinate system.</p></blockquote>
-
-<p>From the <a href="https://developer.apple.com/library/ios/documentation/uikit/reference/uiview_class/UIView/UIView.html#//apple_ref/occ/instp/UIView/bounds" title="Apple Documentation">bounds documentation</a>:</p>
-
-<blockquote><p>The bounds rectangle, which describes the view’s location and size in its own coordinate system.</p></blockquote>
-
-<p>The view controller transition API is simply <em>too vague</em> in its current form. More sample code and documentation really needs to be provided. But for now, if you're going to use custom view controller transitions, make sure to adjust your new views with the bounds of the container.</p>
-
-<p>I've setup a <a href="https://github.com/rnystrom/TransitionExample" title="TransitionExample on Github">Github project</a> with examples using code, NIBs, and Storyboards. Please feel free to use the code from my <a href="https://github.com/rnystrom/TransitionExample/blob/master/TransitionExample/TransitionController.m#L38-45" title="TransitionController">transition controller</a> as a starting point. Hopefully this will provide a good starting point to perform awesome, oriented animations.</p>
+<p><em>Note: Normally I wouldn't care about hiding an idea, since the idea is 5% of the work, but I might have actually found something.</em></p>
 
 </article>
 
 <article class="article">
-    <h2 class="article-title"><a title="Live Blur in iOS7" href="/2013/09/17/Live-blur-in-iOS7">Live Blur in iOS7</a></h2>
-    <time class="timestamp" datetime="September 17, 2013" pubdate>Tuesday, 17 September 2013</time>
-    <p>Lately I have been seeing a lot of designers on <a href="http://dribbble.com/search?q=ios+blur">Dribbble</a> using blurs in UI concept animations for iOS 7. These designs are usually flat and apply a gaussian blur to the contents beneath views. Apple has demonstrated this technique in their design of iOS 7 with Safari's tool bar and Contact's tab bar.</p>
+    <h2 class="article-title"><a title="No One Downloads My App and I Don't Care" href="/2014/06/19/2014-06-19-No-One-Is-Downloading-My-App">No One Downloads My App and I Don't Care</a></h2>
+    <time class="timestamp" datetime="June 19, 2014" pubdate>Thursday, 19 June 2014</time>
+    <ul>
+<li>Moviedo</li>
+<li>reviews</li>
+<li>blogs</li>
+<li>download spike</li>
+<li>free</li>
+<li>dogfooding</li>
+</ul>
 
-<p>In design, blur is primarily used to corral your eyes towards an object. If you are presenting a modal atop a busy background, a blurred background will naturally guide your eyes towards the crisp and <em>in focus</em> text or images.</p>
 
-<p>Blurs also help present additional information while remaining within the context of the previous screen.</p>
+</article>
 
-<p><a href="http://whoisryannystrom.com/img/2013-09-17/ios-7-message.jpg"><img width="320" src="http://whoisryannystrom.com/img/2013-09-17/ios-7-message.jpg" alt="iOS 7 Alert View" /></a></p>
+<article class="article">
+    <h2 class="article-title"><a title="Reducing the size of your IPA" href="/2014/01/30/2014-02-04-RAC-Search-Bar">Reducing the size of your IPA</a></h2>
+    <time class="timestamp" datetime="January 30, 2014" pubdate>Thursday, 30 January 2014</time>
+    <pre><code>@property (nonatomic, strong) RACReplaySubject *searchBarReplaySubject;
 
-<p>Below is an example iOS 7 custom control design by <a href="https://twitter.com/Jakubantalik">Jakub Antalik</a>. I took this beautiful design as a challenge to recreate it as an open source iOS control. I've done these sort of challenges <a href="https://github.com/rnystrom/RNRippleTableView">before</a>, so I didn't think it would be too difficult.</p>
+//...
 
-<p><a href="https://twitter.com/Jakubantalik"><img src="http://whoisryannystrom.com/img/2013-09-17/dribbble-frosted.gif" alt="Sidebar calendar animation" /></a></p>
+self.searchBarReplaySubject = [RACReplaySubject subject];
+[[[self.searchBarReplaySubject filter:^BOOL (NSString *text) {
+    return [text length] &gt; 2;
+}]
+  throttle:0.5]
+ subscribeNext:^(NSString *text) {
+     DDLogInfo(text);
+ }];
 
-<p>Unfortunately in the latest iOS 7 SDK, there is no API to do live blurring of a view. When I say "live blurring" I mean applying a gaussian blur to a screenshot of the contents beneath a view and <strong>maintaining the blur effect throughout animation and state changes</strong> of the background.</p>
+ // ...
 
-<p>There have been some great attempts at creating "live" blur views for iOS, the two most notable being <a href="https://github.com/nicklockwood/FXBlurView">FXBlurView</a> and <a href="https://github.com/alexdrone/ios-realtimeblur">ios-realtimeblur</a>, but these projects work by continuously polling the runtime, grabbing screenshots of the current view (which occurs on the CPU and main thread), applying a blur to the screenshot, and then adding the image to the view. The "live" effect happens by quickly swapping the blurred image with another, working just like frames of film.</p>
-
-<p>The big bottleneck with most of these implementations is the screenshot process. This operation has to occur <strong>on the CPU</strong> which delays other, more critical operations, and can lag and stutter on older devices.</p>
-
-<p><a href="http://stackoverflow.com/a/17299759">Rumors have hinted</a> that Apple is blurring directly on the GPU, but creating such an API would open up security risks, and we've seen how Apple deals with security issues.</p>
-
-<p>One trick that I've experimented with is changing the <code>UIViewContentMode</code> property of <code>UIView</code> (usually <code>UIImageView</code>) to be fixed to a side, and then animate the height or width of the view so it looks like a live-blurred view is sliding in.</p>
-
-<p><a href="http://whoisryannystrom.com/img/2013-09-17/animation-explanation.jpg"><img src="http://whoisryannystrom.com/img/2013-09-17/animation-explanation.jpg" width="1024" alt="RNFrostedSidebar blur hack" /></a></p>
-
-<p>I implemented this trick in my <a href="https://github.com/rnystrom/RNFrostedSidebar">RNFrostedSidebar</a> UI control and I think the effects are quite nice.</p>
-
-<p><a href="http://whoisryannystrom.com/img/2013-09-17/open.gif"><img src="http://whoisryannystrom.com/img/2013-09-17/open.gif" alt="RNFrostedSidebar open animation" /></a></p>
-
-<p>Until a background blur API opens up, I strongly suggest keeping blurs in your designs to a minimum because they can be pretty taxing on the device and hurt user experience. Just remember to keep performance in mind as we design and develop our UIs to match this new iOS.</p>
+ - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [self.searchBarReplaySubject sendNext:searchText];
+}
+</code></pre>
 
 </article>
 
